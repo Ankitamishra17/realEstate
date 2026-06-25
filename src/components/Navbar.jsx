@@ -36,7 +36,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll while mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -48,33 +47,27 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Info Bar */}
+      {/* Top Info Bar — NOT sticky, scrolls away */}
       <div className="bg-[#0f2645] text-white text-[11px] sm:text-xs hidden md:flex items-center justify-between gap-3 px-4 sm:px-6 lg:px-8 py-2 border-b border-[#af7323]/30">
         <div className="flex items-center gap-3 sm:gap-6 min-w-0 overflow-hidden">
           <span className="flex items-center gap-1.5 text-[#af7323] shrink-0">
             <RiPhoneLine className="shrink-0" />
-            <span className="text-white whitespace-nowrap">
-              +91 98765 43210
-            </span>
+            <span className="text-white whitespace-nowrap">+91 98765 43210</span>
           </span>
           <span className="hidden lg:flex items-center gap-1.5 text-[#af7323] shrink-0">
             <RiMailLine className="shrink-0" />
-            <span className="text-white whitespace-nowrap">
-              info@avyayadeveloper.com
-            </span>
+            <span className="text-white whitespace-nowrap">info@avyayadeveloper.com</span>
           </span>
         </div>
         <div className="hidden sm:flex items-center gap-1.5 text-[#af7323] shrink-0">
           <RiMapPinLine className="shrink-0" />
-          <span className="text-white whitespace-nowrap">
-            Ghaziabad, Uttar Pradesh
-          </span>
+          <span className="text-white whitespace-nowrap">Ghaziabad, Uttar Pradesh</span>
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* Main Navbar — fixed */}
       <nav
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-white shadow-lg shadow-[#0f2645]/10"
             : "bg-white border-b border-gray-100"
@@ -167,7 +160,6 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* Mobile/Tablet CTA Buttons */}
             <div className="mt-3 flex flex-col sm:flex-row gap-2.5">
               <Link
                 href="/post-property"

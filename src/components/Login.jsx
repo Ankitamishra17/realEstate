@@ -576,7 +576,7 @@ export default function LoginPage() {
                 Sign In{" "}
                 <ArrowRight style={{ width: 15, height: 15, flexShrink: 0 }} />
               </button>
-              </div>
+            </div>
           </div>
         </div>
       </div>

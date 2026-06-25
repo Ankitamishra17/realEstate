@@ -1,9 +1,9 @@
-import PostProperty from "@/components/PostProperty"
+import PropertiesPage from "@/components/PostProperty";
 
 export default function PostPropertyPage() {
   return (
     <>
-      <PostProperty/>
+    <PropertiesPage />
     </>
   );
 }
