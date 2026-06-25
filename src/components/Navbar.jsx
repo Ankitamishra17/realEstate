@@ -116,7 +116,7 @@ export default function Navbar() {
                 Login
               </Link>
               <Link
-                href="/post-property"
+                href="/postProperty"
                 className="group flex items-center gap-2 bg-[#0f2645] hover:bg-[#af7323] text-white text-[13px] xl:text-sm font-semibold px-3.5 xl:px-5 py-2.5 rounded transition-all duration-300 tracking-wide shadow-md whitespace-nowrap"
               >
                 Post Property
@@ -162,7 +162,7 @@ export default function Navbar() {
 
             <div className="mt-3 flex flex-col sm:flex-row gap-2.5">
               <Link
-                href="/post-property"
+                href="/postProperty"
                 onClick={() => setMenuOpen(false)}
                 className="flex items-center justify-center gap-2 bg-[#0f2645] text-white text-sm font-semibold px-5 py-3 rounded-lg text-center tracking-wide w-full"
               >
