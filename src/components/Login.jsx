@@ -576,29 +576,7 @@ export default function LoginPage() {
                 Sign In{" "}
                 <ArrowRight style={{ width: 15, height: 15, flexShrink: 0 }} />
               </button>
-
-              <div className="divider">
-                <div className="divider-line" />
-                <span className="divider-text">OR</span>
-                <div className="divider-line" />
               </div>
-
-              <div className="signup-row">
-                Don&apos;t have an account?{" "}
-                <Link href="/register" className="signup-link">
-                  Request Access
-                </Link>
-              </div>
-            </div>
-
-            {/* Trust badge */}
-            <div className="trust-row">
-              <div className="trust-dot" />
-              <span className="trust-text">
-                256-bit SSL Encrypted · Your data is safe
-              </span>
-              <div className="trust-dot" />
-            </div>
           </div>
         </div>
       </div>
