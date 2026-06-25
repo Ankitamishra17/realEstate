@@ -111,16 +111,6 @@ function Fade({ children, className = "", delay = 0, from = "bottom", style = {}
   );
 }
 
-function GoldRule() {
-  return (
-    <div className="flex items-center justify-center gap-3 mb-4">
-      <div style={{ width: 32, height: 2, background: "#b8892e" }} />
-      <div style={{ width: 6, height: 6, background: "#b8892e", transform: "rotate(45deg)" }} />
-      <div style={{ width: 32, height: 2, background: "#b8892e" }} />
-    </div>
-  );
-}
-
 function Eyebrow({ children }) {
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 16, flexWrap: "nowrap", overflow: "hidden" }}>
@@ -152,41 +142,127 @@ const styles = `
   .avyaya-root * { box-sizing: border-box; }
   .avyaya-root { overflow-x: hidden; }
 
-  /* ── HERO ── */
+  /* ══════════════════════════════
+     HERO
+  ══════════════════════════════ */
+  .hero-section {
+    background: #12243d;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(2.5rem,7vw,5rem) clamp(1.25rem,4vw,2.5rem);
+    width: 100%;
+  }
   .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
   }
-  .hero-collage {
-    position: relative;
-    height: 460px;
+
+  .hero-sanskrit-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(184,137,46,0.35);
+    padding: 0.75rem 1.1rem;
+    border-radius: 2px;
+    background: rgba(184,137,46,0.06);
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+    max-width: 100%;
   }
-  .hero-collage-img1 {
-    position: absolute; top: 0; right: 0;
-    width: 78%; height: 68%;
-    object-fit: cover; border-radius: 2px;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  .hero-sanskrit-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(184,137,46,0.3);
+    flex-shrink: 0;
   }
-  .hero-collage-img2 {
-    position: absolute; bottom: 0; left: 0;
-    width: 50%; height: 50%;
-    object-fit: cover; border-radius: 2px;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
-    border: 3px solid #12243d;
-  }
-  .hero-collage-badge {
-    position: absolute; bottom: 72px; right: 8px; z-index: 10;
-    background: #b8892e; color: #fff;
-    padding: 1rem 1.25rem; border-radius: 2px;
-    box-shadow: 0 8px 32px rgba(184,137,46,0.4);
-    text-align: center;
-  }
+
   .hero-cta-row {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+  .hero-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #b8892e;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.85rem 1.75rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  .hero-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.75);
+    font-weight: 600;
+    padding: 0.85rem 1.75rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .hero-collage {
+    position: relative;
+    height: 460px;
+    width: 100%;
+  }
+  .hero-collage-img1 {
+    position: absolute;
+    top: 0; right: 0;
+    width: 78%; height: 68%;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+  .hero-collage-img2 {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 50%; height: 50%;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    border: 3px solid #12243d;
+  }
+  .hero-collage-badge {
+    position: absolute;
+    bottom: 60px; right: 8px;
+    z-index: 10;
+    background: #b8892e;
+    color: #fff;
+    padding: 1rem 1.25rem;
+    border-radius: 2px;
+    box-shadow: 0 8px 32px rgba(184,137,46,0.4);
+    text-align: center;
+  }
+  .hero-badge-num {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .hero-badge-label {
+    font-size: 11px;
+    opacity: 0.85;
+    margin-top: 4px;
+    line-height: 1.4;
   }
 
   /* ── STATS ── */
@@ -301,170 +377,140 @@ const styles = `
      TABLET  ≤ 1024px
   ══════════════════════════════ */
   @media (max-width: 1024px) {
-
-    /* Hero */
-    .hero-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-    .hero-collage {
-      height: 360px;
-      max-width: 540px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    /* Stats */
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Story */
-    .story-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-    .story-collage {
-      height: 340px;
-      max-width: 540px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .story-quote-box {
-      top: 52%; left: 38%;
-    }
-
-    /* Mission */
-    .mission-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Services */
-    .services-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Values */
-    .values-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-    .values-left-img {
-      max-height: 320px;
-      object-fit: cover;
-    }
-
-    /* Why Us */
-    .whyus-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-    .whyus-img-wrap {
-      max-width: 540px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .whyus-badge {
-      left: -12px;
-    }
-
-    /* Milestones */
-    .milestones-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .milestone-connector {
-      display: none;
-    }
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-collage { height: 360px; max-width: 520px; margin: 0 auto; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .story-collage { height: 340px; max-width: 540px; margin: 0 auto; width: 100%; }
+    .story-quote-box { top: 52%; left: 38%; }
+    .mission-grid { grid-template-columns: repeat(3, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .values-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .values-left-img { max-height: 320px; object-fit: cover; }
+    .whyus-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .whyus-img-wrap { max-width: 540px; margin: 0 auto; width: 100%; }
+    .whyus-badge { left: -12px; }
+    .milestones-grid { grid-template-columns: repeat(2, 1fr); }
+    .milestone-connector { display: none; }
   }
 
   /* ══════════════════════════════
      MOBILE  ≤ 640px
   ══════════════════════════════ */
   @media (max-width: 640px) {
-
     /* Hero */
+    .hero-section { min-height: auto; }
+    .hero-inner { padding: "clamp(5rem,8vw,7rem) clamp(1.25rem,4vw,2.5rem) clamp(2.5rem,6vw,5rem)", }
+
+    /* Stack: text first, image below — NO order:-1 */
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    /* Text block — full width, comes first naturally */
+    .hero-text-col {
+      width: 100%;
+      order: 1;
+    }
+
+    /* Image block — comes second */
+    .hero-collage-wrap {
+      width: 100%;
+      order: 2;
+    }
+
     .hero-collage {
-      height: 260px;
+      height: 240px;
+      max-width: 100%;
+      width: 100%;
     }
+
+    .hero-collage-img1 {
+      width: 80%;
+      height: 70%;
+    }
+
+    .hero-collage-img2 {
+      width: 48%;
+      height: 48%;
+    }
+
     .hero-collage-badge {
-      bottom: 48px;
-      right: 4px;
-      padding: 0.6rem 0.9rem;
+      bottom: 10px;
+      right: 6px;
+      padding: 0.55rem 0.85rem;
     }
-    .hero-collage-badge p:first-child {
-      font-size: 1.35rem !important;
+    .hero-badge-num { font-size: 1.3rem; }
+    .hero-badge-label { font-size: 10px; }
+
+    .hero-cta-row {
+      flex-direction: column;
     }
-    .hero-cta-row a {
-      flex: 1 1 100%;
+    .hero-cta-primary,
+    .hero-cta-secondary {
+      width: 100%;
       justify-content: center;
       text-align: center;
     }
 
-    /* Stats */
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .hero-sanskrit-badge {
+      gap: 0.6rem;
+      padding: 0.6rem 0.875rem;
     }
+    .hero-sanskrit-divider { height: 24px; }
+
+    /* Stats */
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
 
     /* Story */
-    .story-collage {
-      height: 240px;
-    }
-    .story-quote-box {
-      display: none;
-    }
+    .story-collage { height: 240px; }
+    .story-quote-box { display: none; }
 
     /* Mission */
-    .mission-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .mission-grid { grid-template-columns: repeat(2, 1fr); }
 
     /* Services */
-    .services-grid {
-      grid-template-columns: 1fr;
-    }
+    .services-grid { grid-template-columns: 1fr; }
 
     /* Values */
-    .values-left-img {
-      max-height: 220px;
-    }
+    .values-left-img { max-height: 220px; }
 
     /* Why Us */
-    .whyus-checks {
-      grid-template-columns: 1fr;
-    }
-    .whyus-img-wrap {
-      padding-bottom: 0;
-    }
-    .whyus-badge {
-      position: static;
-      margin-top: 1.25rem;
-      display: inline-block;
-      left: 0;
-    }
+    .whyus-checks { grid-template-columns: 1fr; }
+    .whyus-img-wrap { padding-bottom: 0; }
+    .whyus-badge { position: static; margin-top: 1.25rem; display: inline-block; left: 0; }
 
     /* Milestones */
-    .milestones-grid {
-      grid-template-columns: 1fr;
-      max-width: 360px;
-      margin: 0 auto;
-    }
+    .milestones-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
   }
 
   /* ══════════════════════════════
      XS  ≤ 400px
   ══════════════════════════════ */
   @media (max-width: 400px) {
-    .mission-grid {
-      grid-template-columns: 1fr;
-    }
-    .stats-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-    .hero-collage {
-      height: 220px;
-    }
-    .hero-collage-badge {
-      bottom: 36px;
+    .hero-inner { padding: 2rem 1rem 1.75rem; }
+    .hero-collage { height: 200px; }
+    .hero-collage-badge { bottom: 8px; right: 4px; padding: 0.45rem 0.7rem; }
+    .hero-badge-num { font-size: 1.1rem; }
+    .hero-badge-label { font-size: 9px; }
+    .hero-sanskrit-badge { gap: 0.4rem; padding: 0.5rem 0.75rem; }
+    .mission-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ══════════════════════════════
+     TINY  ≤ 320px
+  ══════════════════════════════ */
+  @media (max-width: 320px) {
+    .hero-inner { padding: 1.75rem 0.875rem 1.5rem; }
+    .hero-collage { height: 175px; }
+    .hero-sanskrit-divider { display: none; }
+    .hero-cta-primary,
+    .hero-cta-secondary {
+      padding: 0.75rem 1rem;
+      font-size: 13px;
     }
   }
 `;
@@ -477,60 +523,69 @@ export default function AvyayaDevelopersAbout() {
         className="avyaya-root"
         style={{ background: "#f7f4ef", color: "#12243d", fontFamily: "'Georgia', 'Times New Roman', serif" }}
       >
-
         {/* ── HERO ── */}
-        <section style={{ background: "#12243d", minHeight: "92vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "relative", zIndex: 10, maxWidth: 1200, margin: "0 auto", padding: "clamp(3rem,8vw,6rem) clamp(1.25rem,4vw,2.5rem)", width: "100%" }}>
+        <section className="hero-section">
+          <div className="hero-inner">
             <div className="hero-grid">
 
-              {/* Left — text */}
-              <Fade>
+              {/* LEFT — Text (always first in DOM = always on top on mobile) */}
+              <Fade className="hero-text-col">
                 <EyebrowLeft>Est. in NCR · Avyaya Developers</EyebrowLeft>
-                <h1 style={{ fontSize: "clamp(1.8rem,5vw,4.2rem)", fontWeight: 700, color: "#fff", lineHeight: 1.06, marginBottom: "1.25rem", letterSpacing: "-0.01em" }}>
-                  Building Dreams,<br />
+                <h1
+                  style={{
+                    fontSize: "clamp(1.65rem,5vw,4.2rem)",
+                    fontWeight: 700,
+                    color: "#fff",
+                    lineHeight: 1.06,
+                    marginBottom: "1.25rem",
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  Building Dreams,
+                  <br />
                   <span style={{ color: "#b8892e" }}>Creating Futures</span>
                 </h1>
-                <p style={{ color: "rgba(255,255,255,0.52)", fontSize: "clamp(0.85rem,2vw,1rem)", lineHeight: 1.8, maxWidth: 420, marginBottom: "1.5rem" }}>
-                  Inspired by the Sanskrit word <em>Avyaya</em> — eternal, enduring, everlasting — we build spaces that stand the test of time and create lasting value for communities.
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.52)",
+                    fontSize: "clamp(0.82rem,2vw,1rem)",
+                    lineHeight: 1.8,
+                    maxWidth: 420,
+                    marginBottom: "1.5rem",
+                  }}
+                >
+                  Inspired by the Sanskrit word <em>Avyaya</em> — eternal, enduring, everlasting — we build spaces
+                  that stand the test of time and create lasting value for communities.
                 </p>
-                <div style={{
-                  display: "inline-flex", alignItems: "center", gap: "1rem",
-                  border: "1px solid rgba(184,137,46,0.35)", padding: "0.75rem 1.1rem", borderRadius: 2,
-                  background: "rgba(184,137,46,0.06)", marginBottom: "1.75rem",
-                  flexWrap: "wrap",
-                }}>
-                  <span style={{ fontFamily: "serif", fontSize: "clamp(1.2rem,3vw,1.6rem)", color: "#b8892e", lineHeight: 1 }}>अव्यय</span>
-                  <div style={{ width: 1, height: 32, background: "rgba(184,137,46,0.3)" }} />
+
+                <div className="hero-sanskrit-badge">
+                  <span style={{ fontFamily: "serif", fontSize: "clamp(1.1rem,3vw,1.6rem)", color: "#b8892e", lineHeight: 1 }}>
+                    अव्यय
+                  </span>
+                  <div className="hero-sanskrit-divider" />
                   <div>
-                    <p style={{ color: "#b8892e", fontWeight: 700, fontSize: 13, letterSpacing: "0.15em" }}>AVYAYA</p>
-                    <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 12, marginTop: 2 }}>Eternal · Enduring · Everlasting</p>
+                    <p style={{ color: "#b8892e", fontWeight: 700, fontSize: "clamp(10px,2vw,13px)", letterSpacing: "0.15em" }}>
+                      AVYAYA
+                    </p>
+                    <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "clamp(10px,1.8vw,12px)", marginTop: 2 }}>
+                      Eternal · Enduring · Everlasting
+                    </p>
                   </div>
                 </div>
+
                 <div className="hero-cta-row">
-                  <a href="#story" style={{
-                    display: "inline-flex", alignItems: "center", gap: 8,
-                    background: "#b8892e", color: "#fff", fontWeight: 700,
-                    padding: "0.85rem 1.75rem", borderRadius: 2, textDecoration: "none",
-                    fontSize: 14, letterSpacing: "0.05em",
-                  }}>
+                  <a href="#story" className="hero-cta-primary">
                     Our Story
-                    <svg style={{ width: 16, height: 16 }} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <svg style={{ width: 16, height: 16, flexShrink: 0 }} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </a>
-                  <a href="#services" style={{
-                    display: "inline-flex", alignItems: "center", gap: 8,
-                    border: "1px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.75)",
-                    fontWeight: 600, padding: "0.85rem 1.75rem", borderRadius: 2,
-                    textDecoration: "none", fontSize: 14,
-                  }}>
-                    Our Services
-                  </a>
+                  <a href="#services" className="hero-cta-secondary">Our Services</a>
                 </div>
               </Fade>
 
-              {/* Right — image collage */}
-              <Fade delay={200} from="right">
+              {/* RIGHT — Image collage (below text on mobile) */}
+              <Fade delay={200} from="right" className="hero-collage-wrap">
                 <div className="hero-collage">
                   <img
                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80"
@@ -543,11 +598,12 @@ export default function AvyayaDevelopersAbout() {
                     className="hero-collage-img2"
                   />
                   <div className="hero-collage-badge">
-                    <p style={{ fontSize: "1.75rem", fontWeight: 800, lineHeight: 1 }}>20+</p>
-                    <p style={{ fontSize: 11, opacity: 0.85, marginTop: 4 }}>Landmark<br />Projects</p>
+                    <p className="hero-badge-num">20+</p>
+                    <p className="hero-badge-label">Landmark<br />Projects</p>
                   </div>
                 </div>
               </Fade>
+
             </div>
           </div>
         </section>
@@ -558,16 +614,25 @@ export default function AvyayaDevelopersAbout() {
             <div className="stats-grid">
               {STATS.map((s, i) => (
                 <Fade key={s.label} delay={i * 60} style={{ height: "100%" }}>
-                  <div style={{
-                    background: "#fff",
-                    padding: "clamp(1.1rem,3vw,2rem) clamp(0.75rem,2vw,1.5rem)",
-                    textAlign: "center",
-                    height: "100%",
-                    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                  }}>
-                    <p style={{ fontSize: "clamp(1.15rem,4.5vw,2.4rem)", fontWeight: 800, color: "#12243d", wordBreak: "break-word", lineHeight: 1.1 }}>{s.value}</p>
+                  <div
+                    style={{
+                      background: "#fff",
+                      padding: "clamp(1.1rem,3vw,2rem) clamp(0.75rem,2vw,1.5rem)",
+                      textAlign: "center",
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <p style={{ fontSize: "clamp(1.15rem,4.5vw,2.4rem)", fontWeight: 800, color: "#12243d", wordBreak: "break-word", lineHeight: 1.1 }}>
+                      {s.value}
+                    </p>
                     <div style={{ width: 28, height: 2, background: "#b8892e", margin: "0.5rem auto" }} />
-                    <p style={{ fontSize: "clamp(10px,2.5vw,13px)", color: "rgba(18,36,61,0.5)", fontWeight: 600, lineHeight: 1.4 }}>{s.label}</p>
+                    <p style={{ fontSize: "clamp(10px,2.5vw,13px)", color: "rgba(18,36,61,0.5)", fontWeight: 600, lineHeight: 1.4 }}>
+                      {s.label}
+                    </p>
                   </div>
                 </Fade>
               ))}
@@ -579,20 +644,10 @@ export default function AvyayaDevelopersAbout() {
         <section id="story" style={{ padding: "clamp(3rem,8vw,6rem) clamp(1.25rem,4vw,2.5rem)", background: "#f7f4ef" }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
             <div className="story-grid">
-
-              {/* Images left */}
               <Fade from="left">
                 <div className="story-collage">
-                  <img
-                    src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=700&q=80"
-                    alt="Construction site"
-                    className="story-collage-img1"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&q=80"
-                    alt="Property"
-                    className="story-collage-img2"
-                  />
+                  <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=700&q=80" alt="Construction site" className="story-collage-img1" />
+                  <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&q=80" alt="Property" className="story-collage-img2" />
                   <div className="story-quote-box">
                     <p style={{ color: "#b8892e", fontSize: 12, fontWeight: 600, lineHeight: 1.6, fontStyle: "italic" }}>
                       "Real estate is more than buildings — it is about creating a legacy."
@@ -600,31 +655,23 @@ export default function AvyayaDevelopersAbout() {
                   </div>
                 </div>
               </Fade>
-
-              {/* Text right */}
               <Fade delay={150}>
                 <EyebrowLeft>Our Story</EyebrowLeft>
                 <h2 style={{ fontSize: "clamp(1.4rem,3vw,2.5rem)", fontWeight: 700, color: "#12243d", lineHeight: 1.25, marginBottom: "1.25rem" }}>
                   Built to Create Spaces That Outlast Generations
                 </h2>
                 <p style={{ color: "rgba(18,36,61,0.6)", lineHeight: 1.85, marginBottom: "1.1rem", fontSize: "clamp(14px,1.6vw,15px)" }}>
-                  Avyaya Developers was founded with a singular conviction: that real estate development in India
-                  deserved the same rigour, vision, and integrity that the world's finest developers bring to their
-                  work. The name itself — drawn from Sanskrit — sets the standard we hold ourselves to.
+                  Avyaya Developers was founded with a singular conviction: that real estate development in India deserved
+                  the same rigour, vision, and integrity that the world's finest developers bring to their work.
                 </p>
                 <p style={{ color: "rgba(18,36,61,0.6)", lineHeight: 1.85, marginBottom: "1.75rem", fontSize: "clamp(14px,1.6vw,15px)" }}>
                   Our mission is to transform land into thriving destinations through innovative design, superior
-                  construction, and customer-centric service. Every project reflects our commitment to excellence,
-                  sustainability, and enduring trust.
+                  construction, and customer-centric service.
                 </p>
-                <div style={{
-                  border: "1px solid #e2d9cc", borderLeft: "3px solid #b8892e",
-                  padding: "1.25rem 1.5rem", background: "#fff", borderRadius: "0 2px 2px 0",
-                }}>
+                <div style={{ border: "1px solid #e2d9cc", borderLeft: "3px solid #b8892e", padding: "1.25rem 1.5rem", background: "#fff", borderRadius: "0 2px 2px 0" }}>
                   <p style={{ color: "#b8892e", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 8 }}>Our Vision</p>
                   <p style={{ color: "rgba(18,36,61,0.7)", fontSize: 14, lineHeight: 1.75 }}>
-                    To become a trusted and leading real estate developer known for sustainable, innovative,
-                    and value-driven developments that enhance quality of life for generations.
+                    To become a trusted and leading real estate developer known for sustainable, innovative, and value-driven developments.
                   </p>
                 </div>
               </Fade>
@@ -638,9 +685,7 @@ export default function AvyayaDevelopersAbout() {
             <Fade>
               <div style={{ textAlign: "center", marginBottom: "clamp(2rem,5vw,3.5rem)" }}>
                 <Eyebrow>Our Mission</Eyebrow>
-                <h2 style={{ fontSize: "clamp(1.4rem,3vw,2.4rem)", fontWeight: 700, color: "#fff" }}>
-                  Five Pillars of Purpose
-                </h2>
+                <h2 style={{ fontSize: "clamp(1.4rem,3vw,2.4rem)", fontWeight: 700, color: "#fff" }}>Five Pillars of Purpose</h2>
               </div>
             </Fade>
             <div className="mission-grid">
@@ -652,12 +697,19 @@ export default function AvyayaDevelopersAbout() {
                 { n: "05", t: "Social Impact", d: "Contributing positively to economic and community growth." },
               ].map((p, i) => (
                 <Fade key={p.n} delay={i * 80}>
-                  <div style={{
-                    background: "rgba(255,255,255,0.04)", border: "1px solid rgba(184,137,46,0.2)",
-                    borderRadius: 2, padding: "clamp(1.25rem,2.5vw,1.75rem) clamp(1rem,2vw,1.25rem)", textAlign: "center",
-                    height: "100%",
-                  }}>
-                    <div style={{ color: "#b8892e", fontSize: "clamp(1.5rem,3vw,2rem)", fontWeight: 800, lineHeight: 1, marginBottom: "0.875rem", opacity: 0.7 }}>{p.n}</div>
+                  <div
+                    style={{
+                      background: "rgba(255,255,255,0.04)",
+                      border: "1px solid rgba(184,137,46,0.2)",
+                      borderRadius: 2,
+                      padding: "clamp(1.25rem,2.5vw,1.75rem) clamp(1rem,2vw,1.25rem)",
+                      textAlign: "center",
+                      height: "100%",
+                    }}
+                  >
+                    <div style={{ color: "#b8892e", fontSize: "clamp(1.5rem,3vw,2rem)", fontWeight: 800, lineHeight: 1, marginBottom: "0.875rem", opacity: 0.7 }}>
+                      {p.n}
+                    </div>
                     <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "clamp(12px,1.4vw,14px)", marginBottom: "0.5rem", lineHeight: 1.35 }}>{p.t}</h3>
                     <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "clamp(11px,1.2vw,13px)", lineHeight: 1.7 }}>{p.d}</p>
                   </div>
@@ -679,21 +731,13 @@ export default function AvyayaDevelopersAbout() {
             <div className="services-grid">
               {SERVICES.map((s, i) => (
                 <Fade key={s.title} delay={i * 90}>
-                  <div style={{
-                    background: "#faf8f4", border: "1px solid #e2d9cc", borderRadius: 2,
-                    padding: "clamp(1.25rem,2.5vw,2rem) clamp(1rem,2vw,1.5rem)", height: "100%",
-                  }}>
-                    <div style={{
-                      width: 48, height: 48, borderRadius: 2,
-                      background: `${s.color}12`,
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      color: s.color, marginBottom: "1.1rem",
-                    }}>
+                  <div style={{ background: "#faf8f4", border: "1px solid #e2d9cc", borderRadius: 2, padding: "clamp(1.25rem,2.5vw,2rem) clamp(1rem,2vw,1.5rem)", height: "100%" }}>
+                    <div style={{ width: 48, height: 48, borderRadius: 2, background: `${s.color}12`, display: "flex", alignItems: "center", justifyContent: "center", color: s.color, marginBottom: "1.1rem" }}>
                       {s.icon}
                     </div>
                     <h3 style={{ fontWeight: 700, color: "#12243d", marginBottom: "0.875rem", fontSize: 15 }}>{s.title}</h3>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                      {s.items.map(item => (
+                      {s.items.map((item) => (
                         <li key={item} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                           <div style={{ width: 4, height: 4, background: "#b8892e", borderRadius: "50%", flexShrink: 0 }} />
                           <span style={{ color: "rgba(18,36,61,0.6)", fontSize: 13, lineHeight: 1.5 }}>{item}</span>
@@ -717,8 +761,8 @@ export default function AvyayaDevelopersAbout() {
                   Core Values That Shape Every Decision
                 </h2>
                 <p style={{ color: "rgba(18,36,61,0.55)", fontSize: "clamp(14px,1.5vw,15px)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                  Our values aren't aspirational posters on a wall. They are the operating principles behind
-                  how we acquire land, design projects, manage construction, and serve our customers.
+                  Our values aren't aspirational posters on a wall. They are the operating principles behind how we
+                  acquire land, design projects, manage construction, and serve our customers.
                 </p>
                 <img
                   src="https://images.unsplash.com/photo-1560472355-536de3962603?w=500&q=80"
@@ -726,15 +770,10 @@ export default function AvyayaDevelopersAbout() {
                   className="values-left-img"
                 />
               </Fade>
-
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {VALUES.map((v, i) => (
                   <Fade key={v.title} delay={i * 70} from="right">
-                    <div style={{
-                      display: "flex", alignItems: "flex-start", gap: "1.1rem",
-                      background: "#fff", border: "1px solid #e2d9cc", borderRadius: 2,
-                      padding: "clamp(1rem,2vw,1.4rem) clamp(1rem,2vw,1.5rem)",
-                    }}>
+                    <div style={{ display: "flex", alignItems: "flex-start", gap: "1.1rem", background: "#fff", border: "1px solid #e2d9cc", borderRadius: 2, padding: "clamp(1rem,2vw,1.4rem) clamp(1rem,2vw,1.5rem)" }}>
                       <span style={{ fontSize: "1.3rem", color: "#b8892e", lineHeight: 1, paddingTop: 2, flexShrink: 0 }}>{v.icon}</span>
                       <div>
                         <h3 style={{ fontWeight: 700, color: "#12243d", marginBottom: 5, fontSize: 15 }}>{v.title}</h3>
@@ -752,8 +791,6 @@ export default function AvyayaDevelopersAbout() {
         <section style={{ padding: "clamp(3rem,8vw,6rem) clamp(1.25rem,4vw,2.5rem)", background: "#fff" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <div className="whyus-grid">
-
-              {/* Left — heading + checklist */}
               <Fade>
                 <div>
                   <Eyebrow>Why Avyaya</Eyebrow>
@@ -762,11 +799,7 @@ export default function AvyayaDevelopersAbout() {
                   </h2>
                   <div className="whyus-checks">
                     {WHY_US.map((w) => (
-                      <div key={w} style={{
-                        display: "flex", alignItems: "flex-start", gap: 10,
-                        background: "#faf8f4", border: "1px solid #e2d9cc",
-                        padding: "0.875rem 1rem", borderRadius: 2,
-                      }}>
+                      <div key={w} style={{ display: "flex", alignItems: "flex-start", gap: 10, background: "#faf8f4", border: "1px solid #e2d9cc", padding: "0.875rem 1rem", borderRadius: 2 }}>
                         <svg style={{ width: 18, height: 18, color: "#b8892e", flexShrink: 0, marginTop: 1 }} fill="none" stroke="#b8892e" strokeWidth={2.5} viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -776,8 +809,6 @@ export default function AvyayaDevelopersAbout() {
                   </div>
                 </div>
               </Fade>
-
-              {/* Right — image + badge */}
               <Fade from="right" delay={150}>
                 <div className="whyus-img-wrap">
                   <img
@@ -807,7 +838,6 @@ export default function AvyayaDevelopersAbout() {
                 </p>
               </div>
             </Fade>
-
             <div style={{ position: "relative" }}>
               <div className="milestone-connector">
                 <svg width="100%" height="4">
@@ -818,28 +848,23 @@ export default function AvyayaDevelopersAbout() {
                 {MILESTONES.map((m, i) => (
                   <Fade key={m.year} delay={i * 100}>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-                      <div style={{
-                        position: "relative", zIndex: 1,
-                        width: 104, height: 104, borderRadius: "50%",
-                        background: "#fff", border: "2px solid #e2d9cc",
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        marginBottom: "1.1rem", boxShadow: "0 4px 20px rgba(18,36,61,0.08)",
-                        flexShrink: 0,
-                      }}>
-                        <div style={{
-                          width: 64, height: 64, borderRadius: "50%",
-                          background: "#f7f4ef",
+                      <div
+                        style={{
+                          position: "relative", zIndex: 1,
+                          width: 104, height: 104, borderRadius: "50%",
+                          background: "#fff", border: "2px solid #e2d9cc",
                           display: "flex", alignItems: "center", justifyContent: "center",
-                        }}>
+                          marginBottom: "1.1rem",
+                          boxShadow: "0 4px 20px rgba(18,36,61,0.08)", flexShrink: 0,
+                        }}
+                      >
+                        <div style={{ width: 64, height: 64, borderRadius: "50%", background: "#f7f4ef", display: "flex", alignItems: "center", justifyContent: "center" }}>
                           <svg viewBox="0 0 24 24" fill="none" stroke="#b8892e" strokeWidth="1.5" style={{ width: 28, height: 28 }}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
                           </svg>
                         </div>
                       </div>
-                      <div style={{
-                        display: "inline-flex", padding: "4px 14px", borderRadius: 20,
-                        background: "#12243d", marginBottom: "0.65rem",
-                      }}>
+                      <div style={{ display: "inline-flex", padding: "4px 14px", borderRadius: 20, background: "#12243d", marginBottom: "0.65rem" }}>
                         <span style={{ color: "#b8892e", fontSize: 11, fontWeight: 800, letterSpacing: "0.2em" }}>{m.year.toUpperCase()}</span>
                       </div>
                       <h3 style={{ fontWeight: 700, color: "#12243d", fontSize: 15, marginBottom: "0.4rem" }}>{m.title}</h3>
@@ -863,25 +888,14 @@ export default function AvyayaDevelopersAbout() {
                 <span style={{ color: "#b8892e" }}>One Community at a Time</span>
               </h2>
               <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "clamp(14px,1.5vw,15px)", lineHeight: 1.85, maxWidth: 560, margin: "0 auto 2rem" }}>
-                At Avyaya Developers, we believe real estate is more than buildings — it is about creating
-                communities, nurturing dreams, and building a legacy that lasts for generations. Our commitment
-                to excellence ensures every project becomes a landmark of trust, quality, and innovation.
+                At Avyaya Developers, we believe real estate is more than buildings — it is about creating communities,
+                nurturing dreams, and building a legacy that lasts for generations.
               </p>
               <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-                <a href="#" style={{
-                  display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
-                  background: "#b8892e", color: "#fff", fontWeight: 700,
-                  padding: "1rem 2rem", borderRadius: 2, textDecoration: "none", fontSize: 14,
-                  letterSpacing: "0.05em",
-                }}>
+                <a href="#" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, background: "#b8892e", color: "#fff", fontWeight: 700, padding: "1rem 2rem", borderRadius: 2, textDecoration: "none", fontSize: 14, letterSpacing: "0.05em" }}>
                   Explore Our Projects
                 </a>
-                <a href="#" style={{
-                  display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
-                  border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.75)",
-                  fontWeight: 600, padding: "1rem 2rem", borderRadius: 2,
-                  textDecoration: "none", fontSize: 14,
-                }}>
+                <a href="#" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.75)", fontWeight: 600, padding: "1rem 2rem", borderRadius: 2, textDecoration: "none", fontSize: 14 }}>
                   Get in Touch
                 </a>
               </div>
