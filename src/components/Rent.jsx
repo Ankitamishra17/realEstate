@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import {
   Search,
@@ -1115,7 +1117,9 @@ export default function Rent() {
                     }}
                   >
                     List Your Property{" "}
-                    <ArrowRight style={{ width: 16, height: 16, flexShrink: 0 }} />
+                    <ArrowRight
+                      style={{ width: 16, height: 16, flexShrink: 0 }}
+                    />
                   </a>
                   <a
                     href="#"
@@ -1135,7 +1139,9 @@ export default function Rent() {
                     }}
                   >
                     Talk to an Advisor{" "}
-                    <ArrowUpRight style={{ width: 15, height: 15, flexShrink: 0 }} />
+                    <ArrowUpRight
+                      style={{ width: 15, height: 15, flexShrink: 0 }}
+                    />
                   </a>
                 </div>
               </Fade>

@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import {
   RiPhoneLine,
   RiMailLine,
@@ -56,7 +58,9 @@ export default function Footer() {
             <div key={i} className="flex flex-col items-center gap-1">
               <span className="text-[#af7323] text-2xl">{s.icon}</span>
               <span className="text-3xl font-bold text-white">{s.value}</span>
-              <span className="text-sm text-gray-400 tracking-wide">{s.label}</span>
+              <span className="text-sm text-gray-400 tracking-wide">
+                {s.label}
+              </span>
             </div>
           ))}
         </div>
@@ -66,7 +70,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10">
         {/* Brand Column */}
         <div className="sm:col-span-2 xl:col-span-1">
-          <Link to="/">
+          <Link href="/">
             <img
               src="/logo.png"
               alt="Avyaya Developer"
@@ -101,7 +105,7 @@ export default function Footer() {
             {quickLinks.map((link) => (
               <li key={link.name}>
                 <Link
-                  to={link.path}
+                  href={link.path}
                   className="flex items-center gap-2 text-gray-400 hover:text-[#af7323] text-sm transition-colors group"
                 >
                   <RiArrowRightSLine className="text-[#af7323] group-hover:translate-x-1 transition-transform text-base shrink-0" />
@@ -121,7 +125,7 @@ export default function Footer() {
             {propertyTypes.map((type) => (
               <li key={type}>
                 <Link
-                  to="/properties"
+                  href="/properties"
                   className="flex items-center gap-2 text-gray-400 hover:text-[#af7323] text-sm transition-colors group"
                 >
                   <RiArrowRightSLine className="text-[#af7323] group-hover:translate-x-1 transition-transform text-base shrink-0" />
@@ -141,7 +145,9 @@ export default function Footer() {
             <li className="flex gap-3">
               <RiMapPinLine className="text-[#af7323] text-xl shrink-0 mt-0.5" />
               <span className="text-gray-400 text-sm leading-relaxed">
-                Plot No. 5, Sector 63, Ghaziabad,<br />Uttar Pradesh – 201301
+                Plot No. 5, Sector 63, Ghaziabad,
+                <br />
+                Uttar Pradesh – 201301
               </span>
             </li>
             <li className="flex gap-3 items-center">
@@ -166,7 +172,9 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div className="mt-7 max-w-sm">
-            <p className="text-sm text-white font-semibold mb-3">Get Project Updates</p>
+            <p className="text-sm text-white font-semibold mb-3">
+              Get Project Updates
+            </p>
             <div className="flex gap-0 rounded-lg overflow-hidden border border-white/20">
               <input
                 type="email"
@@ -184,10 +192,10 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500 text-center sm:text-left">
-          <p>© {new Date().getFullYear()} Avyaya Developer. All rights reserved.</p>
           <p>
-            Developed By Debox Techology
+            © {new Date().getFullYear()} Avyaya Developer. All rights reserved.
           </p>
+          <p>Developed By Debox Techology</p>
         </div>
       </div>
     </footer>
