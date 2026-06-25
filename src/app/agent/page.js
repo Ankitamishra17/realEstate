@@ -1,9 +1,11 @@
 // About page
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AgentHeroSection from "@/components/agent/AgentHeroSection";
-import AgentCardSection from "@/components/agent/AgentCardSection"
+import FindAgent from "@/components/Agent";
+
+// import Navbar from "@/components/Navbar";
+// import Footer from "@/components/Footer";
+// import AgentHeroSection from "@/components/agent/AgentHeroSection";
+// import AgentCardSection from "@/components/agent/AgentCardSection"
 // export const metadata = {
 //   title: "About Us | Crown Ink Tattoo Studio, Greater Noida",
 //   description:
@@ -18,10 +20,11 @@ import AgentCardSection from "@/components/agent/AgentCardSection"
 export default function AgentPage() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <AgentHeroSection />
       <AgentCardSection/>
-      <Footer />
+      <Footer /> */}
+      <FindAgent />
     </>
   );
 }

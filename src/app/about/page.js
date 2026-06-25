@@ -1,8 +1,10 @@
 // About page
 
+import AvyayaDevelopersAbout from "@/components/About";
+
 // import Navbar from "@/components/Navbar";
 // import Footer from "@/components/Footer";
-import About from "@/components/about/About";
+
 // import AboutMission from "@/components/about/AboutMission";
 // import AboutOurPurpose from "@/components/about/AboutOurPurpose";
 // import AboutWhoWeAre from "@/components/about/AboutWhoWeAre";
@@ -28,8 +30,8 @@ export default function AboutPage() {
       <AboutMission />
       <AboutWhyChoose />
       <AboutOurPurpose /> */}
-      <About/>
       {/* <Footer /> */}
+      <AvyayaDevelopersAbout/>
     </>
   );
 }

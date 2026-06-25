@@ -1,4 +1,8 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
   MapPin, BedDouble, Bath, Maximize, ArrowRight, ArrowUpRight,
   SlidersHorizontal, Building2, Home, TreePine, Briefcase, Phone,
@@ -178,6 +182,7 @@ function PropertyCard({ p, delay }) {
       }}>
         <div style={{ position: "relative", height: 220, overflow: "hidden", flexShrink: 0 }}>
           <StatusPill status={p.status} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "45%", background: "linear-gradient(to top, rgba(18,36,61,0.55), transparent)" }} />
         </div>
@@ -208,9 +213,9 @@ function PropertyCard({ p, delay }) {
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto" }}>
             <p style={{ color: "#12243d", fontWeight: 800, fontSize: "clamp(13px,1.6vw,15.5px)" }}>{p.price}</p>
-            <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: 5, color: "#b8892e", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>
+            <Link href="#" style={{ display: "inline-flex", alignItems: "center", gap: 5, color: "#b8892e", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>
               Details <ArrowUpRight style={{ width: 14, height: 14 }} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -446,7 +451,7 @@ export default function PropertiesPage() {
               <div style={{ textAlign: "center", marginBottom: "clamp(2rem,5vw,3rem)" }}>
                 <Eyebrow>Featured Listing</Eyebrow>
                 <h2 style={{ fontSize: "clamp(1.4rem,3vw,2.4rem)", fontWeight: 700, color: "#fff" }}>
-                  This Month's Spotlight Property
+                  This Month&apos;s Spotlight Property
                 </h2>
               </div>
             </Fade>
@@ -454,6 +459,7 @@ export default function PropertiesPage() {
             <div className="featured-grid">
               <Fade from="left">
                 <div className="featured-img">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80"
                     alt="Avyaya Riverside Villas"
@@ -499,14 +505,14 @@ export default function PropertiesPage() {
 
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
                     <p style={{ color: "#fff", fontWeight: 800, fontSize: "clamp(1rem,2vw,1.4rem)" }}>₹3.1 Cr onwards</p>
-                    <a href="/contact" style={{
+                    <Link href="/contact" style={{
                       display: "inline-flex", alignItems: "center", gap: 8,
                       background: "#b8892e", color: "#fff", fontWeight: 700,
                       padding: "0.8rem 1.5rem", borderRadius: 2, textDecoration: "none",
                       fontSize: "clamp(12px,1.4vw,13.5px)",
                     }}>
                       Enquire Now <ArrowRight style={{ width: 15, height: 15, flexShrink: 0 }} />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </Fade>
@@ -529,7 +535,7 @@ export default function PropertiesPage() {
             <div className="locations-grid">
               {LOCATIONS.map((l, i) => (
                 <Fade key={l.name} delay={i * 80}>
-                  <a href="/contact" className="loc-card" style={{
+                  <Link href="/contact" className="loc-card" style={{
                     display: "block", textDecoration: "none",
                     background: "#faf8f4", border: "1px solid #e2d9cc",
                     borderRadius: 2, padding: "clamp(1.25rem,3vw,2rem) clamp(1rem,2vw,1.5rem)",
@@ -545,7 +551,7 @@ export default function PropertiesPage() {
                     </div>
                     <h3 style={{ fontWeight: 700, color: "#12243d", fontSize: "clamp(13px,1.5vw,15px)", marginBottom: 6 }}>{l.name}</h3>
                     <p style={{ color: "rgba(18,36,61,0.5)", fontSize: 12.5 }}>{l.count}</p>
-                  </a>
+                  </Link>
                 </Fade>
               ))}
             </div>
@@ -558,7 +564,7 @@ export default function PropertiesPage() {
             <div className="cta-box">
               <Fade>
                 <div style={{ textAlign: "center", position: "relative", zIndex: 2 }}>
-                  <Eyebrow>What You're Looking For</Eyebrow>
+                  <Eyebrow>What You&apos;re Looking For</Eyebrow>
                   <h2 style={{
                     fontSize: "clamp(1.3rem,3vw,2.3rem)", fontWeight: 700, color: "#fff",
                     marginBottom: "1.25rem", lineHeight: 1.25, wordBreak: "break-word",
@@ -569,26 +575,26 @@ export default function PropertiesPage() {
                     color: "rgba(255,255,255,0.5)", fontSize: "clamp(13px,1.5vw,14.5px)",
                     lineHeight: 1.8, maxWidth: 520, margin: "0 auto 2rem",
                   }}>
-                    Share your requirements with our advisory team and we'll match you with upcoming launches,
+                    Share your requirements with our advisory team and we&apos;ll match you with upcoming launches,
                     resale opportunities, and off-market listings across NCR.
                   </p>
                   <div className="cta-btns">
-                    <a href="/contact" style={{
+                    <Link href="/contact" style={{
                       display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
                       background: "#b8892e", color: "#fff", fontWeight: 700,
                       padding: "0.9rem 2rem", borderRadius: 2, textDecoration: "none",
                       fontSize: "clamp(12px,1.4vw,14px)", whiteSpace: "nowrap",
                     }}>
                       Talk to an Advisor <Phone style={{ width: 15, height: 15, flexShrink: 0 }} />
-                    </a>
-                    <a href="/contact" style={{
+                    </Link>
+                    <Link href="/contact" style={{
                       display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
                       border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.75)",
                       fontWeight: 600, padding: "0.9rem 2rem", borderRadius: 2,
                       textDecoration: "none", fontSize: "clamp(12px,1.4vw,14px)", whiteSpace: "nowrap",
                     }}>
                       Download Brochure
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </Fade>

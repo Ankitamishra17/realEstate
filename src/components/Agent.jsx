@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import {
   Search, MapPin, Phone, Mail, Star, Award, Languages,
