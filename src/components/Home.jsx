@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link"
+import { Link } from "react-router-dom";
 import {
   RiSearchLine,
   RiMapPinLine,
@@ -683,7 +683,7 @@ export default function Home() {
                   }}
                 >
                   <Link
-                    to="/properties"
+                    href="/properties"
                     className="gbtn"
                     style={{
                       display: "inline-flex",
@@ -1142,7 +1142,7 @@ export default function Home() {
                   </h2>
                 </div>
                 <Link
-                  to="/properties"
+                  href="/properties"
                   className="out"
                   style={{
                     display: "inline-flex",
@@ -1392,7 +1392,7 @@ export default function Home() {
                         </div>
                       </div>
                       <Link
-                        to="/properties"
+                        href="/properties"
                         className="card-btn"
                         style={{ marginTop: "auto" }}
                       >
@@ -1775,7 +1775,7 @@ export default function Home() {
                 lasting value for every family.
               </p>
               <Link
-                to="/about"
+                href="/about"
                 className="gbtn"
                 style={{
                   display: "inline-flex",
@@ -2648,7 +2648,7 @@ export default function Home() {
                 }}
               >
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="gbtn"
                   style={{
                     display: "block",

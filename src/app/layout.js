@@ -1,5 +1,7 @@
 import { Jost, Marcellus } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const marcellus = Marcellus({
   variable: "--font-marcellus",
@@ -20,7 +22,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${marcellus.variable} ${jost.variable}`}>
+      <Navbar/>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <Footer/>
     </html>
   );
 }
