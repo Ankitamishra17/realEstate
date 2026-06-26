@@ -359,7 +359,7 @@ export default function PropertiesPage() {
         {/* ── HERO ── */}
         <section style={{
           background: "#12243d",
-          padding: "clamp(3.5rem,8vw,7rem) clamp(1.25rem,4vw,2.5rem) clamp(2.5rem,6vw,5rem)",
+          padding: "clamp(5rem,8vw,7rem) clamp(5rem,4vw,2.5rem) clamp(2.5rem,6vw,5rem)",
           position: "relative", overflow: "hidden",
         }}>
           <div style={{ position: "relative", zIndex: 10, maxWidth: 1200, margin: "0 auto" }}>
