@@ -377,7 +377,7 @@ export default function PropertiesPage() {
                   color: "rgba(255,255,255,0.52)", fontSize: "clamp(0.85rem,1.8vw,1rem)",
                   lineHeight: 1.8, maxWidth: "100%",
                 }}>
-                  Browse our residential, commercial, and land developments across NCR — each one designed
+                  Browse our residential, commercial, and land developments — each one designed
                   with the same enduring philosophy: Avyaya.
                 </p>
               </Fade>
@@ -385,7 +385,7 @@ export default function PropertiesPage() {
                 <div className="hero-stats">
                   {[
                     { v: "9", l: "Active Projects" },
-                    { v: "4", l: "NCR Locations" },
+                    { v: "4", l: "Locations" },
                     { v: "3", l: "Property Types" },
                   ].map((s) => (
                     <div key={s.l} style={{
@@ -576,7 +576,7 @@ export default function PropertiesPage() {
                     lineHeight: 1.8, maxWidth: 520, margin: "0 auto 2rem",
                   }}>
                     Share your requirements with our advisory team and we&apos;ll match you with upcoming launches,
-                    resale opportunities, and off-market listings across NCR.
+                    resale opportunities, and off-market listings.
                   </p>
                   <div className="cta-btns">
                     <Link href="/contact" style={{

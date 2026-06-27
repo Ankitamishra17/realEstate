@@ -66,7 +66,7 @@ const BENEFITS = [
   {
     icon: TrendingUp,
     title: "Fair Market Valuation",
-    desc: "Data-backed pricing using recent NCR transactions — not a guessed number.",
+    desc: "Data-backed pricing using recent transactions — not a guessed number.",
   },
   {
     icon: Users,
@@ -485,7 +485,7 @@ export default function Sell() {
                   }}
                 >
                   Get a free, no-obligation valuation from our advisory team and
-                  reach a network of verified buyers across NCR — with full
+                  reach a network of verified buyers — with full
                   legal support until closing.
                 </p>
                 <div className="hero-stats">

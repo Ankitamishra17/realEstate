@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const STATS = [
-  { value: "500+", label: "Acres Developed" },
-  { value: "5,000+", label: "Happy Families" },
-  { value: "20+", label: "Landmark Projects" },
-  { value: "₹3,200Cr+", label: "Total Transactions" },
+  { value: "200+", label: "Acres Developed" },
+  { value: "60+", label: "Happy Families" },
+  { value: "50+", label: "Landmark Projects" },
+  { value: "₹32Cr+", label: "Total Transactions" },
 ];
 
 const SERVICES = [
@@ -71,9 +71,9 @@ const WHY_US = [
 
 const MILESTONES = [
   { year: "Founded", title: "The Vision", text: "Avyaya Developers established with a commitment to build spaces that endure — inspired by the Sanskrit for 'eternal'." },
-  { year: "Growth", title: "NCR Footprint", text: "Expanded across residential, commercial, and land segments, earning trust with quality over speed." },
+  { year: "Growth", title: "Footprint", text: "Expanded across residential, commercial, and land segments, earning trust with quality over speed." },
   { year: "Scale", title: "Landmark Projects", text: "Crossed 20+ landmark developments spanning villas, gated communities, business parks, and townships." },
-  { year: "Today", title: "Industry Leader", text: "₹3,200Cr+ in transactions, 5,000+ families housed, and a legacy of lasting communities across NCR." },
+  { year: "Today", title: "Industry Leader", text: "₹3,200Cr+ in transactions, 5,000+ families housed, and a legacy of lasting communities." },
 ];
 
 function useInView(threshold = 0.12) {
@@ -157,7 +157,7 @@ const styles = `
     position: relative;
     z-index: 10;
     max-width: 1200px;
-    margin: 0 auto;
+
     padding: clamp(5rem,7vw,5rem) clamp(5rem,4vw,2.5rem);
     width: 100%;
   }
@@ -530,7 +530,7 @@ export default function AvyayaDevelopersAbout() {
 
               {/* LEFT — Text (always first in DOM = always on top on mobile) */}
               <Fade className="hero-text-col">
-                <EyebrowLeft>Est. in NCR · Avyaya Developers</EyebrowLeft>
+                <EyebrowLeft>Avyaya Developers</EyebrowLeft>
                 <h1
                   style={{
                     fontSize: "clamp(1.65rem,5vw,4.2rem)",

@@ -653,7 +653,7 @@ export default function Rent() {
                   }}
                 >
                   Verified apartments, villas, and commercial spaces available
-                  for rent across NCR — with transparent agreements and no fake
+                  for rent — with transparent agreements and no fake
                   listings.
                 </p>
               </Fade>

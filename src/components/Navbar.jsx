@@ -19,8 +19,8 @@ const navLinks = [
   { name: "Buy", path: "/buy" },
   { name: "Rent", path: "/rent" },
   { name: "Properties", path: "/properties" },
-  { name: "Sell", path: "/sell" },
-  { name: "Find Agent", path: "/agent" },
+  // { name: "Sell", path: "/sell" },
+  // { name: "Find Agent", path: "/agent" },
   { name: "Gallery", path: "/gallery" },
   { name: "Contact", path: "/contact" },
 ];
@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3 sm:gap-6 min-w-0 overflow-hidden">
           <span className="flex items-center gap-1.5 text-[#af7323] shrink-0">
             <RiPhoneLine className="shrink-0" />
-            <span className="text-white whitespace-nowrap">+91 98765 43210</span>
+            <span className="text-white whitespace-nowrap">+91 7004397655</span>
           </span>
           <span className="hidden lg:flex items-center gap-1.5 text-[#af7323] shrink-0">
             <RiMailLine className="shrink-0" />

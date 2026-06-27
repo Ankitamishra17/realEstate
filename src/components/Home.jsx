@@ -13,8 +13,7 @@ import {
   RiTeamLine,
   RiAwardLine,
   RiBuilding2Line,
-  RiCheckboxCircleLine,
-  RiPlayCircleLine,
+  RiPlayCheckLine,
   RiWhatsappLine,
   RiInstagramLine,
   RiFacebookCircleLine,
@@ -156,30 +155,42 @@ const Fonts = () => (
     .hero-stats { justify-content: center; }
 
     /* ── Responsive ── */
+
+    /* Large desktop down to small laptop */
     @media (max-width:1200px) {
       .props-row { grid-template-columns: repeat(2,1fr) !important; }
       .featured-grid { grid-template-columns: 1fr 1fr !important; }
+      section { padding: 88px 32px !important; }
+      .hero-inner { padding: 80px 32px 48px !important; }
     }
+
+    /* Tablet landscape */
     @media (max-width:1024px) {
-      .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
-      .stats-grid > div:nth-child(2n) > div { border-right: none !important; }
       .explore-grid { grid-template-columns: 1fr !important; gap:36px !important; }
       .explore-grid > div:nth-child(2) { order: -1; }
       .why-grid { grid-template-columns: 1fr !important; gap:40px !important; }
       .nl-grid { grid-template-columns: 1fr !important; }
       .cta-grid { grid-template-columns: 1fr !important; gap:32px !important; text-align:center; }
       .cta-grid > div:last-child { width: 100%; }
-      .gallery-row { flex-wrap:wrap; height:auto !important; padding:0 24px !important; }
+      .gallery-row { flex-wrap:wrap; height:auto !important; padding:0 32px !important; }
       .gallery-item { width:48% !important; height:200px; border-radius:14px !important; margin-bottom:8px; }
       .test-grid { grid-template-columns: 1fr 1fr !important; }
       .as-featured-row { gap: 22px !important; }
       .brand-card-imgs { gap: 6px !important; }
       .hero-rera { top: 80px !important; right: 24px !important; }
-      .hero-float-card { right: 24px !important; bottom: 40px !important; min-width: 240px !important; }
+      .hero-float-card { right: 24px !important; bottom: 40px !important; min-width: 240px !important; max-width: calc(100vw - 48px) !important; }
+      section { padding: 72px 28px !important; }
+      .hero-inner { padding: 72px 28px 44px !important; }
+      .cta-inner { padding: 56px 48px !important; }
     }
+
+    /* Small tablet / large phone */
     @media (max-width:900px) {
       .featured-grid { grid-template-columns: 1fr !important; }
+      .props-row { grid-template-columns: repeat(2,1fr) !important; }
     }
+
+    /* Phones */
     @media (max-width:768px) {
       section { padding:60px 20px !important; }
       .props-row { grid-template-columns: 1fr !important; }
@@ -189,7 +200,6 @@ const Fonts = () => (
       .hero-stats { flex-wrap:wrap; gap:20px !important; }
       .hero-stat { border-right:none !important; padding-right:0 !important; margin-right:0 !important; }
       .test-grid { grid-template-columns: 1fr !important; }
-      .stats-grid { grid-template-columns: 1fr 1fr !important; }
       .stats-grid > div { padding: 20px 12px !important; }
       .search-row { flex-direction: column !important; }
       .search-row > button { width: 100% !important; justify-content: center !important; }
@@ -210,10 +220,17 @@ const Fonts = () => (
       .hero-inner { padding: 32px 20px 40px !important; }
       .hero-content { max-width: 100% !important; }
       h1.cor { font-size: clamp(36px,10vw,56px) !important; }
+      .stats-grid .cor { font-size: clamp(34px,9vw,50px) !important; }
+      .explore-grid button.nbtn,
+      .explore-grid button.gbtn { width: 100% !important; justify-content: center !important; }
+      .as-featured-row span.mono { white-space: nowrap; }
+      .gallery-row { padding: 0 20px !important; }
+      h2.cor { font-size: clamp(28px,7vw,40px) !important; }
     }
+
+    /* Small phones */
     @media (max-width:480px) {
       .why-cards { grid-template-columns: 1fr !important; }
-      .stats-grid { grid-template-columns: 1fr 1fr !important; }
       .hero-stats { gap: 16px !important; }
       .hero-stat { margin-right: 0 !important; padding-right: 0 !important; }
       h1.cor { font-size: clamp(34px,9vw,52px) !important; }
@@ -221,9 +238,30 @@ const Fonts = () => (
       .gallery-item { height: 170px !important; }
       .hero-content p.out { font-size: 14px !important; }
       .cta-buttons-col { gap: 10px !important; }
+      section { padding: 48px 16px !important; }
+      .hero-inner { padding: 28px 16px 36px !important; }
+      .gallery-row { padding: 0 16px !important; gap: 4px !important; }
+      .nl-card-padding { padding: 32px 20px !important; }
+      .brand-card-padding { padding: 24px 20px 0 !important; }
+      .cta-inner { padding: 32px 20px !important; }
+      .hero-search-box { padding: 12px !important; }
+      .explore-list-row span.ca { font-size: 14px !important; }
+      .props-row, .test-grid { gap: 14px !important; }
     }
+
+    /* Stats grid: single column up to 425px, 3-in-a-row above that */
+    @media (max-width:425px) {
+      .stats-grid { grid-template-columns: 1fr !important; }
+      .stats-grid > div { border-right: none !important; border-bottom: 1px solid var(--border); padding: 24px 12px !important; }
+      .stats-grid > div:last-child { border-bottom: none; }
+    }
+
+    /* Very small phones */
     @media (max-width:380px) {
       h1.cor { font-size: clamp(30px,9vw,44px) !important; }
+      .hero-stat p.cor { font-size: 22px !important; }
+      section { padding: 40px 14px !important; }
+      .gallery-row { padding: 0 14px !important; }
     }
   `}</style>
 );
@@ -300,10 +338,7 @@ const PROPS = [
   {
     id: 1,
     name: "Royal Heights",
-    loc: "Sector 62, Ghaziabad",
-    price: "₹85 Lac",
     cfg: "3 BHK",
-    area: "1,450 sq.ft",
     status: "Ready to Move",
     badge: "Featured",
     badgeColor: "#0F1F3D",
@@ -312,10 +347,7 @@ const PROPS = [
   {
     id: 2,
     name: "Green Valley",
-    loc: "NH-24 Bypass, Ghaziabad",
-    price: "₹1.2 Cr",
     cfg: "4 BHK Villa",
-    area: "2,800 sq.ft",
     status: "New Launch",
     badge: "New",
     badgeColor: "#166534",
@@ -324,10 +356,7 @@ const PROPS = [
   {
     id: 3,
     name: "Business Park",
-    loc: "Sector 63, Noida",
-    price: "₹55 Lac",
     cfg: "Open Floor",
-    area: "850 sq.ft",
     status: "Under Construction",
     badge: "Hot",
     badgeColor: "#9B1C1C",
@@ -336,10 +365,7 @@ const PROPS = [
   {
     id: 4,
     name: "Emerald Greens",
-    loc: "Indirapuram, Ghaziabad",
-    price: "₹65 Lac",
     cfg: "2 BHK",
-    area: "1,100 sq.ft",
     status: "Ready to Move",
     badge: "Popular",
     badgeColor: "#7C3AED",
@@ -398,7 +424,7 @@ const TESTS = [
     name: "Rajesh Kumar",
     role: "Home Owner · Sector 62",
     stars: 5,
-    text: "Avyaya delivered our dream home on time. Transparency and construction quality is simply unmatched in NCR.",
+    text: "Avyaya delivered our dream home on time. Transparency and construction quality is simply unmatched.",
     av: "https://i.pinimg.com/1200x/b1/05/ee/b105ee681b2c01e1ceb964421d9566e2.jpg",
   },
   {
@@ -426,7 +452,7 @@ const WHY = [
   {
     icon: <RiAwardLine />,
     title: "Award Winning",
-    desc: "NCR's top-rated developer 4 years running",
+    desc: "Top-rated developer 4 years running",
   },
   {
     icon: <RiTeamLine />,
@@ -538,7 +564,7 @@ export default function Home() {
                       color: "var(--gold2)",
                     }}
                   >
-                    Premium Real Estate · NCR
+                    Premium Real Estate
                   </span>
                 </div>
 
@@ -578,8 +604,7 @@ export default function Home() {
                     marginBottom: 26,
                   }}
                 >
-                  Landmark residences and commercial spaces across Ghaziabad &
-                  Noida, crafted for the life you deserve.
+                  Landmark residences and commercial spaces, crafted for the life you deserve.
                 </p>
 
                 {/* Search box */}
@@ -697,35 +722,6 @@ export default function Home() {
                   >
                     Browse Properties <RiArrowRightLine />
                   </Link>
-                  <button
-                    className="out"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 10,
-                      background: "none",
-                      border: "none",
-                      cursor: "pointer",
-                      color: "rgba(255,255,255,.55)",
-                      fontSize: 13,
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: 40,
-                        height: 40,
-                        borderRadius: "50%",
-                        border: "1px solid rgba(255,255,255,.18)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <RiPlayCircleLine style={{ fontSize: 17 }} />
-                    </span>
-                    Virtual Tour
-                  </button>
                 </div>
 
                 {/* Stats row */}
@@ -741,9 +737,9 @@ export default function Home() {
                   }}
                 >
                   {[
-                    ["500+", "Projects"],
-                    ["1,200+", "Families"],
-                    ["15 Yrs", "Trust"],
+                    ["200+", "Projects"],
+                    ["60+", "Families"],
+                    ["5 Yrs", "Trust"],
                   ].map(([v, l], i) => (
                     <div
                       key={l}
@@ -834,12 +830,6 @@ export default function Home() {
                   }}
                 >
                   Avyaya Royal Heights
-                </p>
-                <p
-                  className="out"
-                  style={{ fontSize: 12, color: "#999", marginTop: 2 }}
-                >
-                  Sector 62, Ghaziabad
                 </p>
               </div>
               <div
@@ -964,7 +954,7 @@ export default function Home() {
                   "Penthouses",
                   "Gated Communities",
                   "RERA Certified",
-                  "NCR's Finest",
+                  "Affordable Homes",
                 ].map((t, j) => (
                   <span
                     key={j}
@@ -999,39 +989,33 @@ export default function Home() {
         </div>
 
         {/* ══ STATS ══════════════════════════════════════════ */}
-        <section style={{ background: "#fff", padding: "72px 48px" }}>
+        <section style={{ background: "#fff", padding: "56px 48px 40px" }}>
           <div
             style={{
               ...mw,
               display: "grid",
-              gridTemplateColumns: "repeat(4,1fr)",
+              gridTemplateColumns: "repeat(3,1fr)",
             }}
             className="stats-grid"
           >
             {[
               {
-                end: 500,
+                end: 200,
                 suf: "+",
                 label: "Projects Delivered",
                 icon: <RiHome4Line />,
               },
               {
-                end: 1200,
+                end: 60,
                 suf: "+",
                 label: "Happy Families",
                 icon: <RiTeamLine />,
               },
               {
-                end: 15,
+                end: 5,
                 suf: "+",
                 label: "Years of Trust",
                 icon: <RiAwardLine />,
-              },
-              {
-                end: 100,
-                suf: "%",
-                label: "RERA Compliant",
-                icon: <RiShieldCheckLine />,
               },
             ].map((s, i) => (
               <Rv key={i} delay={i * 80}>
@@ -1061,7 +1045,7 @@ export default function Home() {
                   <div
                     className="cor"
                     style={{
-                      fontSize: 50,
+                      fontSize: "clamp(34px,6vw,50px)",
                       fontWeight: 700,
                       color: "var(--navy)",
                       lineHeight: 1,
@@ -1089,7 +1073,7 @@ export default function Home() {
         {/* ══ FEATURED PROPERTIES ════════════════════════════ */}
         <section
           style={{
-            padding: "100px 48px",
+            padding: "56px 48px 100px",
             background: "var(--stone)",
             overflowX: "hidden",
           }}
@@ -1336,8 +1320,6 @@ export default function Home() {
                       </div>
                       <div
                         style={{
-                          display: "grid",
-                          gridTemplateColumns: "1fr 1px 1fr",
                           background: "var(--stone)",
                           borderRadius: 10,
                           padding: "9px 4px",
@@ -1369,16 +1351,6 @@ export default function Home() {
                         </div>
                         <div style={{ background: "var(--border)" }} />
                         <div>
-                          <p
-                            className="out"
-                            style={{
-                              fontSize: 9,
-                              color: "#bbb",
-                              marginBottom: 2,
-                            }}
-                          >
-                            Area
-                          </p>
                           <p
                             className="out"
                             style={{
@@ -1446,7 +1418,7 @@ export default function Home() {
                   "Smart Homes",
                   "Creative Build",
                   "Realty Times",
-                  "NCR Housing",
+                  "The Economic Times",
                   "PropertyGuru",
                   "MagicBricks",
                 ].map((b, i) => (
@@ -1525,7 +1497,7 @@ export default function Home() {
                   }}
                 >
                   From luxury apartments to commercial plots, our listings span
-                  every segment across NCR — curated for every need and budget.
+                  every segment across — curated for every need and budget.
                 </p>
                 <button
                   className="nbtn"
@@ -1596,7 +1568,7 @@ export default function Home() {
                       className="out"
                       style={{ fontSize: 11, color: "#aaa", marginTop: 2 }}
                     >
-                      Avyaya Collections, NCR
+                      Avyaya Collections
                     </p>
                   </div>
                 </div>
@@ -1672,198 +1644,6 @@ export default function Home() {
                   </button>
                 </div>
               </Rv>
-            </div>
-          </div>
-        </section>
-
-        {/* ══ WHY CHOOSE ════════════════════════════════════ */}
-        <section
-          style={{
-            background: "var(--navy)",
-            padding: "100px 48px",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              right: -100,
-              top: "50%",
-              transform: "translateY(-50%)",
-              width: 560,
-              height: 560,
-              border: "1px solid rgba(176,139,76,.07)",
-              borderRadius: "50%",
-              pointerEvents: "none",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              right: -50,
-              top: "50%",
-              transform: "translateY(-50%)",
-              width: 360,
-              height: 360,
-              border: "1px solid rgba(176,139,76,.07)",
-              borderRadius: "50%",
-              pointerEvents: "none",
-            }}
-          />
-
-          <div
-            className="why-grid"
-            style={{
-              ...mw,
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 80,
-              alignItems: "center",
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            <Rv>
-              <span
-                className="mono"
-                style={{
-                  fontSize: 10,
-                  letterSpacing: ".22em",
-                  textTransform: "uppercase",
-                  color: "var(--gold)",
-                  display: "block",
-                  marginBottom: 16,
-                }}
-              >
-                Why Avyaya
-              </span>
-              <h2
-                className="cor"
-                style={{
-                  fontSize: "clamp(36px,4vw,58px)",
-                  fontWeight: 700,
-                  color: "#fff",
-                  lineHeight: 1.04,
-                  marginBottom: 20,
-                }}
-              >
-                Building Trust,
-                <br />
-                <em
-                  style={{
-                    fontStyle: "italic",
-                    color: "var(--gold2)",
-                    fontWeight: 400,
-                  }}
-                >
-                  Delivering Dreams.
-                </em>
-              </h2>
-              <p
-                className="out"
-                style={{
-                  fontSize: 15,
-                  color: "rgba(255,255,255,.45)",
-                  lineHeight: 1.85,
-                  fontWeight: 300,
-                  marginBottom: 44,
-                }}
-              >
-                For over 15 years, Avyaya has stood at the forefront of NCR real
-                estate — crafting spaces that balance luxury, functionality, and
-                lasting value for every family.
-              </p>
-              <Link
-                href="/about"
-                className="gbtn"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 9,
-                  padding: "14px 30px",
-                  borderRadius: 12,
-                  fontSize: 13,
-                  textDecoration: "none",
-                }}
-              >
-                Our Story <RiArrowRightLine />
-              </Link>
-            </Rv>
-
-            <div
-              className="why-cards"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 14,
-              }}
-            >
-              {WHY.map((w, i) => (
-                <Rv key={i} delay={i * 70}>
-                  <div
-                    style={{
-                      background: "rgba(255,255,255,.04)",
-                      border: "1px solid rgba(255,255,255,.07)",
-                      borderRadius: 20,
-                      padding: 22,
-                      transition: "all .28s",
-                      cursor: "default",
-                      height: "100%",
-                      boxSizing: "border-box",
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.background = "rgba(176,139,76,.09)";
-                      e.currentTarget.style.borderColor = "rgba(176,139,76,.3)";
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.background =
-                        "rgba(255,255,255,.04)";
-                      e.currentTarget.style.borderColor =
-                        "rgba(255,255,255,.07)";
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: 40,
-                        height: 40,
-                        borderRadius: 12,
-                        background: "rgba(176,139,76,.12)",
-                        color: "var(--gold)",
-                        fontSize: 19,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        marginBottom: 14,
-                      }}
-                    >
-                      {w.icon}
-                    </div>
-                    <h4
-                      className="out"
-                      style={{
-                        fontWeight: 600,
-                        color: "#fff",
-                        fontSize: 14,
-                        marginBottom: 6,
-                      }}
-                    >
-                      {w.title}
-                    </h4>
-                    <p
-                      className="out"
-                      style={{
-                        color: "rgba(255,255,255,.38)",
-                        fontSize: 12,
-                        lineHeight: 1.65,
-                        fontWeight: 300,
-                      }}
-                    >
-                      {w.desc}
-                    </p>
-                  </div>
-                </Rv>
-              ))}
             </div>
           </div>
         </section>
@@ -2106,7 +1886,7 @@ export default function Home() {
                   }}
                 >
                   Receive exclusive offers, new launch alerts and insider guides
-                  on NCR's premium real estate.
+                  on premium real estate.
                 </p>
                 <div>
                   <label
@@ -2225,7 +2005,7 @@ export default function Home() {
                         letterSpacing: ".03em",
                       }}
                     >
-                      Premium Real Estate · NCR
+                      Premium Real Estate
                     </p>
                   </div>
                   <div
@@ -2632,7 +2412,7 @@ export default function Home() {
                   }}
                 >
                   Schedule a free site visit today and let our experts guide you
-                  to the perfect property in NCR.
+                  to the perfect property.
                 </p>
               </div>
 

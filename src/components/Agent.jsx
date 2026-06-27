@@ -564,7 +564,7 @@ export default function FindAgent() {
                     lineHeight: 1.8, maxWidth: "100%", margin: 0,
                   }}>
                     Partner with Avyaya Developers and get access to verified leads, full project documentation,
-                    and a brand that clients already trust across NCR.
+                    and a brand that clients already trust.
                   </p>
                 </div>
               </Fade>

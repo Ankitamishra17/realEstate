@@ -473,7 +473,7 @@ export default function LoginPage() {
               <div className="left-stats">
                 {[
                   { v: "9+", l: "Active Projects" },
-                  { v: "4", l: "NCR Locations" },
+                  { v: "4", l: "Locations" },
                   { v: "500+", l: "Happy Families" },
                 ].map((s) => (
                   <div key={s.l} className="left-stat">
@@ -486,7 +486,7 @@ export default function LoginPage() {
 
             {/* Footer */}
             <div className="left-footer">
-              © {new Date().getFullYear()} Avyaya Developers. NCR&apos;s Trusted
+              © {new Date().getFullYear()} Avyaya Developers — Your Trusted
               Real Estate Partner.
             </div>
           </div>

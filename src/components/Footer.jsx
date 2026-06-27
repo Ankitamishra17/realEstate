@@ -38,14 +38,13 @@ const socialLinks = [
   { icon: <RiFacebookFill />, href: "#", label: "Facebook" },
   { icon: <RiInstagramLine />, href: "#", label: "Instagram" },
   { icon: <RiYoutubeLine />, href: "#", label: "YouTube" },
-  { icon: <RiTwitterXLine />, href: "#", label: "Twitter/X" },
   { icon: <RiWhatsappLine />, href: "#", label: "WhatsApp" },
 ];
 
 const stats = [
-  { icon: <RiHome4Line />, value: "500+", label: "Projects Delivered" },
-  { icon: <RiBuildingLine />, value: "1200+", label: "Happy Families" },
-  { icon: <RiShieldCheckLine />, value: "15+", label: "Years of Trust" },
+  { icon: <RiHome4Line />, value: "200+", label: "Projects Delivered" },
+  { icon: <RiBuildingLine />, value: "60+", label: "Happy Families" },
+  { icon: <RiShieldCheckLine />, value: "5+", label: "Years of Trust" },
 ];
 
 export default function Footer() {
@@ -72,14 +71,14 @@ export default function Footer() {
         <div className="sm:col-span-2 xl:col-span-1">
           <Link href="/">
             <img
-              src="/logo.png"
+              src="/logo1.png"
               alt="Avyaya Developer"
               className="h-16 sm:h-20 w-auto object-contain mb-5"
             />
           </Link>
           <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
             Avyaya Developer — building landmark residences and commercial
-            spaces across Ghaziabad and NCR with integrity, design excellence,
+            spaces with integrity, design excellence,
             and a commitment to every family's dream.
           </p>
           <div className="flex gap-3 flex-wrap">
@@ -145,9 +144,9 @@ export default function Footer() {
             <li className="flex gap-3">
               <RiMapPinLine className="text-[#af7323] text-xl shrink-0 mt-0.5" />
               <span className="text-gray-400 text-sm leading-relaxed">
-                Plot No. 5, Sector 63, Ghaziabad,
+                Office Number 1529, 15th Floor Galaxy Diamond Plaza, Sector 4 Greater Noida,
                 <br />
-                Uttar Pradesh – 201301
+                 Uttar Pradesh - 201009
               </span>
             </li>
             <li className="flex gap-3 items-center">
@@ -156,7 +155,7 @@ export default function Footer() {
                 href="tel:+919876543210"
                 className="text-gray-400 text-sm hover:text-[#af7323] transition"
               >
-                +91 98765 43210
+                +91 7004397655
               </a>
             </li>
             <li className="flex gap-3 items-center">
@@ -169,23 +168,6 @@ export default function Footer() {
               </a>
             </li>
           </ul>
-
-          {/* Newsletter */}
-          <div className="mt-7 max-w-sm">
-            <p className="text-sm text-white font-semibold mb-3">
-              Get Project Updates
-            </p>
-            <div className="flex gap-0 rounded-lg overflow-hidden border border-white/20">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="bg-white/5 text-white text-sm px-4 py-2.5 flex-1 min-w-0 outline-none placeholder-gray-500"
-              />
-              <button className="bg-[#af7323] hover:bg-[#c98530] text-white text-sm px-4 font-semibold transition shrink-0">
-                Go
-              </button>
-            </div>
-          </div>
         </div>
       </div>
 

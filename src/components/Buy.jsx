@@ -28,72 +28,48 @@ const LISTINGS = [
   {
     name: "Avyaya Garden Residences",
     type: "Apartments",
-    location: "Sector 78, Noida",
-    price: "₹68 Lakh onwards",
-    priceBand: "₹50L – ₹1 Cr",
     beds: 2,
     baths: 2,
-    area: "1,180 sq.ft",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80",
   },
   {
     name: "Avyaya Meadows",
     type: "Villas",
-    location: "Sector 150, Noida",
-    price: "₹2.4 Cr onwards",
-    priceBand: "Above ₹2 Cr",
     beds: 4,
     baths: 4,
-    area: "3,200 sq.ft",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80",
   },
   {
     name: "Avyaya Green Acres",
     type: "Plots",
-    location: "Sector 22, Greater Noida",
-    price: "₹1.1 Cr onwards",
-    priceBand: "₹1 Cr – ₹2 Cr",
     beds: null,
     baths: null,
-    area: "200 sq.yd",
     status: "Selling Fast",
     img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
   },
   {
     name: "Avyaya Horizon Towers",
     type: "Apartments",
-    location: "Greater Noida West",
-    price: "₹78 Lakh onwards",
-    priceBand: "₹50L – ₹1 Cr",
     beds: 3,
     baths: 2,
-    area: "1,450 sq.ft",
     status: "Under Construction",
     img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80",
   },
   {
     name: "Avyaya Business Square",
     type: "Commercial",
-    location: "Sector 62, Noida",
-    price: "₹95 Lakh onwards",
-    priceBand: "₹50L – ₹1 Cr",
     beds: null,
     baths: 2,
-    area: "1,800 sq.ft",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
   },
   {
     name: "Avyaya Riverside Villas",
     type: "Villas",
-    location: "Yamuna Expressway",
-    price: "₹3.1 Cr onwards",
-    priceBand: "Above ₹2 Cr",
     beds: 5,
     baths: 5,
-    area: "4,100 sq.ft",
     status: "New Launch",
     img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
   },
@@ -383,7 +359,7 @@ export default function Buy() {
                 <span style={{ color: "#b8892e" }}>Feels Like Yours</span>
               </h1>
               <p style={{ color: "rgba(255,255,255,0.52)", fontSize: "clamp(0.85rem,1.8vw,1rem)", lineHeight: 1.8, maxWidth: 480 }}>
-                Browse RERA-verified apartments, villas, plots, and commercial spaces across NCR — with full
+                Browse RERA-verified apartments, villas, plots, and commercial spaces — with full
                 legal support and home loan assistance built in.
               </p>
             </Fade>
