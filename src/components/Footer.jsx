@@ -35,9 +35,9 @@ const propertyTypes = [
 ];
 
 const socialLinks = [
-  { icon: <RiFacebookFill />, href: "#", label: "Facebook" },
+  { icon: <RiFacebookFill />, href: "https://www.facebook.com/share/18ogofyGrc/", label: "Facebook" },
   { icon: <RiInstagramLine />, href: "#", label: "Instagram" },
-  { icon: <RiYoutubeLine />, href: "#", label: "YouTube" },
+  { icon: <RiYoutubeLine />, href: "https://youtube.com/@avyayadeveloper?si=cBUOCNZS7QAL84bl", label: "YouTube" },
   { icon: <RiWhatsappLine />, href: "#", label: "WhatsApp" },
 ];
 

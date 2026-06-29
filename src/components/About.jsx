@@ -70,10 +70,47 @@ const WHY_US = [
 ];
 
 const MILESTONES = [
-  { year: "Founded", title: "The Vision", text: "Avyaya Developers established with a commitment to build spaces that endure — inspired by the Sanskrit for 'eternal'." },
-  { year: "Growth", title: "Footprint", text: "Expanded across residential, commercial, and land segments, earning trust with quality over speed." },
-  { year: "Scale", title: "Landmark Projects", text: "Crossed 20+ landmark developments spanning villas, gated communities, business parks, and townships." },
-  { year: "Today", title: "Industry Leader", text: "₹3,200Cr+ in transactions, 5,000+ families housed, and a legacy of lasting communities." },
+  {
+    year: "Founded",
+    title: "The Vision",
+    text: "Avyaya Developers established with a commitment to build spaces that endure — inspired by the Sanskrit for 'eternal'.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#b8892e" strokeWidth="1.5" style={{ width: 28, height: 28 }}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12s3.75-7.5 9.75-7.5 9.75 7.5 9.75 7.5-3.75 7.5-9.75 7.5S2.25 12 2.25 12z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+  },
+  {
+    year: "Growth",
+    title: "Footprint",
+    text: "Expanded across residential, commercial, and land segments, earning trust with quality over speed.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#b8892e" strokeWidth="1.5" style={{ width: 28, height: 28 }}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 17.25l5.25-5.25 4.5 4.5L21 8.25M21 8.25H15m6 0v6" />
+      </svg>
+    ),
+  },
+  {
+    year: "Scale",
+    title: "Landmark Projects",
+    text: "Crossed 20+ landmark developments spanning villas, gated communities, business parks, and townships.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#b8892e" strokeWidth="1.5" style={{ width: 28, height: 28 }}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M5.25 21V9.75A1.5 1.5 0 016.75 8.25h2.25A1.5 1.5 0 0110.5 9.75V21M13.5 21V5.25a1.5 1.5 0 011.5-1.5h1.5a1.5 1.5 0 011.5 1.5V21M8.25 12h.008M8.25 15h.008M16.5 9h.008M16.5 12h.008M16.5 15h.008" />
+      </svg>
+    ),
+  },
+  {
+    year: "Today",
+    title: "Industry Leader",
+    text: "₹3,200Cr+ in transactions, 5,000+ families housed, and a legacy of lasting communities.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#b8892e" strokeWidth="1.5" style={{ width: 28, height: 28 }}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9M12 18.75v-4.5m0 0a6.75 6.75 0 006.75-6.75V4.5h-1.5m-5.25 9.75a6.75 6.75 0 01-6.75-6.75V4.5h1.5m9 0H7.5m9 0V3H7.5v1.5m0 0H4.875A1.125 1.125 0 003.75 5.625v.75c0 2.07 1.68 3.75 3.75 3.75M16.125 4.5H19.125c.621 0 1.125.504 1.125 1.125v.75c0 2.07-1.68 3.75-3.75 3.75" />
+      </svg>
+    ),
+  },
 ];
 
 function useInView(threshold = 0.12) {
@@ -146,7 +183,12 @@ const styles = `
      HERO
   ══════════════════════════════ */
   .hero-section {
-    background: #12243d;
+    background:
+      linear-gradient(160deg, rgba(18,36,61,0.94) 0%, rgba(18,36,61,0.88) 45%, rgba(18,36,61,0.95) 100%),
+      url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 92vh;
     display: flex;
     align-items: center;
@@ -859,9 +901,7 @@ export default function AvyayaDevelopersAbout() {
                         }}
                       >
                         <div style={{ width: 64, height: 64, borderRadius: "50%", background: "#f7f4ef", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#b8892e" strokeWidth="1.5" style={{ width: 28, height: 28 }}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
-                          </svg>
+                          {m.icon}
                         </div>
                       </div>
                       <div style={{ display: "inline-flex", padding: "4px 14px", borderRadius: 20, background: "#12243d", marginBottom: "0.65rem" }}>
