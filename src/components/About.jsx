@@ -199,8 +199,8 @@ const styles = `
     position: relative;
     z-index: 10;
     max-width: 1200px;
-
-    padding: clamp(5rem,7vw,5rem) clamp(5rem,4vw,2.5rem);
+    margin: 0 auto;
+    padding: clamp(6rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
     width: 100%;
   }
   .hero-grid {
@@ -416,11 +416,11 @@ const styles = `
   }
 
   /* ══════════════════════════════
-     TABLET  ≤ 1024px
+     HERO — TABLET  ≤ 1024px
   ══════════════════════════════ */
   @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-collage { height: 360px; max-width: 520px; margin: 0 auto; }
+    .hero-collage { height: 380px; max-width: 560px; margin: 0 auto; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .story-collage { height: 340px; max-width: 540px; margin: 0 auto; width: 100%; }
@@ -437,12 +437,22 @@ const styles = `
   }
 
   /* ══════════════════════════════
+     HERO — SMALL TABLET  ≤ 768px
+  ══════════════════════════════ */
+  @media (max-width: 768px) {
+    .hero-inner { padding: clamp(5.5rem, 8vw, 6rem) 1.5rem 3rem; }
+    .hero-collage { height: 320px; max-width: 480px; }
+    .hero-collage-badge { bottom: 40px; padding: 0.85rem 1.1rem; }
+    .hero-badge-num { font-size: 1.5rem; }
+  }
+
+  /* ══════════════════════════════
      MOBILE  ≤ 640px
   ══════════════════════════════ */
   @media (max-width: 640px) {
     /* Hero */
     .hero-section { min-height: auto; }
-    .hero-inner { padding: "clamp(5rem,8vw,7rem) clamp(5rem,4vw,2.5rem) clamp(5rem,6vw,5rem)", }
+    .hero-inner { padding: 5.5rem 1.25rem 3rem; }
 
     /* Stack: text first, image below — NO order:-1 */
     .hero-grid {

@@ -35,15 +35,15 @@ const propertyTypes = [
 ];
 
 const socialLinks = [
-  { icon: <RiFacebookFill />, href: "https://www.facebook.com/share/18ogofyGrc/", label: "Facebook" },
-  { icon: <RiInstagramLine />, href: "#", label: "Instagram" },
+  { icon: <RiFacebookFill />, href: "https://www.facebook.com/share/1PfHxWvUja/", label: "Facebook" },
+  { icon: <RiInstagramLine />, href: "https://www.instagram.com/avyayadeveloper?igsh=MTByeTV3bW1za203dA==", label: "Instagram" },
   { icon: <RiYoutubeLine />, href: "https://youtube.com/@avyayadeveloper?si=cBUOCNZS7QAL84bl", label: "YouTube" },
-  { icon: <RiWhatsappLine />, href: "#", label: "WhatsApp" },
+  { icon: <RiWhatsappLine />, href: "https://chat.whatsapp.com/FidK3t1WlxPKrLb5J8dWvM", label: "WhatsApp" },
 ];
 
 const stats = [
   { icon: <RiHome4Line />, value: "200+", label: "Projects Delivered" },
-  { icon: <RiBuildingLine />, value: "60+", label: "Happy Families" },
+  { icon: <RiBuildingLine />, value: "600+", label: "Happy Families" },
   { icon: <RiShieldCheckLine />, value: "5+", label: "Years of Trust" },
 ];
 

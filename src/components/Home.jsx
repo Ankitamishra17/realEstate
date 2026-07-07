@@ -604,7 +604,8 @@ export default function Home() {
                     marginBottom: 26,
                   }}
                 >
-                  Landmark residences and commercial spaces, crafted for the life you deserve.
+                  Landmark residences and commercial spaces, crafted for the
+                  life you deserve.
                 </p>
 
                 {/* Search box */}
@@ -738,7 +739,7 @@ export default function Home() {
                 >
                   {[
                     ["200+", "Projects"],
-                    ["60+", "Families"],
+                    ["600+", "Families"],
                     ["5 Yrs", "Trust"],
                   ].map(([v, l], i) => (
                     <div
@@ -1006,7 +1007,7 @@ export default function Home() {
                 icon: <RiHome4Line />,
               },
               {
-                end: 60,
+                end: 600,
                 suf: "+",
                 label: "Happy Families",
                 icon: <RiTeamLine />,
@@ -1628,20 +1629,6 @@ export default function Home() {
                       </span>
                     </div>
                   ))}
-                  <button
-                    className="gbtn"
-                    style={{
-                      marginTop: 24,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 8,
-                      padding: "12px 26px",
-                      borderRadius: 11,
-                      fontSize: 13,
-                    }}
-                  >
-                    Explore Collections
-                  </button>
                 </div>
               </Rv>
             </div>
@@ -1650,21 +1637,102 @@ export default function Home() {
 
         {/* ══ PHOTO GALLERY ══════════════════════════════════ */}
         <section
+          className="gallery-section"
           style={{
             padding: "100px 0 0",
             background: "var(--stone)",
             overflow: "hidden",
           }}
         >
-          <div style={{ ...mw, padding: "0 48px", marginBottom: 44 }}>
+          <style>{`
+    .gallery-header-wrap {
+      padding: 0 48px;
+      margin-bottom: 44px;
+    }
+    .gallery-cats {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .gallery-row {
+      display: flex;
+      gap: 5px;
+      height: 360px;
+      padding-left: 48px;
+      padding-right: 48px;
+      box-sizing: border-box;
+    }
+    .gallery-item {
+      flex-shrink: 0;
+      border-radius: 18px 18px 0 0;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1024px) {
+      .gallery-section { padding-top: 72px; }
+      .gallery-header-wrap { padding: 0 32px; margin-bottom: 32px; }
+      .gallery-row { padding-left: 32px; padding-right: 32px; height: 300px; }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-section { padding-top: 56px; }
+      .gallery-header-wrap { padding: 0 20px; margin-bottom: 24px; }
+      .gallery-header-flex {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 20px !important;
+      }
+      .gallery-cats {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+      }
+      .gallery-cats::-webkit-scrollbar { display: none; }
+      .gallery-cats button { flex-shrink: 0; }
+
+      /* Convert gallery to horizontal snap-scroll on mobile */
+      .gallery-row {
+        height: 260px;
+        padding-left: 20px;
+        padding-right: 20px;
+        marginBottom: 5px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .gallery-row::-webkit-scrollbar { display: none; }
+      .gallery-item {
+        width: 78% !important;
+        scroll-snap-align: start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-section { padding-top: 40px; }
+      .gallery-header-wrap { padding: 0 16px; }
+      .gallery-row { height: 220px; padding-left: 16px; padding-right: 16px; }
+      .gallery-item { width: 88% !important; }
+      .gallery-item span { font-size: 12px !important; bottom: 14px !important; left: 14px !important; }
+    }
+  `}</style>
+
+          <div className="gallery-header-wrap" style={{ ...mw }}>
             <Rv>
               <div
+                className="gallery-header-flex"
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "flex-end",
                   flexWrap: "wrap",
                   gap: 16,
+                  marginBottom:"10px"
                 }}
               >
                 <div>
@@ -1684,9 +1752,10 @@ export default function Home() {
                   <h2
                     className="cor"
                     style={{
-                      fontSize: "clamp(32px,4vw,52px)",
+                      fontSize: "clamp(28px,6vw,52px)",
                       fontWeight: 700,
                       color: "var(--navy)",
+                      lineHeight: 1.1,
                     }}
                   >
                     Spaces That{" "}
@@ -1701,7 +1770,7 @@ export default function Home() {
                     </em>
                   </h2>
                 </div>
-                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                <div className="gallery-cats">
                   {CATS.map((cat, i) => (
                     <button
                       key={i}
@@ -1713,6 +1782,7 @@ export default function Home() {
                         fontSize: 12,
                         fontWeight: 600,
                         cursor: "pointer",
+                        whiteSpace: "nowrap",
                         background:
                           i === activeCat ? "var(--navy)" : "transparent",
                         color: i === activeCat ? "#fff" : "var(--muted)",
@@ -1730,17 +1800,8 @@ export default function Home() {
               </div>
             </Rv>
           </div>
-          <div
-            className="gallery-row"
-            style={{
-              display: "flex",
-              gap: 5,
-              height: 360,
-              paddingLeft: 48,
-              paddingRight: 48,
-              boxSizing: "border-box",
-            }}
-          >
+
+          <div className="gallery-row">
             {[
               { w: "31%", label: "Living Spaces", idx: 0 },
               { w: "20%", label: "Exteriors", idx: 1 },
@@ -1750,14 +1811,7 @@ export default function Home() {
               <div
                 key={`${activeCat}-${i}`}
                 className="gallery-item lift"
-                style={{
-                  width: g.w,
-                  flexShrink: 0,
-                  borderRadius: "18px 18px 0 0",
-                  overflow: "hidden",
-                  position: "relative",
-                  cursor: "pointer",
-                }}
+                style={{ width: g.w }}
               >
                 <img
                   src={
@@ -1931,7 +1985,7 @@ export default function Home() {
                     <button
                       className="gbtn"
                       style={{
-                        padding: "0 20px",
+                        padding: "10px 20px",
                         height: "100%",
                         borderRadius: 0,
                         fontSize: 18,
@@ -2028,9 +2082,21 @@ export default function Home() {
                       Follow us
                     </span>
                     {[
-                      { icon: <RiInstagramLine />, label: "Instagram" },
-                      { icon: <RiFacebookCircleLine />, label: "Facebook" },
-                      { icon: <RiPinterestLine />, label: "Pinterest" },
+                      {
+                        icon: <RiInstagramLine />,
+                        href: "https://www.instagram.com/avyayadeveloper?igsh=MTByeTV3bW1za203dA==",
+                        label: "Instagram",
+                      },
+                      {
+                        icon: <RiFacebookCircleLine />,
+                        href: "",
+                        label: "Facebook",
+                      },
+                      {
+                        icon: <RiPinterestLine />,
+                        href: "",
+                        label: "Pinterest",
+                      },
                     ].map((s, i) => (
                       <a
                         key={i}
@@ -2445,7 +2511,7 @@ export default function Home() {
                   Book Free Site Visit
                 </Link>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://chat.whatsapp.com/FidK3t1WlxPKrLb5J8dWvM"
                   className="out"
                   style={{
                     display: "flex",

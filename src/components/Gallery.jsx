@@ -394,13 +394,15 @@ function GalleryCard({ item, onClick, delay, isMobile, isTablet }) {
   const [hovered, setHovered] = useState(false);
   const [ref, inView] = useInView();
 
-  // Height based on screen size and card type
+  // Height based on screen size and card type.
+  // These varied heights are exactly what the column-based masonry
+  // layout below is designed to pack cleanly without gaps.
   let h = 300;
   if (isMobile) {
     h = 240;
   } else if (isTablet) {
-    // Uniform height on tablet so every 2-up row lines up evenly.
-    h = 300;
+    const heightMap = { tall: 360, wide: 260, normal: 300 };
+    h = heightMap[item.size] || 300;
   } else {
     const heightMap = { tall: 420, wide: 280, normal: 320 };
     h = heightMap[item.size] || 320;
@@ -418,6 +420,7 @@ function GalleryCard({ item, onClick, delay, isMobile, isTablet }) {
         borderRadius: 2,
         cursor: "pointer",
         height: h,
+        width: "100%",
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(32px)",
         transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
@@ -584,17 +587,9 @@ export default function GalleryPage() {
     };
   }, [lightbox]);
 
-  // Grid columns based on screen
+  // Number of masonry columns based on screen width
   const gridCols = isMobile ? 1 : isTablet ? 2 : 3;
-
-  // Decide gridColumn for each item
-  const getGridCol = (item) => {
-    if (isMobile) return "span 1";
-    // On tablet (~768px) always keep 2 equal columns, so every
-    // row shows exactly 2 images regardless of card "size".
-    if (isTablet) return "span 1";
-    return item.size === "wide" ? "span 2" : "span 1";
-  };
+  const gap = isMobile ? 10 : 14;
 
   return (
     <div
@@ -606,7 +601,18 @@ export default function GalleryPage() {
       }}
     >
       <style>{`
-      
+        .masonry-grid {
+          column-count: ${gridCols};
+          column-gap: ${gap}px;
+        }
+        .masonry-item {
+          break-inside: avoid;
+          -webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+          margin-bottom: ${gap}px;
+          display: inline-block;
+          width: 100%;
+        }
 
         .filter-pill {
           padding: 0.5rem 1.2rem;
@@ -981,16 +987,11 @@ export default function GalleryPage() {
             </div>
           </Fade>
 
-          {/* Gallery Grid */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: `repeat(${gridCols}, 1fr)`,
-              gap: isMobile ? "10px" : "14px",
-            }}
-          >
+          {/* Gallery Grid — column-based masonry so mixed-height
+              cards always pack tightly, aligned, with no gaps */}
+          <div className="masonry-grid">
             {filtered.map((item, i) => (
-              <div key={item.id} style={{ gridColumn: getGridCol(item) }}>
+              <div key={item.id} className="masonry-item">
                 <GalleryCard
                   item={item}
                   onClick={openLightbox}
