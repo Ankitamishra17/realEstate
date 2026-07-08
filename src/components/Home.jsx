@@ -1500,6 +1500,8 @@ export default function Home() {
                   From luxury apartments to commercial plots, our listings span
                   every segment across — curated for every need and budget.
                 </p>
+                <a
+                href="/properties">
                 <button
                   className="nbtn"
                   style={{
@@ -1513,6 +1515,7 @@ export default function Home() {
                 >
                   Explore Collections <RiArrowRightLine />
                 </button>
+                </a>
               </Rv>
 
               <Rv delay={100}>
@@ -1656,10 +1659,10 @@ export default function Home() {
     }
     .gallery-row {
       display: flex;
-      gap: 5px;
+      gap: 10px;
       height: 360px;
-      padding-left: 48px;
-      padding-right: 48px;
+      padding-left: 180px;
+      margin-bottom: 10px;
       box-sizing: border-box;
     }
     .gallery-item {
@@ -1700,7 +1703,7 @@ export default function Home() {
         height: 260px;
         padding-left: 20px;
         padding-right: 20px;
-        marginBottom: 5px;
+        margin-bottom: 5px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
@@ -1720,19 +1723,31 @@ export default function Home() {
       .gallery-item { width: 88% !important; }
       .gallery-item span { font-size: 12px !important; bottom: 14px !important; left: 14px !important; }
     }
+
+    /* Landscape phones: row was getting too tall relative to viewport height */
+    @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+      .gallery-row { height: 200px; }
+    }
+
+    /* Very narrow devices (foldables, small Androids) */
+    @media (max-width: 360px) {
+      .gallery-header-wrap { padding: 0 12px; }
+      .gallery-row { padding-left: 12px; padding-right: 12px; height: 190px; }
+      .gallery-item { width: 92% !important; }
+    }
   `}</style>
 
           <div className="gallery-header-wrap" style={{ ...mw }}>
             <Rv>
               <div
-                className="gallery-header-flex"
+                className="gallery-header-flex  max-w-7xl"
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "flex-end",
                   flexWrap: "wrap",
                   gap: 16,
-                  marginBottom:"10px"
+                  marginBottom: "10px",
                 }}
               >
                 <div>
@@ -1802,63 +1817,77 @@ export default function Home() {
           </div>
 
           <div className="gallery-row">
-            {[
-              { w: "31%", label: "Living Spaces", idx: 0 },
-              { w: "20%", label: "Exteriors", idx: 1 },
-              { w: "28%", label: "Amenities", idx: 2 },
-              { w: "21%", label: "Interiors", idx: 0 },
-            ].map((g, i) => (
-              <div
-                key={`${activeCat}-${i}`}
-                className="gallery-item lift"
-                style={{ width: g.w }}
-              >
-                <img
-                  src={
-                    CATS[activeCat].gallery[
-                      g.idx % CATS[activeCat].gallery.length
-                    ]
-                  }
-                  alt={g.label}
-                  className="cat-img-enter"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    transition: "transform .6s cubic-bezier(.22,.68,0,1.2)",
-                  }}
-                  onMouseOver={(e) =>
-                    (e.currentTarget.style.transform = "scale(1.07)")
-                  }
-                  onMouseOut={(e) =>
-                    (e.currentTarget.style.transform = "scale(1)")
-                  }
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background:
-                      "linear-gradient(to top,rgba(15,31,61,.65) 0%,transparent 55%)",
-                  }}
-                />
-                <span
-                  className="out"
-                  style={{
-                    position: "absolute",
-                    bottom: 20,
-                    left: 20,
-                    color: "#fff",
-                    fontSize: 13,
-                    fontWeight: 600,
-                    letterSpacing: ".03em",
-                  }}
-                >
-                  {g.label}
-                </span>
-              </div>
-            ))}
-          </div>
+  {[
+    {
+      w: "21%",
+      label: "Living Spaces",
+      img: "https://i.pinimg.com/736x/ff/13/25/ff1325ee41487fa0786900320db42651.jpg",
+    },
+    {
+      w: "21%",
+      label: "Exteriors",
+      img: "https://i.pinimg.com/736x/ff/84/86/ff84865f07698d168e6b3f291e87acda.jpg",
+    },
+    {
+      w: "21%",
+      label: "Amenities",
+      img: "https://i.pinimg.com/1200x/c8/25/29/c82529eead19d10d8b89000fc0c51fa6.jpg",
+    },
+    {
+      w: "21%",
+      label: "Interiors",
+      img: "https://i.pinimg.com/736x/c6/0f/ec/c60fec5efa1b8aff3a85409984b7c449.jpg",
+    },
+  ].map((g, i) => (
+    <div
+      key={`${activeCat}-${i}`}
+      className="gallery-item lift"
+      style={{ width: g.w }}
+    >
+      <img
+        src={g.img}
+        alt={g.label}
+        className="cat-img-enter"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          transition: "transform .6s cubic-bezier(.22,.68,0,1.2)",
+        }}
+        onMouseOver={(e) =>
+          (e.currentTarget.style.transform = "scale(1.07)")
+        }
+        onMouseOut={(e) =>
+          (e.currentTarget.style.transform = "scale(1)")
+        }
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(to top,rgba(15,31,61,.65) 0%,transparent 55%)",
+        }}
+      />
+
+      <span
+        className="out"
+        style={{
+          position: "absolute",
+          bottom: 20,
+          left: 20,
+          color: "#fff",
+          fontSize: 13,
+          fontWeight: 600,
+          letterSpacing: ".03em",
+        }}
+      >
+        {g.label}
+      </span>
+    </div>
+  ))}
+</div>
         </section>
 
         {/* ══ NEWSLETTER + BRAND CARD ═══════════════════════ */}

@@ -452,19 +452,19 @@ const styles = `
   @media (max-width: 640px) {
     /* Hero */
     .hero-section { min-height: auto; }
-    .hero-inner { padding: 5.5rem 1.25rem 3rem; }
+  .hero-inner { padding: 5.5rem 1.25rem 3rem; }
 
     /* Stack: text first, image below — NO order:-1 */
     .hero-grid {
       display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
+    flex-direction: column;
+    gap: 1.75rem;
     }
 
     /* Text block — full width, comes first naturally */
     .hero-text-col {
       width: 100%;
-      order: 1;
+    order: 1;
     }
 
     /* Image block — comes second */
@@ -585,7 +585,7 @@ export default function AvyayaDevelopersAbout() {
                 <EyebrowLeft>Avyaya Developers</EyebrowLeft>
                 <h1
                   style={{
-                    fontSize: "clamp(1.65rem,5vw,4.2rem)",
+                    fontSize: "clamp(1.5rem,4vw,3.5rem)",
                     fontWeight: 700,
                     color: "#fff",
                     lineHeight: 1.06,
@@ -942,8 +942,8 @@ export default function AvyayaDevelopersAbout() {
                 nurturing dreams, and building a legacy that lasts for generations.
               </p>
               <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-                <a href="#" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, background: "#b8892e", color: "#fff", fontWeight: 700, padding: "1rem 2rem", borderRadius: 2, textDecoration: "none", fontSize: 14, letterSpacing: "0.05em" }}>
-                  Explore Our Projects
+                <a href="/properties" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, background: "#b8892e", color: "#fff", fontWeight: 700, padding: "1rem 2rem", borderRadius: 2, textDecoration: "none", fontSize: 14, letterSpacing: "0.05em" }}>
+                  Explore Our Properties
                 </a>
                 <a href="#" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.75)", fontWeight: 600, padding: "1rem 2rem", borderRadius: 2, textDecoration: "none", fontSize: 14 }}>
                   Get in Touch
@@ -952,7 +952,6 @@ export default function AvyayaDevelopersAbout() {
             </Fade>
           </div>
         </section>
-
       </div>
     </>
   );

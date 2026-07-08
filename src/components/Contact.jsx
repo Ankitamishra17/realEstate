@@ -568,7 +568,7 @@ export default function ContactPage() {
             <Fade delay={80}>
               <h1
                 style={{
-                  fontSize: "clamp(1.8rem,4.5vw,3.8rem)",
+                  fontSize: "clamp(1.8rem,3.4vw,3.2rem)",
                   fontWeight: 700,
                   color: "#fff",
                   lineHeight: 1.1,

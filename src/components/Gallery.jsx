@@ -108,7 +108,7 @@ const GALLERY = [
     cat: "Interiors",
     title: "Master Suite",
     img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
-    size: "tall",
+    size: "wide",
   },
   {
     id: 15,
@@ -150,6 +150,13 @@ const GALLERY = [
     cat: "Townships",
     title: "Central Park Homes",
     img: "https://images.unsplash.com/photo-1555636222-cae831e670b3?w=800&q=80",
+    size: "tall",
+  },
+  {
+    id: 21,
+    cat: "Commercial",
+    title: "Metro Commerce Centre",
+    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
     size: "normal",
   },
 ];
