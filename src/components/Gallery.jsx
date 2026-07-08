@@ -1114,7 +1114,7 @@ export default function GalleryPage() {
               }}
             >
               <a
-                href="#"
+                href="/contact"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -1147,7 +1147,7 @@ export default function GalleryPage() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="/properties"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",

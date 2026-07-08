@@ -14,73 +14,64 @@ const PROPERTIES = [
   {
     name: "Avyaya Meadows",
     type: "Residential", category: "Villas",
-    location: "Sector 150, Noida", price: "₹2.4 Cr onwards",
-    beds: 4, baths: 4, area: "3,200 sq.ft", status: "Ready to Move",
+    beds: 4, baths: 4, status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80",
   },
   {
     name: "Avyaya Horizon Towers",
     type: "Residential", category: "Apartments",
-    location: "Greater Noida West", price: "₹78 Lakh onwards",
-    beds: 3, baths: 2, area: "1,450 sq.ft", status: "Under Construction",
+    beds: 3, baths: 2,status: "Under Construction",
     img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80",
   },
   {
     name: "Avyaya Business Square",
     type: "Commercial", category: "Office Spaces",
-    location: "Sector 62, Noida", price: "₹95 Lakh onwards",
-    beds: null, baths: 2, area: "1,800 sq.ft", status: "Ready to Move",
+    beds: 1, baths: 2, status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
   },
   {
     name: "Avyaya High Street",
     type: "Commercial", category: "Retail",
-    location: "Yamuna Expressway", price: "₹42 Lakh onwards",
-    beds: null, baths: 1, area: "650 sq.ft", status: "New Launch",
+    beds: 2, baths: 1, status: "New Launch",
     img: "https://images.unsplash.com/photo-1555636222-cae831e670b3?w=700&q=80",
   },
   {
     name: "Avyaya Green Acres",
     type: "Plots & Land", category: "Residential Plots",
-    location: "Sector 22, Greater Noida", price: "₹1.1 Cr onwards",
-    beds: null, baths: null, area: "200 sq.yd", status: "Selling Fast",
+    beds: 3, baths: 2, status: "Selling Fast",
     img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
   },
   {
     name: "Avyaya Riverside Villas",
     type: "Residential", category: "Gated Community",
-    location: "Yamuna Expressway", price: "₹3.1 Cr onwards",
-    beds: 5, baths: 5, area: "4,100 sq.ft", status: "New Launch",
+    beds: 5, baths: 5, status: "New Launch",
     img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
   },
   {
     name: "Avyaya Township Phase II",
     type: "Plots & Land", category: "Township",
-    location: "Sector 16, Greater Noida", price: "₹65 Lakh onwards",
-    beds: null, baths: null, area: "150 sq.yd", status: "Under Construction",
+    beds: null, baths: null, status: "Under Construction",
     img: "https://images.unsplash.com/photo-1574958269340-fa927503f3dd?w=700&q=80",
   },
   {
     name: "Avyaya Corporate Park",
     type: "Commercial", category: "Business Park",
-    location: "Sector 132, Noida", price: "₹1.6 Cr onwards",
-    beds: null, baths: 2, area: "2,500 sq.ft", status: "Ready to Move",
+    beds: null, baths: 2, status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80",
   },
   {
     name: "Avyaya Garden Residences",
     type: "Residential", category: "Apartments",
-    location: "Sector 78, Noida", price: "₹68 Lakh onwards",
-    beds: 2, baths: 2, area: "1,180 sq.ft", status: "Ready to Move",
+    beds: 2, baths: 2, status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80",
   },
 ];
 
 const LOCATIONS = [
-  { icon: Building2, name: "Noida", count: "9 Projects" },
-  { icon: Home, name: "Greater Noida", count: "6 Projects" },
-  { icon: TreePine, name: "Yamuna Expressway", count: "4 Projects" },
-  { icon: Briefcase, name: "Noida Extension", count: "3 Projects" },
+  { icon: Building2, count: "9 Projects" },
+  { icon: Home, count: "6 Projects" },
+  { icon: TreePine, count: "4 Projects" },
+  { icon: Briefcase, count: "3 Projects" },
 ];
 
 function useInView(threshold = 0.12) {
@@ -184,15 +175,10 @@ function PropertyCard({ p, delay }) {
           <StatusPill status={p.status} />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "45%", background: "linear-gradient(to top, rgba(18,36,61,0.55), transparent)" }} />
         </div>
         <div style={{ padding: "1.25rem", display: "flex", flexDirection: "column", flex: 1 }}>
           <p style={{ color: "#b8892e", fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 6 }}>{p.category}</p>
           <h3 style={{ fontWeight: 700, color: "#12243d", fontSize: "clamp(14px,1.8vw,17px)", marginBottom: 6, lineHeight: 1.3 }}>{p.name}</h3>
-          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 14 }}>
-            <MapPin style={{ width: 13, height: 13, color: "rgba(18,36,61,0.45)", flexShrink: 0 }} />
-            <span style={{ color: "rgba(18,36,61,0.55)", fontSize: 12.5 }}>{p.location}</span>
-          </div>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", paddingTop: "0.875rem", borderTop: "1px solid #e2d9cc", marginBottom: "1rem" }}>
             {p.beds && (
               <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
@@ -206,16 +192,6 @@ function PropertyCard({ p, delay }) {
                 <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>{p.baths} Baths</span>
               </div>
             )}
-            <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-              <Maximize style={{ width: 14, height: 14, color: "#b8892e" }} />
-              <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>{p.area}</span>
-            </div>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto" }}>
-            <p style={{ color: "#12243d", fontWeight: 800, fontSize: "clamp(13px,1.6vw,15.5px)" }}>{p.price}</p>
-            <Link href="#" style={{ display: "inline-flex", alignItems: "center", gap: 5, color: "#b8892e", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>
-              Details <ArrowUpRight style={{ width: 14, height: 14 }} />
-            </Link>
           </div>
         </div>
       </div>
@@ -385,7 +361,6 @@ export default function PropertiesPage() {
                 <div className="hero-stats">
                   {[
                     { v: "9", l: "Active Projects" },
-                    { v: "4", l: "Locations" },
                     { v: "3", l: "Property Types" },
                   ].map((s) => (
                     <div key={s.l} style={{
@@ -504,7 +479,6 @@ export default function PropertiesPage() {
                   </div>
 
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
-                    <p style={{ color: "#fff", fontWeight: 800, fontSize: "clamp(1rem,2vw,1.4rem)" }}>₹3.1 Cr onwards</p>
                     <Link href="/contact" style={{
                       display: "inline-flex", alignItems: "center", gap: 8,
                       background: "#b8892e", color: "#fff", fontWeight: 700,
@@ -531,30 +505,6 @@ export default function PropertiesPage() {
                 </h2>
               </div>
             </Fade>
-
-            <div className="locations-grid">
-              {LOCATIONS.map((l, i) => (
-                <Fade key={l.name} delay={i * 80}>
-                  <Link href="/contact" className="loc-card" style={{
-                    display: "block", textDecoration: "none",
-                    background: "#faf8f4", border: "1px solid #e2d9cc",
-                    borderRadius: 2, padding: "clamp(1.25rem,3vw,2rem) clamp(1rem,2vw,1.5rem)",
-                    textAlign: "center",
-                  }}>
-                    <div style={{
-                      width: 52, height: 52, borderRadius: "50%",
-                      background: "rgba(184,137,46,0.1)",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      margin: "0 auto 1rem",
-                    }}>
-                      <l.icon style={{ width: 22, height: 22, color: "#b8892e" }} />
-                    </div>
-                    <h3 style={{ fontWeight: 700, color: "#12243d", fontSize: "clamp(13px,1.5vw,15px)", marginBottom: 6 }}>{l.name}</h3>
-                    <p style={{ color: "rgba(18,36,61,0.5)", fontSize: 12.5 }}>{l.count}</p>
-                  </Link>
-                </Fade>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -586,14 +536,6 @@ export default function PropertiesPage() {
                       fontSize: "clamp(12px,1.4vw,14px)", whiteSpace: "nowrap",
                     }}>
                       Talk to an Advisor <Phone style={{ width: 15, height: 15, flexShrink: 0 }} />
-                    </Link>
-                    <Link href="/contact" style={{
-                      display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
-                      border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.75)",
-                      fontWeight: 600, padding: "0.9rem 2rem", borderRadius: 2,
-                      textDecoration: "none", fontSize: "clamp(12px,1.4vw,14px)", whiteSpace: "nowrap",
-                    }}>
-                      Download Brochure
                     </Link>
                   </div>
                 </div>

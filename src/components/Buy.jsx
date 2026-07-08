@@ -21,7 +21,6 @@ import {
   Calculator,
 } from "lucide-react";
 
-const BUDGET_RANGES = ["Any Budget", "Under ₹50 Lakh", "₹50L – ₹1 Cr", "₹1 Cr – ₹2 Cr", "Above ₹2 Cr"];
 const TYPE_FILTERS = ["All Types", "Apartments", "Villas", "Plots", "Commercial"];
 
 const LISTINGS = [
@@ -44,8 +43,8 @@ const LISTINGS = [
   {
     name: "Avyaya Green Acres",
     type: "Plots",
-    beds: null,
-    baths: null,
+    beds: 2,
+    baths: 1,
     status: "Selling Fast",
     img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
   },
@@ -60,7 +59,7 @@ const LISTINGS = [
   {
     name: "Avyaya Business Square",
     type: "Commercial",
-    beds: null,
+    beds: 1,
     baths: 2,
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
@@ -200,10 +199,6 @@ function ListingCard({ p, delay }) {
             {p.type}
           </p>
           <h3 style={{ fontWeight: 700, color: "#12243d", fontSize: "clamp(14px,1.8vw,17px)", marginBottom: 6, lineHeight: 1.3 }}>{p.name}</h3>
-          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 14 }}>
-            <MapPin style={{ width: 13, height: 13, color: "rgba(18,36,61,0.45)", flexShrink: 0 }} />
-            <span style={{ color: "rgba(18,36,61,0.55)", fontSize: 12.5 }}>{p.location}</span>
-          </div>
 
           <div style={{
             display: "flex", gap: "0.875rem", flexWrap: "wrap",
@@ -229,9 +224,6 @@ function ListingCard({ p, delay }) {
 
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto" }}>
             <p style={{ color: "#12243d", fontWeight: 800, fontSize: "clamp(13px,1.6vw,15.5px)" }}>{p.price}</p>
-            <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: 5, color: "#b8892e", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>
-              View <ArrowUpRight style={{ width: 14, height: 14 }} />
-            </a>
           </div>
         </div>
       </div>
@@ -241,7 +233,6 @@ function ListingCard({ p, delay }) {
 
 export default function Buy() {
   const [activeType, setActiveType] = useState("All Types");
-  const [activeBudget, setActiveBudget] = useState("Any Budget");
   const [loanAmount, setLoanAmount] = useState(5000000);
   const [tenure, setTenure] = useState(20);
 
@@ -254,8 +245,7 @@ export default function Buy() {
 
   const filtered = LISTINGS.filter((p) => {
     const typeMatch = activeType === "All Types" || p.type === activeType;
-    const budgetMatch = activeBudget === "Any Budget" || p.priceBand === activeBudget;
-    return typeMatch && budgetMatch;
+    return typeMatch;
   });
 
   return (
@@ -412,19 +402,6 @@ export default function Buy() {
                     </button>
                   ))}
                 </div>
-                <div className="filter-row">
-                  {BUDGET_RANGES.map((b) => (
-                    <button key={b} className="filter-btn" onClick={() => setActiveBudget(b)} style={{
-                      border: activeBudget === b ? "1px solid #12243d" : "1px solid #e2d9cc",
-                      background: activeBudget === b ? "#12243d" : "#fff",
-                      color: activeBudget === b ? "#fff" : "rgba(18,36,61,0.5)",
-                      fontWeight: 600, fontSize: "clamp(10px,1.3vw,11.5px)",
-                      padding: "0.4rem 0.8rem", borderRadius: 20, cursor: "pointer", whiteSpace: "nowrap",
-                    }}>
-                      {b}
-                    </button>
-                  ))}
-                </div>
               </div>
             </div>
           </Fade>
@@ -530,7 +507,7 @@ export default function Buy() {
                 <p style={{ color: "#b8892e", fontWeight: 800, fontSize: "clamp(1.6rem,3vw,2.2rem)", lineHeight: 1 }}>
                   ₹{emi.toLocaleString("en-IN")}
                 </p>
-                <a href="#" style={{
+                <a href="tel: +91 7004397655" style={{
                   display: "inline-flex", alignItems: "center", gap: 6,
                   color: "#fff", fontSize: 12.5, fontWeight: 700, marginTop: "1.5rem",
                   textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.3)", paddingBottom: 2,
@@ -595,7 +572,7 @@ export default function Buy() {
                 Talk to an advisor today and schedule a site visit at your convenience.
               </p>
               <div className="cta-btn-row" style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-                <a href="#" style={{
+                <a href="/contact" style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
                   background: "#b8892e", color: "#fff", fontWeight: 700,
                   padding: "0.9rem 2rem", borderRadius: 2, textDecoration: "none", fontSize: 14,
@@ -603,7 +580,7 @@ export default function Buy() {
                   Schedule a Visit
                   <ArrowRight style={{ width: 16, height: 16 }} />
                 </a>
-                <a href="#" style={{
+                <a href="/contact" style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
                   border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.75)",
                   fontWeight: 600, padding: "0.9rem 2rem", borderRadius: 2,

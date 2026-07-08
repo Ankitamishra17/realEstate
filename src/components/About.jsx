@@ -945,7 +945,7 @@ export default function AvyayaDevelopersAbout() {
                 <a href="/properties" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, background: "#b8892e", color: "#fff", fontWeight: 700, padding: "1rem 2rem", borderRadius: 2, textDecoration: "none", fontSize: 14, letterSpacing: "0.05em" }}>
                   Explore Our Properties
                 </a>
-                <a href="#" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.75)", fontWeight: 600, padding: "1rem 2rem", borderRadius: 2, textDecoration: "none", fontSize: 14 }}>
+                <a href="/contact" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.75)", fontWeight: 600, padding: "1rem 2rem", borderRadius: 2, textDecoration: "none", fontSize: 14 }}>
                   Get in Touch
                 </a>
               </div>

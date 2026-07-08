@@ -17,98 +17,55 @@ import {
   Sofa,
 } from "lucide-react";
 
-const RENT_RANGES = [
-  "Any Budget",
-  "Under ₹20K",
-  "₹20K – ₹40K",
-  "₹40K – ₹70K",
-  "Above ₹70K",
-];
 const TYPE_FILTERS = ["All Types", "Apartments", "Villas", "Commercial"];
-const FURNISHING = [
-  "Any Furnishing",
-  "Furnished",
-  "Semi-Furnished",
-  "Unfurnished",
-];
 
 const LISTINGS = [
   {
     name: "Avyaya Garden Residences",
     type: "Apartments",
-    location: "Sector 78, Noida",
-    rent: "₹28,000 / month",
-    rentBand: "₹20K – ₹40K",
     furnishing: "Semi-Furnished",
     beds: 2,
     baths: 2,
-    area: "1,180 sq.ft",
-    available: "Available Now",
     img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80",
   },
   {
     name: "Avyaya Horizon Towers",
     type: "Apartments",
-    location: "Greater Noida West",
-    rent: "₹35,000 / month",
-    rentBand: "₹20K – ₹40K",
     furnishing: "Unfurnished",
     beds: 3,
     baths: 2,
-    area: "1,450 sq.ft",
-    available: "Available from Aug",
     img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80",
   },
   {
     name: "Avyaya Meadows",
     type: "Villas",
-    location: "Sector 150, Noida",
-    rent: "₹85,000 / month",
-    rentBand: "Above ₹70K",
     furnishing: "Furnished",
     beds: 4,
     baths: 4,
-    area: "3,200 sq.ft",
-    available: "Available Now",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80",
   },
   {
     name: "Avyaya Business Square",
     type: "Commercial",
-    location: "Sector 62, Noida",
-    rent: "₹62,000 / month",
-    rentBand: "₹40K – ₹70K",
     furnishing: "Unfurnished",
-    beds: null,
+    beds: 2,
     baths: 2,
-    area: "1,800 sq.ft",
-    available: "Available Now",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
   },
   {
     name: "Avyaya Garden Residences — Tower B",
     type: "Apartments",
-    location: "Sector 78, Noida",
-    rent: "₹18,500 / month",
-    rentBand: "Under ₹20K",
     furnishing: "Unfurnished",
     beds: 1,
     baths: 1,
-    area: "650 sq.ft",
-    available: "Available Now",
     img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=700&q=80",
   },
   {
     name: "Avyaya Riverside Villas",
     type: "Villas",
-    location: "Yamuna Expressway",
-    rent: "₹1,20,000 / month",
-    rentBand: "Above ₹70K",
     furnishing: "Furnished",
     beds: 5,
     baths: 5,
-    area: "4,100 sq.ft",
-    available: "Available from Sep",
     img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
   },
 ];
@@ -328,44 +285,6 @@ function RentalCard({ p, delay }) {
             flexShrink: 0,
           }}
         >
-          <span
-            style={{
-              position: "absolute",
-              top: 14,
-              left: 14,
-              zIndex: 2,
-              background: isNow ? "#2d6a4f" : "#b07d2a",
-              color: "#fff",
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "0.03em",
-              padding: "5px 12px",
-              borderRadius: 2,
-            }}
-          >
-            {p.available}
-          </span>
-          <span
-            style={{
-              position: "absolute",
-              top: 14,
-              right: 14,
-              zIndex: 2,
-              background: "rgba(18,36,61,0.85)",
-              color: "#fff",
-              fontSize: 10.5,
-              fontWeight: 700,
-              letterSpacing: "0.03em",
-              padding: "5px 10px",
-              borderRadius: 2,
-              display: "flex",
-              alignItems: "center",
-              gap: 4,
-            }}
-          >
-            <Sofa style={{ width: 11, height: 11 }} />
-            {p.furnishing}
-          </span>
           <img
             src={p.img}
             alt={p.name}
@@ -428,17 +347,6 @@ function RentalCard({ p, delay }) {
               marginBottom: 14,
             }}
           >
-            <MapPin
-              style={{
-                width: 13,
-                height: 13,
-                color: "rgba(18,36,61,0.45)",
-                flexShrink: 0,
-              }}
-            />
-            <span style={{ color: "rgba(18,36,61,0.55)", fontSize: 12.5 }}>
-              {p.location}
-            </span>
           </div>
 
           <div
@@ -469,45 +377,6 @@ function RentalCard({ p, delay }) {
                 </span>
               </div>
             )}
-            <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-              <Maximize style={{ width: 14, height: 14, color: "#b8892e" }} />
-              <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>
-                {p.area}
-              </span>
-            </div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginTop: "auto",
-            }}
-          >
-            <p
-              style={{
-                color: "#12243d",
-                fontWeight: 800,
-                fontSize: "clamp(13px,1.6vw,15.5px)",
-              }}
-            >
-              {p.rent}
-            </p>
-            <a
-              href="#"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 5,
-                color: "#b8892e",
-                fontWeight: 700,
-                fontSize: 13,
-                textDecoration: "none",
-              }}
-            >
-              View <ArrowUpRight style={{ width: 14, height: 14 }} />
-            </a>
           </div>
         </div>
       </div>
@@ -585,16 +454,9 @@ const css = `
 /* ─── PAGE ────────────────────────────────── */
 export default function Rent() {
   const [activeType, setActiveType] = useState("All Types");
-  const [activeRent, setActiveRent] = useState("Any Budget");
-  const [activeFurnishing, setActiveFurnishing] = useState("Any Furnishing");
-
   const filtered = LISTINGS.filter((p) => {
     const typeMatch = activeType === "All Types" || p.type === activeType;
-    const rentMatch = activeRent === "Any Budget" || p.rentBand === activeRent;
-    const furnishMatch =
-      activeFurnishing === "Any Furnishing" ||
-      p.furnishing === activeFurnishing;
-    return typeMatch && rentMatch && furnishMatch;
+    return typeMatch;
   });
 
   const SP = "clamp(3rem,8vw,6rem) clamp(1.25rem,4vw,2.5rem)";
@@ -761,61 +623,6 @@ export default function Rent() {
                         fontWeight: 600,
                         fontSize: "clamp(11px,1.4vw,12px)",
                         padding: "0.45rem 0.9rem",
-                        borderRadius: 20,
-                        cursor: "pointer",
-                        whiteSpace: "nowrap",
-                        flexShrink: 0,
-                      }}
-                    >
-                      {f}
-                    </button>
-                  ))}
-                </div>
-                <div className="filter-row">
-                  {RENT_RANGES.map((b) => (
-                    <button
-                      key={b}
-                      className="filter-btn"
-                      onClick={() => setActiveRent(b)}
-                      style={{
-                        border:
-                          activeRent === b
-                            ? "1px solid #12243d"
-                            : "1px solid #e2d9cc",
-                        background: activeRent === b ? "#12243d" : "#fff",
-                        color: activeRent === b ? "#fff" : "rgba(18,36,61,0.5)",
-                        fontWeight: 600,
-                        fontSize: "clamp(10px,1.3vw,11.5px)",
-                        padding: "0.4rem 0.8rem",
-                        borderRadius: 20,
-                        cursor: "pointer",
-                        whiteSpace: "nowrap",
-                        flexShrink: 0,
-                      }}
-                    >
-                      {b}
-                    </button>
-                  ))}
-                </div>
-                <div className="filter-row">
-                  {FURNISHING.map((f) => (
-                    <button
-                      key={f}
-                      className="filter-btn"
-                      onClick={() => setActiveFurnishing(f)}
-                      style={{
-                        border:
-                          activeFurnishing === f
-                            ? "1px solid #2d6a4f"
-                            : "1px solid #e2d9cc",
-                        background: activeFurnishing === f ? "#2d6a4f" : "#fff",
-                        color:
-                          activeFurnishing === f
-                            ? "#fff"
-                            : "rgba(18,36,61,0.5)",
-                        fontWeight: 600,
-                        fontSize: "clamp(10px,1.3vw,11.5px)",
-                        padding: "0.4rem 0.8rem",
                         borderRadius: 20,
                         cursor: "pointer",
                         whiteSpace: "nowrap",
@@ -1100,7 +907,7 @@ export default function Rent() {
                   }}
                 >
                   <a
-                    href="#"
+                    href="/properties"
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -1122,7 +929,7 @@ export default function Rent() {
                     />
                   </a>
                   <a
-                    href="#"
+                    href="/contact"
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
