@@ -555,7 +555,10 @@ export default function Buy() {
       {/* ── HERO ── */}
       <section
         style={{
-          background: "#12243d",
+          backgroundImage: "url('/buy.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           padding:
             "clamp(5rem,8vw,7rem) clamp(1.25rem,4vw,2.5rem) clamp(3rem,6vw,5rem)",
           position: "relative",

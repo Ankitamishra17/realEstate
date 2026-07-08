@@ -346,8 +346,7 @@ function RentalCard({ p, delay }) {
               gap: 6,
               marginBottom: 14,
             }}
-          >
-          </div>
+          ></div>
 
           <div
             style={{
@@ -475,7 +474,10 @@ export default function Rent() {
         {/* ── HERO ── */}
         <section
           style={{
-            background: "#12243d",
+            backgroundImage: "url('/rent.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
             padding:
               "clamp(5rem,8vw,7rem) clamp(1.25rem,4vw,2.5rem) clamp(2.5rem,6vw,5rem)",
             position: "relative",
@@ -497,7 +499,7 @@ export default function Rent() {
                   style={{
                     fontSize: "clamp(1.8rem,4.5vw,3.8rem)",
                     fontWeight: 700,
-                    color: "#fff",
+                    color: "white",
                     lineHeight: 1.1,
                     marginBottom: "1.1rem",
                     letterSpacing: "-0.01em",
@@ -508,15 +510,14 @@ export default function Rent() {
                 </h1>
                 <p
                   style={{
-                    color: "rgba(255,255,255,0.52)",
+                    color: "rgba(209, 215, 222, 0.7)",
                     fontSize: "clamp(0.85rem,1.8vw,1rem)",
                     lineHeight: 1.8,
                     maxWidth: 480,
                   }}
                 >
                   Verified apartments, villas, and commercial spaces available
-                  for rent — with transparent agreements and no fake
-                  listings.
+                  for rent — with transparent agreements and no fake listings.
                 </p>
               </Fade>
 
@@ -538,8 +539,8 @@ export default function Rent() {
                     <div
                       key={s.l}
                       style={{
-                        border: "1px solid rgba(184,137,46,0.3)",
-                        background: "rgba(184,137,46,0.06)",
+                        border: "1px solid rgba(184,137,46,0.35)",
+                        background: "rgba(255,255,255,0.75)",
                         padding:
                           "clamp(0.75rem,2vw,1rem) clamp(0.875rem,2vw,1.4rem)",
                         borderRadius: 2,
@@ -560,7 +561,7 @@ export default function Rent() {
                       </p>
                       <p
                         style={{
-                          color: "rgba(255,255,255,0.5)",
+                          color: "#12243d",
                           fontSize: 11,
                           marginTop: 6,
                         }}

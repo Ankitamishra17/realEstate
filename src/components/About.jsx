@@ -183,9 +183,7 @@ const styles = `
      HERO
   ══════════════════════════════ */
   .hero-section {
-    background:
-      linear-gradient(160deg, rgba(18,36,61,0.94) 0%, rgba(18,36,61,0.88) 45%, rgba(18,36,61,0.95) 100%),
-      url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80');
+    background: url('/about.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -636,26 +634,6 @@ export default function AvyayaDevelopersAbout() {
                 </div>
               </Fade>
 
-              {/* RIGHT — Image collage (below text on mobile) */}
-              <Fade delay={200} from="right" className="hero-collage-wrap">
-                <div className="hero-collage">
-                  <img
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80"
-                    alt="Luxury development"
-                    className="hero-collage-img1"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80"
-                    alt="Commercial building"
-                    className="hero-collage-img2"
-                  />
-                  <div className="hero-collage-badge">
-                    <p className="hero-badge-num">50+</p>
-                    <p className="hero-badge-label">Landmark<br />Projects</p>
-                  </div>
-                </div>
-              </Fade>
-
             </div>
           </div>
         </section>
@@ -869,7 +847,7 @@ export default function AvyayaDevelopersAbout() {
                     style={{ width: "100%", borderRadius: 2, boxShadow: "0 16px 56px rgba(18,36,61,0.13)", display: "block" }}
                   />
                   <div className="whyus-badge">
-                    <p style={{ color: "#b8892e", fontWeight: 800, fontSize: "clamp(1.2rem,2.5vw,1.6rem)", lineHeight: 1 }}>5,000+</p>
+                    <p style={{ color: "#b8892e", fontWeight: 800, fontSize: "clamp(1.2rem,2.5vw,1.6rem)", lineHeight: 1 }}>600+</p>
                     <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 12, marginTop: 4 }}>Happy Families Housed</p>
                   </div>
                 </div>
