@@ -803,7 +803,7 @@ export default function GalleryPage() {
               }}
             >
               {[
-                { v: "20+", l: "Projects" },
+                { v: "50+", l: "Projects" },
                 { v: "5", l: "Categories" },
                 { v: "₹3,200Cr+", l: "Delivered" },
               ].map((s) => (

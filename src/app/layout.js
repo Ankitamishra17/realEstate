@@ -14,7 +14,7 @@ const jost = Jost({
 });
 
 export const metadata = {
-  title: "Real Estate Website",
+  title: "Avyaya Developer",
   description: "Modern real estate platform",
 };
 

@@ -13,7 +13,7 @@ import {
   RiTeamLine,
   RiAwardLine,
   RiBuilding2Line,
-  RiPlayCheckLine,
+
   RiWhatsappLine,
   RiInstagramLine,
   RiFacebookCircleLine,

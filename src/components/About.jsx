@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 const STATS = [
   { value: "200+", label: "Acres Developed" },
-  { value: "60+", label: "Happy Families" },
+  { value: "600+", label: "Happy Families" },
   { value: "50+", label: "Landmark Projects" },
   { value: "₹32Cr+", label: "Total Transactions" },
 ];
@@ -94,7 +94,7 @@ const MILESTONES = [
   {
     year: "Scale",
     title: "Landmark Projects",
-    text: "Crossed 20+ landmark developments spanning villas, gated communities, business parks, and townships.",
+    text: "Crossed 50+ landmark developments spanning villas, gated communities, business parks, and townships.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#b8892e" strokeWidth="1.5" style={{ width: 28, height: 28 }}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M5.25 21V9.75A1.5 1.5 0 016.75 8.25h2.25A1.5 1.5 0 0110.5 9.75V21M13.5 21V5.25a1.5 1.5 0 011.5-1.5h1.5a1.5 1.5 0 011.5 1.5V21M8.25 12h.008M8.25 15h.008M16.5 9h.008M16.5 12h.008M16.5 15h.008" />
@@ -650,7 +650,7 @@ export default function AvyayaDevelopersAbout() {
                     className="hero-collage-img2"
                   />
                   <div className="hero-collage-badge">
-                    <p className="hero-badge-num">20+</p>
+                    <p className="hero-badge-num">50+</p>
                     <p className="hero-badge-label">Landmark<br />Projects</p>
                   </div>
                 </div>
