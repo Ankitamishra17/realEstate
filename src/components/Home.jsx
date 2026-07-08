@@ -13,11 +13,10 @@ import {
   RiTeamLine,
   RiAwardLine,
   RiBuilding2Line,
-
   RiWhatsappLine,
   RiInstagramLine,
-  RiFacebookCircleLine,
-  RiPinterestLine,
+  RiFacebookFill,
+  RiYoutubeLine
 } from "react-icons/ri";
 
 const Fonts = () => (
@@ -2112,20 +2111,25 @@ export default function Home() {
                     </span>
                     {[
                       {
-                        icon: <RiInstagramLine />,
-                        href: "https://www.instagram.com/avyayadeveloper?igsh=MTByeTV3bW1za203dA==",
-                        label: "Instagram",
-                      },
-                      {
-                        icon: <RiFacebookCircleLine />,
-                        href: "",
-                        label: "Facebook",
-                      },
-                      {
-                        icon: <RiPinterestLine />,
-                        href: "",
-                        label: "Pinterest",
-                      },
+                          icon: <RiFacebookFill />,
+                          href: "https://www.facebook.com/share/1PfHxWvUja/",
+                          label: "Facebook",
+                        },
+                        {
+                          icon: <RiInstagramLine />,
+                          href: "https://www.instagram.com/avyayadeveloper?igsh=MTByeTV3bW1za203dA==",
+                          label: "Instagram",
+                        },
+                        {
+                          icon: <RiYoutubeLine />,
+                          href: "https://youtube.com/@avyayadeveloper?si=cBUOCNZS7QAL84bl",
+                          label: "YouTube",
+                        },
+                        {
+                          icon: <RiWhatsappLine />,
+                          href: "https://wa.me/917004397655",
+                          label: "WhatsApp",
+                        },
                     ].map((s, i) => (
                       <a
                         key={i}

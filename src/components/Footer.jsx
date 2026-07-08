@@ -34,10 +34,26 @@ const propertyTypes = [
 ];
 
 const socialLinks = [
-  { icon: <RiFacebookFill />, href: "https://www.facebook.com/share/1PfHxWvUja/", label: "Facebook" },
-  { icon: <RiInstagramLine />, href: "https://www.instagram.com/avyayadeveloper?igsh=MTByeTV3bW1za203dA==", label: "Instagram" },
-  { icon: <RiYoutubeLine />, href: "https://youtube.com/@avyayadeveloper?si=cBUOCNZS7QAL84bl", label: "YouTube" },
-  { icon: <RiWhatsappLine />, href: "https://chat.whatsapp.com/FidK3t1WlxPKrLb5J8dWvM", label: "WhatsApp" },
+  {
+    icon: <RiFacebookFill />,
+    href: "https://www.facebook.com/share/1PfHxWvUja/",
+    label: "Facebook",
+  },
+  {
+    icon: <RiInstagramLine />,
+    href: "https://www.instagram.com/avyayadeveloper?igsh=MTByeTV3bW1za203dA==",
+    label: "Instagram",
+  },
+  {
+    icon: <RiYoutubeLine />,
+    href: "https://youtube.com/@avyayadeveloper?si=cBUOCNZS7QAL84bl",
+    label: "YouTube",
+  },
+  {
+    icon: <RiWhatsappLine />,
+    href: "https://wa.me/917004397655",
+    label: "WhatsApp",
+  },
 ];
 
 const stats = [
@@ -72,13 +88,13 @@ export default function Footer() {
             <img
               src="/logo1.png"
               alt="Avyaya Developer"
-              className="h-16 sm:h-20 w-auto object-contain mb-5"
+              className="h-29 sm:h-20 w-auto object-contain mb-5"
             />
           </Link>
           <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
             Avyaya Developer — building landmark residences and commercial
-            spaces with integrity, design excellence,
-            and a commitment to every family's dream.
+            spaces with integrity, design excellence, and a commitment to every
+            family's dream.
           </p>
           <div className="flex gap-3 flex-wrap">
             {socialLinks.map((s, i) => (
@@ -143,9 +159,10 @@ export default function Footer() {
             <li className="flex gap-3">
               <RiMapPinLine className="text-[#af7323] text-xl shrink-0 mt-0.5" />
               <span className="text-gray-400 text-sm leading-relaxed">
-                Office Number 1529, 15th Floor Galaxy Diamond Plaza, Sector 4 Greater Noida,
+                Office Number 1529, 15th Floor Galaxy Diamond Plaza, Sector 4
+                Greater Noida,
                 <br />
-                 Uttar Pradesh - 201009
+                Uttar Pradesh - 201009
               </span>
             </li>
             <li className="flex gap-3 items-center">
