@@ -563,7 +563,7 @@ export default function FindAgent() {
                     color: "rgba(255,255,255,0.5)", fontSize: "clamp(13px,1.5vw,14.5px)",
                     lineHeight: 1.8, maxWidth: "100%", margin: 0,
                   }}>
-                    Partner with Avyaya Developers and get access to verified leads, full project documentation,
+                    Partner with avyaya developer and get access to verified leads, full project documentation,
                     and a brand that clients already trust.
                   </p>
                 </div>

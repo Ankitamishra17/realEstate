@@ -691,7 +691,7 @@ export default function GalleryPage() {
       >
         <img
           src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=85"
-          alt="Avyaya Developers projects"
+          alt="avyaya developer projects"
           style={{
             position: "absolute",
             inset: 0,
@@ -788,7 +788,7 @@ export default function GalleryPage() {
                 maxWidth: 480,
               }}
             >
-              A curated showcase of Avyaya Developers' landmark residential,
+              A curated showcase of avyaya developer' landmark residential,
               commercial, villa, and township projects.
             </p>
           </Fade>
@@ -803,9 +803,9 @@ export default function GalleryPage() {
               }}
             >
               {[
-                { v: "50+", l: "Projects" },
-                { v: "5", l: "Categories" },
-                { v: "₹3,200Cr+", l: "Delivered" },
+                { v: "100+", l: "Projects" },
+                { v: "10", l: "Categories" },
+                { v: "₹500Cr+", l: "Delivered" },
               ].map((s) => (
                 <div key={s.l}>
                   <p

@@ -2090,79 +2090,6 @@ export default function Home() {
                       Premium Real Estate
                     </p>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 12,
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    <span
-                      className="mono"
-                      style={{
-                        fontSize: 9,
-                        color: "rgba(255,255,255,.3)",
-                        letterSpacing: ".16em",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      Follow us
-                    </span>
-                    {[
-                      {
-                          icon: <RiFacebookFill />,
-                          href: "https://www.facebook.com/share/1PfHxWvUja/",
-                          label: "Facebook",
-                        },
-                        {
-                          icon: <RiInstagramLine />,
-                          href: "https://www.instagram.com/avyayadeveloper?igsh=MTByeTV3bW1za203dA==",
-                          label: "Instagram",
-                        },
-                        {
-                          icon: <RiYoutubeLine />,
-                          href: "https://youtube.com/@avyayadeveloper?si=cBUOCNZS7QAL84bl",
-                          label: "YouTube",
-                        },
-                        {
-                          icon: <RiWhatsappLine />,
-                          href: "https://wa.me/917004397655",
-                          label: "WhatsApp",
-                        },
-                    ].map((s, i) => (
-                      <a
-                        key={i}
-                        href="#"
-                        aria-label={s.label}
-                        style={{
-                          width: 34,
-                          height: 34,
-                          borderRadius: 9,
-                          border: "1px solid rgba(255,255,255,.13)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          color: "rgba(255,255,255,.55)",
-                          fontSize: 16,
-                          textDecoration: "none",
-                          transition: "all .2s",
-                          flexShrink: 0,
-                        }}
-                        onMouseOver={(e) => {
-                          e.currentTarget.style.borderColor = "var(--gold)";
-                          e.currentTarget.style.color = "var(--gold2)";
-                        }}
-                        onMouseOut={(e) => {
-                          e.currentTarget.style.borderColor =
-                            "rgba(255,255,255,.13)";
-                          e.currentTarget.style.color = "rgba(255,255,255,.55)";
-                        }}
-                      >
-                        {s.icon}
-                      </a>
-                    ))}
-                  </div>
                 </div>
                 <div
                   className="brand-card-imgs"
@@ -2544,7 +2471,7 @@ export default function Home() {
                   Book Free Site Visit
                 </Link>
                 <a
-                  href="https://chat.whatsapp.com/FidK3t1WlxPKrLb5J8dWvM"
+                  href="https://wa.me/917004397655"
                   className="out"
                   style={{
                     display: "flex",

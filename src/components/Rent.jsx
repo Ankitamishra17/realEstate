@@ -6,7 +6,6 @@ import {
   MapPin,
   BedDouble,
   Bath,
-  Maximize,
   ArrowRight,
   ArrowUpRight,
   ShieldCheck,
@@ -24,48 +23,42 @@ const LISTINGS = [
     name: "Avyaya Garden Residences",
     type: "Apartments",
     furnishing: "Semi-Furnished",
-    beds: 2,
-    baths: 2,
+    beds: "2BHK",
     img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80",
   },
   {
     name: "Avyaya Horizon Towers",
     type: "Apartments",
     furnishing: "Unfurnished",
-    beds: 3,
-    baths: 2,
+    beds: "3BHK",
     img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80",
   },
   {
     name: "Avyaya Meadows",
     type: "Villas",
     furnishing: "Furnished",
-    beds: 4,
-    baths: 4,
+    beds: "4BHK",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80",
   },
   {
     name: "Avyaya Business Square",
     type: "Commercial",
     furnishing: "Unfurnished",
-    beds: 2,
-    baths: 2,
+    beds: "2BHK",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
   },
   {
     name: "Avyaya Garden Residences — Tower B",
     type: "Apartments",
     furnishing: "Unfurnished",
-    beds: 1,
-    baths: 1,
+    beds: "1BHK",
     img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=700&q=80",
   },
   {
     name: "Avyaya Riverside Villas",
     type: "Villas",
     furnishing: "Furnished",
-    beds: 5,
-    baths: 5,
+    beds: "5BHK",
     img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
   },
 ];
@@ -364,7 +357,7 @@ function RentalCard({ p, delay }) {
                   style={{ width: 14, height: 14, color: "#b8892e" }}
                 />
                 <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>
-                  {p.beds} Beds
+                  {p.beds} 
                 </span>
               </div>
             )}

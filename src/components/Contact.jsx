@@ -189,10 +189,16 @@ const css = `
     .map-header span:last-child { font-size: 12px !important; }
   }
 
-  /* ── XS ≤ 400px ── */
-  @media (max-width: 400px) {
-    .contact-chip-label { display: none; }
+ @media (max-width: 400px) {
+  .contact-chip-label {
+    display: block;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    font-size: 11px;
+    line-height: 1.4;
   }
+}}
 `;
 
 function ContactForm() {
@@ -519,7 +525,7 @@ export default function ContactPage() {
         >
           <img
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=85"
-            alt="Avyaya Developers headquarters"
+            alt="avyaya developer headquarters"
             style={{
               position: "absolute",
               inset: 0,
@@ -644,8 +650,8 @@ export default function ContactPage() {
                       border: "1px solid rgba(184,137,46,0.4)",
                       borderRadius: 2,
                       padding: "0.65rem 1.2rem",
-                      background: "rgba(10,20,45,0.45)",
-                      color: "rgba(255,255,255,0.75)",
+                      background: "rgba(79, 95, 136, 0.45)",
+                      color: "rgb(242, 241, 241)",
                       fontSize: "clamp(11px,1.5vw,13px)",
                       minWidth: 0,
                       overflow: "hidden",
@@ -707,61 +713,8 @@ export default function ContactPage() {
                     />
                   </svg>
                 </a>
-                <a
-                  href="#offices"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 8,
-                    border: "1px solid rgba(255,255,255,0.25)",
-                    color: "rgba(255,255,255,0.8)",
-                    fontWeight: 600,
-                    padding: "0.9rem 2rem",
-                    borderRadius: 2,
-                    textDecoration: "none",
-                    fontSize: "clamp(12px,1.4vw,14px)",
-                    background: "rgba(10,20,45,0.3)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  Our Offices
-                </a>
               </div>
             </Fade>
-          </div>
-
-          <div
-            style={{
-              position: "absolute",
-              bottom: 32,
-              left: "50%",
-              transform: "translateX(-50%)",
-              zIndex: 3,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 6,
-            }}
-          >
-            <span
-              style={{
-                color: "rgba(255,255,255,0.35)",
-                fontSize: 11,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-              }}
-            >
-              Scroll
-            </span>
-            <div
-              style={{
-                width: 1,
-                height: 36,
-                background:
-                  "linear-gradient(to bottom, rgba(184,137,46,0.8), transparent)",
-              }}
-            />
           </div>
         </section>
 
@@ -908,20 +861,16 @@ export default function ContactPage() {
                       icon: <IconPhone />,
                       label: "Call Us",
                       value: "+91 7004397655",
-                      sub: "Mon – Sat, 10 AM – 7 PM",
                     },
                     {
                       icon: <IconMail />,
                       label: "Email Us",
                       value: "info@avyayadevelopers.com",
-                      sub: "We reply within 12 hours",
                     },
                     {
                       icon: <IconPin />,
                       label: "Head Office",
-                      value:
-                        "Office Number 1529, 15th Floor Galaxy Diamond Plaza, Sector 4 Greater Noida, Uttar Pradesh 201009",
-                      sub: "Open for walk-ins",
+                      value: "Office Number 1529, 15th Floor Galaxy Diamond Plaza, Sector 4 Greater Noida, Uttar Pradesh 201009",
                     },
                   ].map((row, i) => (
                     <div
@@ -1092,11 +1041,11 @@ export default function ContactPage() {
                       wordBreak: "break-word",
                     }}
                   >
-                    Avyaya Developers – Noida Headquarters
+                    avyaya developer – Noida Headquarters
                   </span>
                 </div>
                 <iframe
-                  title="Avyaya Developers Location"
+                  title="avyaya developer Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.7818344659636!2d77.42722827927595!3d28.606321022581717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee4b71461185%3A0xd1989111c49e52fa!2sGalaxy%20Diamond%20Plaza!5e0!3m2!1sen!2sin!4v1781358485127!5m2!1sen!2sin"
                   width="100%"
                   height="380"

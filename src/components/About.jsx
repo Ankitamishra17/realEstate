@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 const STATS = [
   { value: "200+", label: "Acres Developed" },
   { value: "600+", label: "Happy Families" },
-  { value: "50+", label: "Landmark Projects" },
-  { value: "₹32Cr+", label: "Total Transactions" },
+  { value: "100+", label: "Landmark Projects" },
+  { value: "₹500Cr+", label: "Total Transactions" },
 ];
 
 const SERVICES = [
@@ -73,7 +73,7 @@ const MILESTONES = [
   {
     year: "Founded",
     title: "The Vision",
-    text: "Avyaya Developers established with a commitment to build spaces that endure — inspired by the Sanskrit for 'eternal'.",
+    text: "avyaya developer established with a commitment to build spaces that endure — inspired by the Sanskrit for 'eternal'.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#b8892e" strokeWidth="1.5" style={{ width: 28, height: 28 }}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12s3.75-7.5 9.75-7.5 9.75 7.5 9.75 7.5-3.75 7.5-9.75 7.5S2.25 12 2.25 12z" />
@@ -580,7 +580,7 @@ export default function AvyayaDevelopersAbout() {
 
               {/* LEFT — Text (always first in DOM = always on top on mobile) */}
               <Fade className="hero-text-col">
-                <EyebrowLeft>Avyaya Developers</EyebrowLeft>
+                <EyebrowLeft>avyaya developer</EyebrowLeft>
                 <h1
                   style={{
                     fontSize: "clamp(1.5rem,4vw,3.5rem)",
@@ -691,7 +691,7 @@ export default function AvyayaDevelopersAbout() {
                   Built to Create Spaces That Outlast Generations
                 </h2>
                 <p style={{ color: "rgba(18,36,61,0.6)", lineHeight: 1.85, marginBottom: "1.1rem", fontSize: "clamp(14px,1.6vw,15px)" }}>
-                  Avyaya Developers was founded with a singular conviction: that real estate development in India deserved
+                  avyaya developer was founded with a singular conviction: that real estate development in India deserved
                   the same rigour, vision, and integrity that the world's finest developers bring to their work.
                 </p>
                 <p style={{ color: "rgba(18,36,61,0.6)", lineHeight: 1.85, marginBottom: "1.75rem", fontSize: "clamp(14px,1.6vw,15px)" }}>
@@ -825,7 +825,7 @@ export default function AvyayaDevelopersAbout() {
                 <div>
                   <Eyebrow>Why Avyaya</Eyebrow>
                   <h2 style={{ fontSize: "clamp(1.4rem,3vw,2.4rem)", fontWeight: 700, color: "#12243d", textAlign: "center" }}>
-                    Why Choose Avyaya Developers
+                    Why Choose avyaya developer
                   </h2>
                   <div className="whyus-checks">
                     {WHY_US.map((w) => (
@@ -916,7 +916,7 @@ export default function AvyayaDevelopersAbout() {
                 <span style={{ color: "#b8892e" }}>One Community at a Time</span>
               </h2>
               <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "clamp(14px,1.5vw,15px)", lineHeight: 1.85, maxWidth: 560, margin: "0 auto 2rem" }}>
-                At Avyaya Developers, we believe real estate is more than buildings — it is about creating communities,
+                At avyaya developer, we believe real estate is more than buildings — it is about creating communities,
                 nurturing dreams, and building a legacy that lasts for generations.
               </p>
               <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
