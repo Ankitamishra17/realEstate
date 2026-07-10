@@ -205,9 +205,31 @@ function ContactForm() {
   });
   const [sent, setSent] = useState(false);
   const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    setSent(true);
+
+    try {
+      const response = await fetch(
+        "https://avyayadeveloper.com/send-contact.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        },
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSent(true);
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      alert("Something went wrong");
+    }
   };
 
   const inputBase = {
@@ -897,7 +919,8 @@ export default function ContactPage() {
                     {
                       icon: <IconPin />,
                       label: "Head Office",
-                      value: "Office Number 1529, 15th Floor Galaxy Diamond Plaza, Sector 4 Greater Noida, Uttar Pradesh 201009",
+                      value:
+                        "Office Number 1529, 15th Floor Galaxy Diamond Plaza, Sector 4 Greater Noida, Uttar Pradesh 201009",
                       sub: "Open for walk-ins",
                     },
                   ].map((row, i) => (
