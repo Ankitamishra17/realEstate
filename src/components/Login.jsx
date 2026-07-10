@@ -486,7 +486,7 @@ export default function LoginPage() {
 
             {/* Footer */}
             <div className="left-footer">
-              © {new Date().getFullYear()} Avyaya Developers — Your Trusted
+              © {new Date().getFullYear()} avyaya developer — Your Trusted
               Real Estate Partner.
             </div>
           </div>

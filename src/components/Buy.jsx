@@ -5,19 +5,13 @@ import {
   Search,
   MapPin,
   BedDouble,
-  Bath,
   Maximize,
   ArrowRight,
-  ArrowUpRight,
   Wallet,
   ShieldCheck,
   FileCheck2,
-  Building2,
-  Home,
-  TreePine,
   IndianRupee,
   Percent,
-  ChevronDown,
   Calculator,
 } from "lucide-react";
 
@@ -33,48 +27,42 @@ const LISTINGS = [
   {
     name: "Avyaya Garden Residences",
     type: "Apartments",
-    beds: 2,
-    baths: 2,
+    beds: "2BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80",
   },
   {
     name: "Avyaya Meadows",
     type: "Villas",
-    beds: 4,
-    baths: 4,
+    beds: "4BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80",
   },
   {
     name: "Avyaya Green Acres",
     type: "Plots",
-    beds: 2,
-    baths: 1,
+    beds: "2BHK",
     status: "Selling Fast",
     img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
   },
   {
     name: "Avyaya Horizon Towers",
     type: "Apartments",
-    beds: 3,
-    baths: 2,
+    beds: "3BHK",
     status: "Under Construction",
     img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80",
   },
   {
     name: "Avyaya Business Square",
     type: "Commercial",
-    beds: 1,
-    baths: 2,
+    beds: "1BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
   },
   {
     name: "Avyaya Riverside Villas",
     type: "Villas",
-    beds: 5,
-    baths: 5,
+    beds: "5BHK",
     status: "New Launch",
     img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
   },
@@ -401,24 +389,10 @@ function ListingCard({ p, delay }) {
                   style={{ width: 14, height: 14, color: "#b8892e" }}
                 />
                 <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>
-                  {p.beds} Beds
+                  {p.beds}
                 </span>
               </div>
             )}
-            {p.baths && (
-              <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-                <Bath style={{ width: 14, height: 14, color: "#b8892e" }} />
-                <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>
-                  {p.baths} Baths
-                </span>
-              </div>
-            )}
-            <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-              <Maximize style={{ width: 14, height: 14, color: "#b8892e" }} />
-              <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>
-                {p.area}
-              </span>
-            </div>
           </div>
 
           <div
