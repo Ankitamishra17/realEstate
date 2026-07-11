@@ -15,7 +15,13 @@ const jost = Jost({
 
 export const metadata = {
   title: "Avyaya Developer",
-  description: "Modern real estate platform",
+  description: "Buy, Sell & Rent Properties with Avyaya Developer",
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
