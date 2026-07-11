@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FaHome } from "react-icons/fa";
 import {
   MapPin,
   BedDouble,
@@ -348,11 +349,9 @@ function PropertyCard({ p, delay }) {
           >
             {p.beds && (
               <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-                <BedDouble
-                  style={{ width: 14, height: 14, color: "#b8892e" }}
-                />
+                <FaHome size={14} color="#12243D" />
                 <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>
-                  {p.beds} 
+                  {p.beds}
                 </span>
               </div>
             )}
@@ -796,11 +795,8 @@ export default function PropertiesPage() {
                   </p>
 
                   <div className="featured-specs">
-                    {[
-                      { icon: BedDouble, v: "5 Beds" },
-                      { icon: Bath, v: "5 Baths" },
-                      { icon: Maximize, v: "4,100 sq.ft" },
-                    ].map((f) => (
+                    {[{ icon: FaHome, v: "3 BHK" }].map((f) => (
+                        
                       <div
                         key={f.v}
                         style={{

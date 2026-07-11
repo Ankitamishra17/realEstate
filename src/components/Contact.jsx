@@ -675,7 +675,7 @@ export default function ContactPage() {
               </div>
             </Fade>
 
-            <Fade delay={280}>
+            {/* <Fade delay={280}>
               <div
                 className="hero-ctas"
                 style={{ display: "flex", gap: "0.9rem", flexWrap: "wrap" }}
@@ -714,7 +714,7 @@ export default function ContactPage() {
                   </svg>
                 </a>
               </div>
-            </Fade>
+            </Fade> */}
           </div>
         </section>
 

@@ -114,14 +114,14 @@ export default function Navbar() {
               >
                 <RiUserLine className="text-base shrink-0" />
                 Login
-              </Link>
+              </Link> */}
               <Link
                 href="/postProperty"
                 className="group flex items-center gap-2 bg-[#0f2645] hover:bg-[#af7323] text-white text-[13px] xl:text-sm font-semibold px-3.5 xl:px-5 py-2.5 rounded transition-all duration-300 tracking-wide shadow-md whitespace-nowrap"
               >
                 Post Property
                 <RiArrowRightLine className="text-base shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link> */}
+              </Link>
             </div>
 
             {/* Mobile/Tablet Menu Toggle */}
@@ -169,14 +169,14 @@ export default function Navbar() {
                 Post Property
                 <RiArrowRightLine className="text-base shrink-0" />
               </Link>
-              <Link
+              {/* <Link
                 href="/login"
                 onClick={() => setMenuOpen(false)}
                 className="flex items-center justify-center gap-1.5 border border-[#0f2645]/20 text-[#0f2645] text-sm font-semibold px-5 py-3 rounded-lg text-center tracking-wide w-full"
               >
                 <RiUserLine className="text-base shrink-0" />
                 Login
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
