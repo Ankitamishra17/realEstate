@@ -16,7 +16,7 @@ import {
   RiWhatsappLine,
   RiInstagramLine,
   RiFacebookFill,
-  RiYoutubeLine
+  RiYoutubeLine,
 } from "react-icons/ri";
 
 const Fonts = () => (
@@ -1499,21 +1499,20 @@ export default function Home() {
                   From luxury apartments to commercial plots, our listings span
                   every segment across — curated for every need and budget.
                 </p>
-                <a
-                href="/properties">
-                <button
-                  className="nbtn"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 8,
-                    padding: "13px 26px",
-                    borderRadius: 11,
-                    fontSize: 13,
-                  }}
-                >
-                  Explore Collections <RiArrowRightLine />
-                </button>
+                <a href="/properties">
+                  <button
+                    className="nbtn"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                      padding: "13px 26px",
+                      borderRadius: 11,
+                      fontSize: 13,
+                    }}
+                  >
+                    Explore Collections <RiArrowRightLine />
+                  </button>
                 </a>
               </Rv>
 
@@ -1816,77 +1815,77 @@ export default function Home() {
           </div>
 
           <div className="gallery-row">
-  {[
-    {
-      w: "21%",
-      label: "Living Spaces",
-      img: "https://i.pinimg.com/736x/ff/13/25/ff1325ee41487fa0786900320db42651.jpg",
-    },
-    {
-      w: "21%",
-      label: "Exteriors",
-      img: "https://i.pinimg.com/736x/ff/84/86/ff84865f07698d168e6b3f291e87acda.jpg",
-    },
-    {
-      w: "21%",
-      label: "Amenities",
-      img: "https://i.pinimg.com/1200x/c8/25/29/c82529eead19d10d8b89000fc0c51fa6.jpg",
-    },
-    {
-      w: "21%",
-      label: "Interiors",
-      img: "https://i.pinimg.com/736x/c6/0f/ec/c60fec5efa1b8aff3a85409984b7c449.jpg",
-    },
-  ].map((g, i) => (
-    <div
-      key={`${activeCat}-${i}`}
-      className="gallery-item lift"
-      style={{ width: g.w }}
-    >
-      <img
-        src={g.img}
-        alt={g.label}
-        className="cat-img-enter"
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          transition: "transform .6s cubic-bezier(.22,.68,0,1.2)",
-        }}
-        onMouseOver={(e) =>
-          (e.currentTarget.style.transform = "scale(1.07)")
-        }
-        onMouseOut={(e) =>
-          (e.currentTarget.style.transform = "scale(1)")
-        }
-      />
+            {[
+              {
+                w: "21%",
+                label: "Living Spaces",
+                img: "https://i.pinimg.com/736x/ff/13/25/ff1325ee41487fa0786900320db42651.jpg",
+              },
+              {
+                w: "21%",
+                label: "Exteriors",
+                img: "https://i.pinimg.com/736x/ff/84/86/ff84865f07698d168e6b3f291e87acda.jpg",
+              },
+              {
+                w: "21%",
+                label: "Amenities",
+                img: "https://i.pinimg.com/1200x/c8/25/29/c82529eead19d10d8b89000fc0c51fa6.jpg",
+              },
+              {
+                w: "21%",
+                label: "Interiors",
+                img: "https://i.pinimg.com/736x/c6/0f/ec/c60fec5efa1b8aff3a85409984b7c449.jpg",
+              },
+            ].map((g, i) => (
+              <div
+                key={`${activeCat}-${i}`}
+                className="gallery-item lift"
+                style={{ width: g.w }}
+              >
+                <img
+                  src={g.img}
+                  alt={g.label}
+                  className="cat-img-enter"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transition: "transform .6s cubic-bezier(.22,.68,0,1.2)",
+                  }}
+                  onMouseOver={(e) =>
+                    (e.currentTarget.style.transform = "scale(1.07)")
+                  }
+                  onMouseOut={(e) =>
+                    (e.currentTarget.style.transform = "scale(1)")
+                  }
+                />
 
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(to top,rgba(15,31,61,.65) 0%,transparent 55%)",
-        }}
-      />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(to top,rgba(15,31,61,.65) 0%,transparent 55%)",
+                  }}
+                />
 
-      <span
-        className="out"
-        style={{
-          position: "absolute",
-          bottom: 20,
-          left: 20,
-          color: "#fff",
-          fontSize: 13,
-          fontWeight: 600,
-          letterSpacing: ".03em",
-        }}
-      >
-        {g.label}
-      </span>
-    </div>
-  ))}
-</div>
+                <span
+                  className="out"
+                  style={{
+                    position: "absolute",
+                    bottom: 20,
+                    left: 20,
+                    color: "#fff",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    letterSpacing: ".03em",
+                  }}
+                >
+                  {g.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* ══ NEWSLETTER + BRAND CARD ═══════════════════════ */}
@@ -1945,7 +1944,7 @@ export default function Home() {
                     marginBottom: 12,
                   }}
                 >
-                  Subscribe to
+                  Schedule a
                   <br />
                   <em
                     style={{
@@ -1954,7 +1953,7 @@ export default function Home() {
                       fontWeight: 400,
                     }}
                   >
-                    Our Newsletter
+                    Site Visit
                   </em>
                 </h3>
                 <p
@@ -1974,7 +1973,7 @@ export default function Home() {
                   <label
                     className="mono"
                     style={{
-                      fontSize: 9,
+                      fontSize: 12,
                       fontWeight: 500,
                       color: "var(--navy)",
                       display: "block",
@@ -1982,61 +1981,33 @@ export default function Home() {
                       letterSpacing: ".18em",
                     }}
                   >
-                    E-MAIL *
+                    Contact with Us *
                   </label>
                   <div
-                    className="nl-input-row"
                     style={{
                       display: "flex",
-                      alignItems: "center",
-                      border: "1.5px solid var(--border)",
-                      borderRadius: 12,
-                      overflow: "hidden",
-                      background: "#fff",
+                      justifyContent: "flex-start",
                     }}
                   >
-                    <input
-                      type="email"
-                      placeholder="your@email.com"
-                      className="out"
-                      style={{
-                        flex: 1,
-                        padding: "14px 18px",
-                        border: "none",
-                        outline: "none",
-                        background: "transparent",
-                        fontSize: 14,
-                        color: "var(--navy)",
-                        minWidth: 0,
-                      }}
-                    />
-                    <button
+                    <a
+                      href="tel:+917004397655"
                       className="gbtn"
                       style={{
                         padding: "10px 20px",
                         height: "100%",
                         borderRadius: 0,
-                        fontSize: 18,
+                        fontSize: 14,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         flexShrink: 0,
+                        textDecoration: "none",
+                        whiteSpace: "nowrap",
                       }}
                     >
-                      →
-                    </button>
+                      Call Now
+                    </a>
                   </div>
-                  <p
-                    className="out"
-                    style={{
-                      fontSize: 11,
-                      color: "#ccc",
-                      marginTop: 10,
-                      fontWeight: 300,
-                    }}
-                  >
-                    No spam. Unsubscribe anytime.
-                  </p>
                 </div>
               </div>
             </Rv>

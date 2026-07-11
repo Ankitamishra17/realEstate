@@ -81,17 +81,19 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10">
         {/* Brand Column */}
         <div className="sm:col-span-2 xl:col-span-1">
-          <Link href="/">
-            <img
-              src="/logo1.png"
-              alt="Avyaya Developer"
-              className="h-29 sm:h-20 w-auto object-contain mb-5"
-            />
-          </Link>
-          <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+          <div className="flex justify-center sm:justify-start">
+            <Link href="/">
+              <img
+                src="/logo1.png"
+                alt="Avyaya Developer"
+                className="h-16 sm:h-20 w-auto object-contain"
+              />
+            </Link>
+          </div>
+          <p className="text-gray-400 text-sm leading-relaxed mb-6 mt-4 max-w-sm">
             Avyaya Developer — building landmark residences and commercial
             spaces with integrity, design excellence, and a commitment to every
             family's dream.
@@ -168,7 +170,7 @@ export default function Footer() {
             <li className="flex gap-3 items-center">
               <RiPhoneLine className="text-[#af7323] text-xl shrink-0" />
               <a
-                href="tel:+919876543210"
+                href="tel:+917004397655"
                 className="text-gray-400 text-sm hover:text-[#af7323] transition"
               >
                 +91 7004397655
