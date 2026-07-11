@@ -108,7 +108,7 @@ export default function Navbar() {
 
             {/* CTA Buttons (desktop) */}
             <div className="hidden xl:flex items-center gap-2 shrink-0">
-              <Link
+              {/* <Link
                 href="/login"
                 className="flex items-center gap-1.5 border border-[#0f2645]/20 hover:border-[#af7323] text-[#0f2645] hover:text-[#af7323] text-[13px] xl:text-sm font-semibold px-3 xl:px-4 py-2.5 rounded transition-all duration-300 tracking-wide whitespace-nowrap"
               >
@@ -121,7 +121,7 @@ export default function Navbar() {
               >
                 Post Property
                 <RiArrowRightLine className="text-base shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
+              </Link> */}
             </div>
 
             {/* Mobile/Tablet Menu Toggle */}
