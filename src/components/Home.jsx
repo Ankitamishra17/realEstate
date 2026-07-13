@@ -446,7 +446,7 @@ const TESTS = [
   role: "Villa Owner · Greater Noida",
   stars: 5,
   text: "Buying our dream home with Avyaya Developer was an excellent experience. The team was transparent, professional, and always available to answer our questions. The construction quality and attention to detail truly impressed our family.",
-  av: "https://i.pinimg.com/736x/4d/3c/6f/4d3c6f3a6e4f2e4e7f9e5c3e4f7c8b1a.jpg",
+    av: "https://i.pinimg.com/1200x/b1/05/ee/b105ee681b2c01e1ceb964421d9566e2.jpg",
 
   },
 ];
