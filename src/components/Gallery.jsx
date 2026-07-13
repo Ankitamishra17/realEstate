@@ -725,7 +725,7 @@ export default function GalleryPage() {
         }}
       >
         <img
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=85"
+          src="/Gallery-Banner.png"
           alt="avyaya developer projects"
           style={{
             position: "absolute",
@@ -741,7 +741,7 @@ export default function GalleryPage() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(to bottom, rgba(8,16,36,0.55) 0%, rgba(8,16,36,0.72) 100%)",
+              "linear-gradient(to bottom, rgba(8,16,36,0.55) 0%, rgba(8,16,36,0.52) 100%)",
           }}
         />
         <div
@@ -754,6 +754,7 @@ export default function GalleryPage() {
             background:
               "linear-gradient(90deg,transparent,#b8892e 35%,#d4a84b 65%,transparent)",
             zIndex: 2,
+            
           }}
         />
 
@@ -769,6 +770,7 @@ export default function GalleryPage() {
                 ? "6rem 2rem 3.5rem"
                 : "7rem 2.5rem 4rem",
             width: "100%",
+            
           }}
         >
           <Fade>
@@ -778,6 +780,7 @@ export default function GalleryPage() {
                 alignItems: "center",
                 gap: 10,
                 marginBottom: 14,
+                marginTop:36
               }}
             >
               <div style={{ width: 22, height: 2, background: "#b8892e" }} />
@@ -788,6 +791,7 @@ export default function GalleryPage() {
                   letterSpacing: "0.28em",
                   fontWeight: 700,
                   textTransform: "uppercase",
+                  
                 }}
               >
                 Our Portfolio

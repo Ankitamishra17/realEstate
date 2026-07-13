@@ -445,6 +445,30 @@ const css = `
     flex-wrap: wrap;
   }
 
+  .hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(8,16,30,0.90) 0%,
+    rgba(8,16,30,0.75) 35%,
+    rgba(8,16,30,0.48) 60%,
+    rgba(8,16,30,0.22) 100%
+  );
+  z-index: 1;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 2;
+}
+
   /* ── TABLET ≤ 1024px ── */
   @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; }
@@ -512,6 +536,7 @@ export default function PropertiesPage() {
       >
         {/* ── HERO ── */}
         <section
+          className="hero-section"
           style={{
             backgroundImage: "url('/properties.png')",
             backgroundSize: "cover",
@@ -529,7 +554,7 @@ export default function PropertiesPage() {
               zIndex: 10,
               maxWidth: 1200,
               margin: "0 auto",
-               marginTop: "56px",
+              marginTop: "56px",
             }}
           >
             <div className="hero-grid">
@@ -797,7 +822,6 @@ export default function PropertiesPage() {
 
                   <div className="featured-specs">
                     {[{ icon: FaHome, v: "3 BHK" }].map((f) => (
-                        
                       <div
                         key={f.v}
                         style={{

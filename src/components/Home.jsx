@@ -749,7 +749,7 @@ export default function Home() {
                   {[
                     ["200+", "Projects"],
                     ["600+", "Families"],
-                    ["5 Yrs", "Trust"],
+                    ["5 Years", "Trust"],
                   ].map(([v, l], i) => (
                     <div
                       key={l}

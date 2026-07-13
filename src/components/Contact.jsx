@@ -569,6 +569,7 @@ export default function ContactPage() {
                 alignItems: "center",
                 gap: 10,
                 marginBottom: 18,
+                marginTop:86
               }}
             >
               <div

@@ -530,17 +530,29 @@ export default function Buy() {
 
       {/* ── HERO ── */}
       <section
-        style={{
-          backgroundImage: "url('/buy.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          padding:
-            "clamp(5rem,8vw,7rem) clamp(1.25rem,4vw,2.5rem) clamp(3rem,6vw,5rem)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+  style={{
+    backgroundImage: "url('/buy.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    padding:
+      "clamp(5rem,8vw,7rem) clamp(1.25rem,4vw,2.5rem) clamp(3rem,6vw,5rem)",
+    position: "relative",
+    overflow: "hidden",
+  }}
+>
+  {/* Gradient Overlay */}
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      background:
+        "linear-gradient(100deg, rgba(8,16,30,0.90) 0%, rgba(8,16,30,0.75) 35%, rgba(8,16,30,0.48) 60%, rgba(8,16,30,0.22) 100%)",
+      zIndex: 1,
+    }}
+  />
+
+  
         <div
           style={{
             position: "relative",
@@ -568,7 +580,7 @@ export default function Buy() {
               </h1>
               <p
                 style={{
-                  color: "rgba(255,255,255,0.52)",
+                  color: "rgba(255,255,255,0.72)",
                   fontSize: "clamp(0.85rem,1.8vw,1rem)",
                   lineHeight: 1.8,
                   maxWidth: 480,
@@ -620,7 +632,7 @@ export default function Buy() {
                     </p>
                     <p
                       style={{
-                        color: "rgba(255,255,255,0.5)",
+                        color: "rgba(255,255,255,0.72)",
                         fontSize: 11,
                         marginTop: 6,
                       }}
