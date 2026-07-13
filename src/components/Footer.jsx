@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import Link from "next/link";
@@ -109,10 +107,21 @@ export default function Footer() {
               <a
                 key={i}
                 href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={s.label}
-                className={`w-9 h-9 rounded-full border border-white/20 flex items-center justify-center ${s.color} hover:bg-[#af7323] hover:border-[#af7323] ${s.color}  transition-all duration-300 text-base shrink-0`}
+                className="
+        w-11 h-11
+        rounded-full
+        bg-white
+        flex items-center justify-center
+        shadow-md
+        hover:scale-110
+        hover:shadow-lg
+        transition-all duration-300
+      "
               >
-                {s.icon}
+                <span className={`${s.color} text-[22px]`}>{s.icon}</span>
               </a>
             ))}
           </div>
