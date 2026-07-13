@@ -579,7 +579,7 @@ export default function AvyayaDevelopersAbout() {
             <div className="hero-grid">
 
               {/* LEFT — Text (always first in DOM = always on top on mobile) */}
-              <Fade className="hero-text-col">
+              <Fade className="hero-text-col mt-16">
                 <EyebrowLeft>avyaya developer</EyebrowLeft>
                 <h1
                   style={{

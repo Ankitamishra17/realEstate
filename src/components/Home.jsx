@@ -539,7 +539,7 @@ export default function Home() {
               
             }}
           >
-            <div className="hero-inner-wrap mt-56">
+            <div className="hero-inner-wrap mt-20 ">
               <div className="hero-content">
                 {/* Pill badge */}
                 <div
