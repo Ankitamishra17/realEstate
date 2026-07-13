@@ -423,8 +423,8 @@ function ListingCard({ p, delay }) {
 
 export default function Buy() {
   const [activeType, setActiveType] = useState("All Types");
-  const [loanAmount, setLoanAmount] = useState(5000000);
-  const [tenure, setTenure] = useState(20);
+  const [loanAmount, setLoanAmount] = useState(1000000);
+  const [tenure, setTenure] = useState(5);
 
   const rate = 7;
   const monthlyRate = rate / 12 / 100;
