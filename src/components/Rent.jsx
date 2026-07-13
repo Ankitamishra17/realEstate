@@ -355,11 +355,9 @@ function RentalCard({ p, delay }) {
           >
             {p.beds && (
               <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-                < FaHome 
-                  style={{ width: 14, height: 14, color: "#b8892e" }}
-                />
+                <FaHome style={{ width: 14, height: 14, color: "#b8892e" }} />
                 <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>
-                  {p.beds} 
+                  {p.beds}
                 </span>
               </div>
             )}
@@ -479,13 +477,31 @@ export default function Rent() {
             overflow: "hidden",
           }}
         >
+          {/* Gradient Overlay */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: `
+        linear-gradient(
+          100deg,
+          rgba(8,16,30,0.92) 0%,
+          rgba(8,16,30,0.82) 35%,
+          rgba(8,16,30,0.55) 65%,
+          rgba(8,16,30,0.20) 100%
+        )
+      `,
+              zIndex: 1,
+            }}
+          />
+
           <div
             style={{
               position: "relative",
               zIndex: 10,
               maxWidth: 1200,
               margin: "0 auto",
-              marginTop: "56px"
+              marginTop: "56px",
             }}
           >
             <div className="hero-grid">
@@ -501,7 +517,7 @@ export default function Rent() {
                     letterSpacing: "-0.01em",
                   }}
                 >
-                   A Home to Rent,{" "}
+                  A Home to Rent,{" "}
                   <span style={{ color: "#b8892e" }}>Minus the Hassle</span>
                 </h1>
                 <p
@@ -529,7 +545,7 @@ export default function Rent() {
                 >
                   {[
                     { v: "6", l: "Rentals Live" },
-                    
+
                     { v: "7 Days", l: "Avg. Move-In" },
                   ].map((s) => (
                     <div

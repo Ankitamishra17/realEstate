@@ -524,7 +524,7 @@ export default function ContactPage() {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=85"
+            src="/Contact_Banner.png"
             alt="avyaya developer headquarters"
             style={{
               position: "absolute",

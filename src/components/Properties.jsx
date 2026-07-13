@@ -538,7 +538,7 @@ export default function PropertiesPage() {
         <section
           className="hero-section"
           style={{
-            backgroundImage: "url('/properties.png')",
+            backgroundImage: "url('/Properties_Banner.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
