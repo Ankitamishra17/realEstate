@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { FaHome } from "react-icons/fa";
+
 import {
   Search,
   MapPin,
@@ -27,42 +29,42 @@ const LISTINGS = [
   {
     name: "Avyaya Garden Residences",
     type: "Apartments",
-    beds: "2BHK",
+    beds: "2 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80",
   },
   {
     name: "Avyaya Meadows",
     type: "Villas",
-    beds: "4BHK",
+    beds: "4 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80",
   },
   {
     name: "Avyaya Green Acres",
     type: "Plots",
-    beds: "2BHK",
+    beds: "2 BHK",
     status: "Selling Fast",
     img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
   },
   {
     name: "Avyaya Horizon Towers",
     type: "Apartments",
-    beds: "3BHK",
+    beds: "3 BHK",
     status: "Under Construction",
     img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80",
   },
   {
     name: "Avyaya Business Square",
     type: "Commercial",
-    beds: "1BHK",
+    beds: "1 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
   },
   {
     name: "Avyaya Riverside Villas",
     type: "Villas",
-    beds: "5BHK",
+    beds: "5 BHK",
     status: "New Launch",
     img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
   },
@@ -385,7 +387,7 @@ function ListingCard({ p, delay }) {
           >
             {p.beds && (
               <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-                <BedDouble
+                <FaHome
                   style={{ width: 14, height: 14, color: "#b8892e" }}
                 />
                 <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>
@@ -445,7 +447,7 @@ export default function Buy() {
       style={{
         background: "#f7f4ef",
         color: "#12243d",
-        fontFamily: "'Georgia', 'Times New Roman', serif",
+        fontFamily: "'Cormorant', serif",
         overflowX: "hidden",
       }}
     >
@@ -498,7 +500,7 @@ export default function Buy() {
           }
           .filter-row::-webkit-scrollbar { display: none; }
         }
-
+ 
         /* ── TABLET ≤ 1024px ── */
         @media (max-width: 1024px) {
           .listings-grid  { grid-template-columns: repeat(2, 1fr); }
@@ -545,6 +547,7 @@ export default function Buy() {
             zIndex: 10,
             maxWidth: 1200,
             margin: "0 auto",
+            marginTop: "56px",
           }}
         >
           <div className="buy-hero-grid">
@@ -589,7 +592,7 @@ export default function Buy() {
                 }}
               >
                 {[
-                  { v: "9", l: "Listings Live" },
+                  { v: "10", l: "Listings Live" },
                   { v: "7%", l: "Loan Rate From" },
                   { v: "0", l: "Hidden Charges" },
                 ].map((s) => (
@@ -673,7 +676,7 @@ export default function Buy() {
                         fontWeight: 600,
                         fontSize: "clamp(11px,1.4vw,12px)",
                         padding: "0.45rem 0.9rem",
-                        borderRadius: 20,
+                        borderRadius: 10,
                         cursor: "pointer",
                         whiteSpace: "nowrap",
                       }}

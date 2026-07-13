@@ -446,7 +446,7 @@ const TESTS = [
   role: "Villa Owner · Greater Noida",
   stars: 5,
   text: "Buying our dream home with Avyaya Developer was an excellent experience. The team was transparent, professional, and always available to answer our questions. The construction quality and attention to detail truly impressed our family.",
-    av: "https://i.pinimg.com/1200x/b1/05/ee/b105ee681b2c01e1ceb964421d9566e2.jpg",
+  av: "https://i.pinimg.com/736x/4d/3c/6f/4d3c6f3a6e4f2e4e7f9e5c3e4f7c8b1a.jpg",
 
   },
 ];
@@ -790,134 +790,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Floating card — hidden on mobile via CSS class */}
-          <div
-            className="flt hero-float-card"
-            style={{
-              position: "absolute",
-              bottom: 40,
-              right: 48,
-              zIndex: 3,
-              background: "rgba(255,255,255,.96)",
-              backdropFilter: "blur(20px)",
-              borderRadius: 22,
-              padding: "20px 24px",
-              minWidth: 286,
-              boxShadow: "0 28px 70px rgba(15,31,61,.28)",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-                marginBottom: 14,
-              }}
-            >
-              <div
-                style={{
-                  width: 46,
-                  height: 46,
-                  borderRadius: 12,
-                  overflow: "hidden",
-                  flexShrink: 0,
-                }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=120&auto=format"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  alt=""
-                />
-              </div>
-              <div style={{ minWidth: 0 }}>
-                <p
-                  className="out"
-                  style={{
-                    fontWeight: 700,
-                    fontSize: 14,
-                    color: "var(--navy)",
-                  }}
-                >
-                  Avyaya Royal Heights
-                </p>
-              </div>
-              <div
-                style={{
-                  marginLeft: "auto",
-                  background: "#DCFCE7",
-                  color: "#166534",
-                  fontSize: 10,
-                  fontWeight: 700,
-                  padding: "4px 10px",
-                  borderRadius: 999,
-                  fontFamily: "'Outfit',sans-serif",
-                  flexShrink: 0,
-                }}
-              >
-                Ready
-              </div>
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1px 1fr 1px 1fr",
-                paddingTop: 14,
-                borderTop: "1px solid var(--border)",
-                textAlign: "center",
-              }}
-            >
-              <div>
-                <p className="out" style={{ fontSize: 10, color: "#bbb" }}>
-                  Price
-                </p>
-                <p
-                  className="out"
-                  style={{
-                    fontWeight: 700,
-                    fontSize: 15,
-                    color: "var(--navy)",
-                    marginTop: 2,
-                  }}
-                >
-                  ₹85 Lac
-                </p>
-              </div>
-              <div style={{ background: "var(--border)" }} />
-              <div>
-                <p className="out" style={{ fontSize: 10, color: "#bbb" }}>
-                  Config
-                </p>
-                <p
-                  className="out"
-                  style={{
-                    fontWeight: 600,
-                    fontSize: 14,
-                    color: "var(--navy)",
-                    marginTop: 2,
-                  }}
-                >
-                  3 BHK
-                </p>
-              </div>
-              <div style={{ background: "var(--border)" }} />
-              <div>
-                <p className="out" style={{ fontSize: 10, color: "#bbb" }}>
-                  Area
-                </p>
-                <p
-                  className="out"
-                  style={{
-                    fontWeight: 600,
-                    fontSize: 13,
-                    color: "var(--navy)",
-                    marginTop: 2,
-                  }}
-                >
-                  1,450 sq.ft
-                </p>
-              </div>
-            </div>
-          </div>
+          
 
           {/* Scroll hint — hidden on mobile */}
           <div
@@ -1666,9 +1539,9 @@ export default function Home() {
     }
     .gallery-row {
       display: flex;
-      gap: 10px;
+      gap: 42px;
       height: 360px;
-      padding-left: 180px;
+      padding-left: 100px;
       margin-bottom: 10px;
       box-sizing: border-box;
     }
@@ -1747,7 +1620,7 @@ export default function Home() {
           <div className="gallery-header-wrap" style={{ ...mw }}>
             <Rv>
               <div
-                className="gallery-header-flex  max-w-7xl"
+                className="gallery-header-flex  max-w-7xl "
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
@@ -1778,6 +1651,7 @@ export default function Home() {
                       fontWeight: 700,
                       color: "var(--navy)",
                       lineHeight: 1.1,
+                      marginBottom:56
                     }}
                   >
                     Spaces That{" "}
@@ -1792,7 +1666,7 @@ export default function Home() {
                     </em>
                   </h2>
                 </div>
-                <div className="gallery-cats">
+                <div className="gallery-cats  mb-18">
                   {CATS.map((cat, i) => (
                     <button
                       key={i}

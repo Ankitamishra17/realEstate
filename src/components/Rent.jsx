@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { FaHome } from "react-icons/fa";
+
 import {
   Search,
   MapPin,
@@ -23,42 +25,42 @@ const LISTINGS = [
     name: "Avyaya Garden Residences",
     type: "Apartments",
     furnishing: "Semi-Furnished",
-    beds: "2BHK",
+    beds: "2 BHK",
     img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80",
   },
   {
     name: "Avyaya Horizon Towers",
     type: "Apartments",
     furnishing: "Unfurnished",
-    beds: "3BHK",
+    beds: "3 BHK",
     img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80",
   },
   {
     name: "Avyaya Meadows",
     type: "Villas",
     furnishing: "Furnished",
-    beds: "4BHK",
+    beds: "4 BHK",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80",
   },
   {
     name: "Avyaya Business Square",
     type: "Commercial",
     furnishing: "Unfurnished",
-    beds: "2BHK",
+    beds: "2 BHK",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
   },
   {
     name: "Avyaya Garden Residences — Tower B",
     type: "Apartments",
     furnishing: "Unfurnished",
-    beds: "1BHK",
+    beds: "1 BHK",
     img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=700&q=80",
   },
   {
     name: "Avyaya Riverside Villas",
     type: "Villas",
     furnishing: "Furnished",
-    beds: "5BHK",
+    beds: "5 BHK",
     img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
   },
 ];
@@ -353,7 +355,7 @@ function RentalCard({ p, delay }) {
           >
             {p.beds && (
               <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-                <BedDouble
+                < FaHome 
                   style={{ width: 14, height: 14, color: "#b8892e" }}
                 />
                 <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>
@@ -461,7 +463,7 @@ export default function Rent() {
         style={{
           background: "#f7f4ef",
           color: "#12243d",
-          fontFamily: "'Georgia','Times New Roman',serif",
+          fontFamily: "'Cormorant',serif",
         }}
       >
         {/* ── HERO ── */}
@@ -483,6 +485,7 @@ export default function Rent() {
               zIndex: 10,
               maxWidth: 1200,
               margin: "0 auto",
+              marginTop: "56px"
             }}
           >
             <div className="hero-grid">
@@ -498,7 +501,7 @@ export default function Rent() {
                     letterSpacing: "-0.01em",
                   }}
                 >
-                  A Home to Rent,{" "}
+                   A Home to Rent,{" "}
                   <span style={{ color: "#b8892e" }}>Minus the Hassle</span>
                 </h1>
                 <p
@@ -526,7 +529,7 @@ export default function Rent() {
                 >
                   {[
                     { v: "6", l: "Rentals Live" },
-                    { v: "0", l: "Fake Listings" },
+                    
                     { v: "7 Days", l: "Avg. Move-In" },
                   ].map((s) => (
                     <div
@@ -617,7 +620,7 @@ export default function Rent() {
                         fontWeight: 600,
                         fontSize: "clamp(11px,1.4vw,12px)",
                         padding: "0.45rem 0.9rem",
-                        borderRadius: 20,
+                        borderRadius: 10,
                         cursor: "pointer",
                         whiteSpace: "nowrap",
                         flexShrink: 0,

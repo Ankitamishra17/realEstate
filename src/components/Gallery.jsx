@@ -156,7 +156,42 @@ const GALLERY = [
     id: 21,
     cat: "Commercial",
     title: "Metro Commerce Centre",
+    img: "https://images.pexels.com/photos/1488267/pexels-photo-1488267.png",
+    size: "normal",
+  },
+  {
+    id: 22,
+    cat: "Villas",
+    title: "Palm Grove Villas",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    size: "normal",
+  },
+  {
+    id: 23,
+    cat: "Commercial",
+    title: "Business Hub Tower",
+    img: "https://images.pexels.com/photos/9560264/pexels-photo-9560264.jpeg",
+    size: "normal",
+  },
+  {
+    id: 24,
+    cat: "Villas",
+    title: "Royal Crest Villas",
+    img: "https://images.pexels.com/photos/36466231/pexels-photo-36466231.jpeg",
+    size: "normal",
+  },
+  {
+    id: 25,
+    cat: "Commercial",
+    title: "Corporate Plaza",
+    img: "https://images.pexels.com/photos/36640959/pexels-photo-36640959.png",
+    size: "normal",
+  },
+  {
+    id: 26,
+    cat: "Villas",
+    title: "Green Valley Villas",
+    img: "https://images.pexels.com/photos/36681530/pexels-photo-36681530.jpeg",
     size: "normal",
   },
 ];
@@ -467,7 +502,7 @@ function GalleryCard({ item, onClick, delay, isMobile, isTablet }) {
           backdropFilter: "blur(6px)",
           border: "1px solid rgba(184,137,46,0.3)",
           padding: "3px 10px",
-          borderRadius: 20,
+          borderRadius: 10,
           color: "#b8892e",
           fontSize: 10,
           fontWeight: 700,
@@ -623,7 +658,7 @@ export default function GalleryPage() {
 
         .filter-pill {
           padding: 0.5rem 1.2rem;
-          border-radius: 30px;
+          border-radius: 10px;
           border: 1px solid #d9cfc2;
           background: transparent;
           color: rgba(18,36,61,0.6);

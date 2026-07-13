@@ -529,6 +529,7 @@ export default function PropertiesPage() {
               zIndex: 10,
               maxWidth: 1200,
               margin: "0 auto",
+               marginTop: "56px",
             }}
           >
             <div className="hero-grid">
@@ -650,7 +651,7 @@ export default function PropertiesPage() {
                         fontWeight: 600,
                         fontSize: "clamp(11px,1.4vw,12.5px)",
                         padding: "0.5rem 1rem",
-                        borderRadius: 20,
+                        borderRadius: 10,
                         cursor: "pointer",
                         whiteSpace: "nowrap",
                         flexShrink: 0,
