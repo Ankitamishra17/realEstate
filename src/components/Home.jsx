@@ -536,9 +536,10 @@ export default function Home() {
               width: "100%",
               padding: "90px 48px 56px",
               boxSizing: "border-box",
+              
             }}
           >
-            <div className="hero-inner-wrap">
+            <div className="hero-inner-wrap mt-56">
               <div className="hero-content">
                 {/* Pill badge */}
                 <div
