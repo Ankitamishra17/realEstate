@@ -1,6 +1,8 @@
 import { Jost, Marcellus } from "next/font/google";
 import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import CallButton from "@/components/CallButton";
 
 const marcellus = Marcellus({
   variable: "--font-marcellus",
@@ -28,7 +30,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${marcellus.variable} ${jost.variable}`}>
       <body className="min-h-screen flex flex-col font-sans">
-        <LayoutWrapper>{children}</LayoutWrapper>
+        <LayoutWrapper>
+        {children}
+              
+        </LayoutWrapper>
+         <CallButton />
+        <WhatsAppButton />
       </body>
     </html>
   );

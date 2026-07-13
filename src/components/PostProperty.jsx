@@ -30,7 +30,7 @@ const PROPERTIES = [
     location: "Sector 150, Noida",
     price: "₹2.4 Cr onwards",
 
-    bhk: "3BHK",
+    bhk: "3 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80",
   },
@@ -41,7 +41,7 @@ const PROPERTIES = [
     location: "Greater Noida West",
     price: "₹78 Lakh onwards",
 
-    bhk: "2BHK",
+    bhk: "2 BHK",
     status: "Under Construction",
     img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80",
   },
@@ -52,7 +52,7 @@ const PROPERTIES = [
     location: "Sector 62, Noida",
     price: "₹95 Lakh onwards",
 
-    bhk: "1BHK",
+    bhk: "1 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
   },
@@ -61,7 +61,7 @@ const PROPERTIES = [
     type: "Commercial",
     category: "Retail",
     // location: "Yamuna Expressway", price: "₹42 Lakh onwards",
-    bhk: "1BHK",
+    bhk: "1 BHK",
     status: "New Launch",
     img: "https://images.unsplash.com/photo-1555636222-cae831e670b3?w=700&q=80",
   },
@@ -69,7 +69,7 @@ const PROPERTIES = [
     name: "Avyaya Green Acres",
     type: "Plots & Land",
     category: "Residential Plots",
-    bhk: "4BHK",
+    bhk: "4 BHK",
     status: "Selling Fast",
     img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
   },
@@ -77,7 +77,7 @@ const PROPERTIES = [
     name: "Avyaya Riverside Villas",
     type: "Residential",
     category: "Gated Community",
-    bhk: "3BHK",
+    bhk: "3 BHK",
     status: "New Launch",
     img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
   },
@@ -85,7 +85,7 @@ const PROPERTIES = [
     name: "Avyaya Township Phase II",
     type: "Plots & Land",
     category: "Township",
-    bhk: "5bhk",
+    bhk: "5 BHK",
     status: "Under Construction",
     img: "https://images.unsplash.com/photo-1574958269340-fa927503f3dd?w=700&q=80",
   },
@@ -93,7 +93,7 @@ const PROPERTIES = [
     name: "Avyaya Corporate Park",
     type: "Commercial",
     category: "Business Park",
-    bhk: "2BHK",
+    bhk: "2 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80",
   },
@@ -101,7 +101,7 @@ const PROPERTIES = [
     name: "Avyaya Garden Residences",
     type: "Residential",
     category: "Apartments",
-    bhk: "1BHK",
+    bhk: "1 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80",
   },
@@ -360,10 +360,7 @@ function PropertyCard({ p, delay }) {
           >
             {p.name}
           </h3>
-          {/* <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 14 }}>
-            <MapPin style={{ width: 13, height: 13, color: "rgba(18,36,61,0.45)", flexShrink: 0 }} />
-            <span style={{ color: "rgba(18,36,61,0.55)", fontSize: 12.5 }}>{p.location}</span>
-          </div> */}
+          
           <div
             style={{
               display: "flex",
@@ -374,31 +371,15 @@ function PropertyCard({ p, delay }) {
               marginBottom: "1rem",
             }}
           >
-            {/* {p.beds && (
-              <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-                <BedDouble style={{ width: 14, height: 14, color: "#b8892e" }} />
-                <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>{p.beds} Beds</span>
-              </div>
-            )} */}
-            {/* {p.baths && (
-              <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-                <Bath style={{ width: 14, height: 14, color: "#b8892e" }} />
-                <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>{p.baths} Baths</span>
-              </div>
-            )} */}
             <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
               <FaHome size={14} color="#12243D" />
-              <span style={{ fontSize: 12, color: "rgba(18,36,61,0.6)" }}>
+              <span style={{ fontSize: 14, color: "rgba(18,36,61,0.6)" }}>
                 {p.bhk}
               </span>
             </div>
+
+           
           </div>
-          {/* <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto" }}>
-            <p style={{ color: "#12243d", fontWeight: 800, fontSize: "clamp(13px,1.6vw,15.5px)" }}>{p.price}</p>
-            <Link href="#" style={{ display: "inline-flex", alignItems: "center", gap: 5, color: "#b8892e", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>
-              Details <ArrowUpRight style={{ width: 14, height: 14 }} />
-            </Link>
-          </div> */}
         </div>
       </div>
     </Fade>
@@ -542,7 +523,7 @@ export default function PropertiesPage() {
         style={{
           background: "#f7f4ef",
           color: "#12243d",
-          fontFamily: "'Georgia', 'Times New Roman', serif",
+          fontFamily: " 'Cormorant', serif",
         }}
       >
         {/* ── HERO ── */}
@@ -595,9 +576,9 @@ export default function PropertiesPage() {
               <Fade delay={150} from="right">
                 <div className="hero-stats">
                   {[
-                    { v: "9", l: "Active Projects" },
-                    { v: "4", l: "Locations" },
-                    { v: "3", l: "Property Types" },
+                    { v: "10", l: "Active Projects" },
+                    { v: "10+", l: "Locations" },
+                    { v: "5", l: "Property Types" },
                   ].map((s) => (
                     <div
                       key={s.l}
@@ -832,10 +813,7 @@ export default function PropertiesPage() {
                   </p>
 
                   <div className="featured-specs">
-                    {[
-                      { icon: FaHome, v: "5 BHK" },
-                     
-                    ].map((f) => (
+                    {[{ icon: FaHome, v: "5 BHK" }].map((f) => (
                       <div
                         key={f.v}
                         style={{
@@ -876,7 +854,6 @@ export default function PropertiesPage() {
                       gap: "1rem",
                     }}
                   >
-                   
                     <Link
                       href="/contact"
                       style={{

@@ -25,7 +25,7 @@ const PROPERTIES = [
     name: "Avyaya Meadows",
     type: "Residential",
     category: "Villas",
-    beds: "4BHK",
+    beds: "4 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80",
   },
@@ -33,7 +33,7 @@ const PROPERTIES = [
     name: "Avyaya Horizon Towers",
     type: "Residential",
     category: "Apartments",
-    beds: "3BHK",
+    beds: "3 BHK",
     status: "Under Construction",
     img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80",
   },
@@ -41,7 +41,7 @@ const PROPERTIES = [
     name: "Avyaya Business Square",
     type: "Commercial",
     category: "Office Spaces",
-    beds: "1BHK",
+    beds: "1 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
   },
@@ -49,7 +49,7 @@ const PROPERTIES = [
     name: "Avyaya High Street",
     type: "Commercial",
     category: "Retail",
-    beds: "2BHK",
+    beds: "2 BHK",
     status: "New Launch",
     img: "https://images.unsplash.com/photo-1555636222-cae831e670b3?w=700&q=80",
   },
@@ -57,7 +57,7 @@ const PROPERTIES = [
     name: "Avyaya Green Acres",
     type: "Plots & Land",
     category: "Residential Plots",
-    beds: "3BHK",
+    beds: "3 BHK",
     status: "Selling Fast",
     img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
   },
@@ -65,7 +65,7 @@ const PROPERTIES = [
     name: "Avyaya Riverside Villas",
     type: "Residential",
     category: "Gated Community",
-    beds: "5BHK",
+    beds: "5 BHK",
     status: "New Launch",
     img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
   },
@@ -73,7 +73,7 @@ const PROPERTIES = [
     name: "Avyaya Township Phase II",
     type: "Plots & Land",
     category: "Township",
-    beds: "1BHK",
+    beds: "1 BHK",
     status: "Under Construction",
     img: "https://images.unsplash.com/photo-1574958269340-fa927503f3dd?w=700&q=80",
   },
@@ -81,7 +81,7 @@ const PROPERTIES = [
     name: "Avyaya Corporate Park",
     type: "Commercial",
     category: "Business Park",
-    beds: "2BHK",
+    beds: "2 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80",
   },
@@ -89,7 +89,7 @@ const PROPERTIES = [
     name: "Avyaya Garden Residences",
     type: "Residential",
     category: "Apartments",
-    beds: "2BHK",
+    beds: "2 BHK",
     status: "Ready to Move",
     img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80",
   },
@@ -507,7 +507,7 @@ export default function PropertiesPage() {
         style={{
           background: "#f7f4ef",
           color: "#12243d",
-          fontFamily: "'Georgia', 'Times New Roman', serif",
+          fontFamily: "'Cormorant', serif",
         }}
       >
         {/* ── HERO ── */}
@@ -563,8 +563,8 @@ export default function PropertiesPage() {
               <Fade delay={150} from="right">
                 <div className="hero-stats">
                   {[
-                    { v: "9", l: "Active Projects" },
-                    { v: "3", l: "Property Types" },
+                    { v: "10", l: "Active Projects" },
+                    { v: "5", l: "Property Types" },
                   ].map((s) => (
                     <div
                       key={s.l}
