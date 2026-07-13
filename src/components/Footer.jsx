@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import Link from "next/link";
@@ -39,24 +41,28 @@ const socialLinks = [
     href: "https://www.facebook.com/share/1PfHxWvUja/",
     label: "Facebook",
     color: "text-[#1877F2]",
+    bg: "bg-[#1877F2]/10",
   },
   {
     icon: <RiInstagramLine />,
     href: "https://www.instagram.com/avyayadeveloper?igsh=MTByeTV3bW1za203dA==",
     label: "Instagram",
     color: "text-[#E4405F]",
+    bg: "bg-[#E4405F]/10",
   },
   {
     icon: <RiYoutubeLine />,
     href: "https://youtube.com/@avyayadeveloper?si=cBUOCNZS7QAL84bl",
     label: "YouTube",
     color: "text-[#FF0000]",
+    bg: "bg-[#FF0000]/10",
   },
   {
     icon: <RiWhatsappLine />,
     href: "https://wa.me/917004397655",
     label: "WhatsApp",
     color: "text-[#25D366]",
+    bg: "bg-[#25D366]/10",
   },
 ];
 
@@ -103,28 +109,30 @@ export default function Footer() {
             family's dream.
           </p>
           <div className="flex gap-3 flex-wrap">
-            {socialLinks.map((s, i) => (
-              <a
-                key={i}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={s.label}
-                className="
+  {socialLinks.map((s, i) => (
+    <a
+      key={i}
+      href={s.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={s.label}
+      className={`
         w-11 h-11
         rounded-full
-        bg-white
         flex items-center justify-center
-        shadow-md
+        ${s.bg}
+        ${s.color}
+        border border-transparent
         hover:scale-110
-        hover:shadow-lg
         transition-all duration-300
-      "
-              >
-                <span className={`${s.color} text-[35px]`}>{s.icon}</span>
-              </a>
-            ))}
-          </div>
+      `}
+    >
+      <span className="text-[22px]">
+        {s.icon}
+      </span>
+    </a>
+  ))}
+</div>
         </div>
 
         {/* Quick Links */}
