@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -38,21 +39,25 @@ const socialLinks = [
     icon: <RiFacebookFill />,
     href: "https://www.facebook.com/share/1PfHxWvUja/",
     label: "Facebook",
+    color: "text-[#1877F2]",
   },
   {
     icon: <RiInstagramLine />,
     href: "https://www.instagram.com/avyayadeveloper?igsh=MTByeTV3bW1za203dA==",
     label: "Instagram",
+    color: "text-[#E4405F]",
   },
   {
     icon: <RiYoutubeLine />,
     href: "https://youtube.com/@avyayadeveloper?si=cBUOCNZS7QAL84bl",
     label: "YouTube",
+    color: "text-[#FF0000]",
   },
   {
     icon: <RiWhatsappLine />,
     href: "https://wa.me/917004397655",
     label: "WhatsApp",
+    color: "text-[#25D366]",
   },
 ];
 
@@ -104,7 +109,7 @@ export default function Footer() {
                 key={i}
                 href={s.href}
                 aria-label={s.label}
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-gray-300 hover:bg-[#af7323] hover:border-[#af7323] hover:text-white transition-all duration-300 text-base shrink-0"
+                className={`w-9 h-9 rounded-full border border-white/20 flex items-center justify-center ${s.color} hover:bg-[#af7323] hover:border-[#af7323] hover:text-white transition-all duration-300 text-base shrink-0`}
               >
                 {s.icon}
               </a>

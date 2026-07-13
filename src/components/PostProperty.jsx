@@ -542,18 +542,20 @@ export default function PropertiesPage() {
               zIndex: 10,
               maxWidth: 1200,
               margin: "0 auto",
+              marginTop: "56px"
+              
             }}
           >
             <div className="hero-grid">
               <Fade>
-                <EyebrowLeft>Our Portfolio</EyebrowLeft>
+                <EyebrowLeft >Our Portfolio</EyebrowLeft>
                 <h1
                   style={{
                     fontSize: "clamp(1.8rem,4.5vw,3.8rem)",
                     fontWeight: 700,
                     color: "#fff",
                     lineHeight: 1.1,
-                    marginBottom: "1.25rem",
+                    marginBottom: "1rem",
                     letterSpacing: "-0.01em",
                     wordBreak: "break-word",
                   }}

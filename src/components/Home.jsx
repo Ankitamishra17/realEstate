@@ -440,6 +440,15 @@ const TESTS = [
     text: "From site visit to possession, every step was smooth. Green Valley villa exceeded every expectation we had.",
     av: "https://i.pinimg.com/736x/95/27/98/9527986992f218aa26fee549651dd001.jpg",
   },
+  {
+    
+  name: "Rajesh Khanna",
+  role: "Villa Owner · Greater Noida",
+  stars: 5,
+  text: "Buying our dream home with Avyaya Developer was an excellent experience. The team was transparent, professional, and always available to answer our questions. The construction quality and attention to detail truly impressed our family.",
+    av: "https://i.pinimg.com/1200x/b1/05/ee/b105ee681b2c01e1ceb964421d9566e2.jpg",
+
+  },
 ];
 
 const WHY = [
@@ -2200,7 +2209,7 @@ export default function Home() {
               className="test-grid"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(4,1fr)",
                 gap: 18,
               }}
             >
