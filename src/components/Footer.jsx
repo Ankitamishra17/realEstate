@@ -121,7 +121,7 @@ export default function Footer() {
         transition-all duration-300
       "
               >
-                <span className={`${s.color} text-[22px]`}>{s.icon}</span>
+                <span className={`${s.color} text-[35px]`}>{s.icon}</span>
               </a>
             ))}
           </div>
