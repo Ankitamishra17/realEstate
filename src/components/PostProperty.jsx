@@ -3,15 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
+import LeadFormModal from "@/components/LeadFormModal";
 
-import Image from "next/image";
+
 import {
-  MapPin,
-  BedDouble,
-  Bath,
-  Maximize,
+ 
   ArrowRight,
-  ArrowUpRight,
+  
   SlidersHorizontal,
   Building2,
   Home,
@@ -360,7 +358,7 @@ function PropertyCard({ p, delay }) {
           >
             {p.name}
           </h3>
-          
+
           <div
             style={{
               display: "flex",
@@ -377,8 +375,6 @@ function PropertyCard({ p, delay }) {
                 {p.bhk}
               </span>
             </div>
-
-           
           </div>
         </div>
       </div>
@@ -509,6 +505,13 @@ const css = `
 
 export default function PropertiesPage() {
   const [activeFilter, setActiveFilter] = useState("All Properties");
+  const [leadModalOpen, setLeadModalOpen] = useState(false);
+  const [leadDestination, setLeadDestination] = useState(null);
+
+  const openLeadForm = (destinationUrl) => {
+    setLeadDestination(destinationUrl);
+    setLeadModalOpen(true);
+  };
 
   const filtered =
     activeFilter === "All Properties"
@@ -542,13 +545,12 @@ export default function PropertiesPage() {
               zIndex: 10,
               maxWidth: 1200,
               margin: "0 auto",
-              marginTop: "56px"
-              
+              marginTop: "56px",
             }}
           >
             <div className="hero-grid">
               <Fade>
-                <EyebrowLeft >Our Portfolio</EyebrowLeft>
+                <EyebrowLeft>Our Portfolio</EyebrowLeft>
                 <h1
                   style={{
                     fontSize: "clamp(1.8rem,4.5vw,3.8rem)",
@@ -1035,7 +1037,7 @@ export default function PropertiesPage() {
                       Talk to an Advisor{" "}
                       <Phone style={{ width: 15, height: 15, flexShrink: 0 }} />
                     </Link>
-                    <Link
+                    {/* <Link
                       href="/contact"
                       style={{
                         display: "inline-flex",
@@ -1053,13 +1055,39 @@ export default function PropertiesPage() {
                       }}
                     >
                       Download Brochure
-                    </Link>
+                    </Link> */}
+
+                    <button
+                      onClick={() => openLeadForm("/brochure.pdf")}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: 8,
+                        border: "2px solid rgba(255,255,255,0.2)",
+                        background: "transparent",
+                        color: "rgba(255,255,255,0.75)",
+                        fontWeight: 600,
+                        padding: "0.9rem 2rem",
+                        borderRadius: 2,
+                        fontSize: "clamp(12px,1.4vw,14px)",
+                        whiteSpace: "nowrap",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Download Brochure
+                    </button>
                   </div>
                 </div>
               </Fade>
             </div>
           </div>
         </section>
+        <LeadFormModal
+          isOpen={leadModalOpen}
+          destination={leadDestination}
+          onClose={() => setLeadModalOpen(false)}
+        />
       </div>
     </>
   );

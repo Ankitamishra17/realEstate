@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import LeadFormModal from "@/components/LeadFormModal";
 import Link from "next/link";
 import {
   RiSearchLine,
@@ -441,13 +442,11 @@ const TESTS = [
     av: "https://i.pinimg.com/736x/95/27/98/9527986992f218aa26fee549651dd001.jpg",
   },
   {
-    
-  name: "Rajesh Khanna",
-  role: "Villa Owner · Greater Noida",
-  stars: 5,
-  text: "Buying our dream home with Avyaya Developer was an excellent experience. The team was transparent, professional, and always available to answer our questions. The construction quality and attention to detail truly impressed our family.",
+    name: "Rajesh Khanna",
+    role: "Villa Owner · Greater Noida",
+    stars: 5,
+    text: "Buying our dream home with Avyaya Developer was an excellent experience. The team was transparent, professional, and always available to answer our questions. The construction quality and attention to detail truly impressed our family.",
     av: "https://i.pinimg.com/1200x/b1/05/ee/b105ee681b2c01e1ceb964421d9566e2.jpg",
-
   },
 ];
 
@@ -479,6 +478,13 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [activeCat, setActiveCat] = useState(0);
   const [catImgKey, setCatImgKey] = useState(0);
+  const [leadModalOpen, setLeadModalOpen] = useState(false);
+  const [leadDestination, setLeadDestination] = useState(null);
+
+  const openLeadForm = (destinationUrl) => {
+    setLeadDestination(destinationUrl);
+    setLeadModalOpen(true);
+  };
 
   useEffect(() => {
     const fn = () => setScrollY(window.scrollY);
@@ -536,7 +542,6 @@ export default function Home() {
               width: "100%",
               padding: "90px 48px 56px",
               boxSizing: "border-box",
-              
             }}
           >
             <div className="hero-inner-wrap mt-20 ">
@@ -639,7 +644,7 @@ export default function Home() {
                       justifyContent: "center",
                     }}
                   >
-                    {["Buy", "Rent", "Commercial"].map((t) => (
+                    {["Buy", "Rent", "Commercial", "Residential"].map((t) => (
                       <button
                         key={t}
                         onClick={() => setTab(t)}
@@ -717,7 +722,7 @@ export default function Home() {
                     flexWrap: "wrap",
                   }}
                 >
-                  <Link
+                  {/* <Link
                     href="/properties"
                     className="gbtn"
                     style={{
@@ -731,7 +736,24 @@ export default function Home() {
                     }}
                   >
                     Browse Properties <RiArrowRightLine />
-                  </Link>
+                  </Link> */}
+
+                  <button
+                    onClick={() => openLeadForm("/properties")}
+                    className="gbtn"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                      padding: "13px 28px",
+                      borderRadius: 12,
+                      fontSize: 13,
+                      border: "none",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Browse Properties <RiArrowRightLine />
+                  </button>
                 </div>
 
                 {/* Stats row */}
@@ -790,8 +812,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          
 
           {/* Scroll hint — hidden on mobile */}
           <div
@@ -1246,7 +1266,7 @@ export default function Home() {
                           </p>
                         </div>
                       </div>
-                      <Link
+                      {/* <Link
                         href="/properties"
                         className="card-btn"
                         style={{ marginTop: "auto" }}
@@ -1254,7 +1274,21 @@ export default function Home() {
                         <span>
                           View Details <span className="arr">→</span>
                         </span>
-                      </Link>
+                      </Link> */}
+
+                      <button
+                        onClick={() => openLeadForm("/properties")}
+                        className="card-btn"
+                        style={{
+                          marginTop: "auto",
+                          width: "100%",
+                          border: "none",
+                        }}
+                      >
+                        <span>
+                          View Details <span className="arr">→</span>
+                        </span>
+                      </button>
                     </div>
                   </div>
                 </Rv>
@@ -1652,7 +1686,7 @@ export default function Home() {
                       fontWeight: 700,
                       color: "var(--navy)",
                       lineHeight: 1.1,
-                      marginBottom:56
+                      marginBottom: 56,
                     }}
                   >
                     Spaces That{" "}
@@ -2308,7 +2342,7 @@ export default function Home() {
                   flexShrink: 0,
                 }}
               >
-                <Link
+                {/* <Link
                   href="/contact"
                   className="gbtn"
                   style={{
@@ -2324,7 +2358,26 @@ export default function Home() {
                   }}
                 >
                   Book Free Site Visit
-                </Link>
+                </Link> */}
+
+                <button
+                  onClick={() => openLeadForm("/contact")}
+                  className="gbtn"
+                  style={{
+                    display: "block",
+                    textAlign: "center",
+                    padding: "16px 40px",
+                    borderRadius: 13,
+                    fontSize: 13,
+                    textDecoration: "none",
+                    letterSpacing: ".05em",
+                    whiteSpace: "nowrap",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  Book Free Site Visit 
+                </button>
+
                 <a
                   href="https://wa.me/917004397655"
                   className="out"
@@ -2359,6 +2412,11 @@ export default function Home() {
             </div>
           </Rv>
         </section>
+        <LeadFormModal
+          isOpen={leadModalOpen}
+          destination={leadDestination}
+          onClose={() => setLeadModalOpen(false)}
+        />
       </main>
     </>
   );

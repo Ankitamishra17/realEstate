@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { FaHome } from "react-icons/fa";
+import LeadFormModal from "@/components/LeadFormModal";
 
 import {
   Search,
@@ -452,6 +453,14 @@ export default function Rent() {
   });
 
   const SP = "clamp(3rem,8vw,6rem) clamp(1.25rem,4vw,2.5rem)";
+
+  const [leadModalOpen, setLeadModalOpen] = useState(false);
+  const [leadDestination, setLeadDestination] = useState(null);
+
+  const openLeadForm = (destinationUrl) => {
+    setLeadDestination(destinationUrl);
+    setLeadModalOpen(true);
+  };
 
   return (
     <>
@@ -919,7 +928,7 @@ export default function Rent() {
                     marginTop: "clamp(1.75rem,4vw,0rem)",
                   }}
                 >
-                  <a
+                  {/* <a
                     href="/properties"
                     style={{
                       display: "inline-flex",
@@ -940,7 +949,31 @@ export default function Rent() {
                     <ArrowRight
                       style={{ width: 16, height: 16, flexShrink: 0 }}
                     />
-                  </a>
+                  </a> */}
+                  <button
+                    onClick={() => openLeadForm("/properties")}
+                    className="gbtn"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 8,
+                      background: "#b8892e",
+                      color: "#fff",
+                      fontWeight: 700,
+                      padding: "0.9rem 1.75rem",
+                      borderRadius: 2,
+                      textDecoration: "none",
+                      fontSize: 14,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    List Your Property{" "}
+                    <ArrowRight
+                      style={{ width: 16, height: 16, flexShrink: 0 }}
+                    />
+                  </button>
+
                   <a
                     href="/contact"
                     style={{
@@ -968,6 +1001,11 @@ export default function Rent() {
             </div>
           </div>
         </section>
+        <LeadFormModal
+          isOpen={leadModalOpen}
+          destination={leadDestination}
+          onClose={() => setLeadModalOpen(false)}
+        />
       </div>
     </>
   );

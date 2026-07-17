@@ -10,16 +10,26 @@ import AvyayaDevelopersAbout from "@/components/About";
 // import AboutWhoWeAre from "@/components/about/AboutWhoWeAre";
 // import AboutWhyChoose from "@/components/about/AboutWhyChoose";
 // import AboutHeroSection from "@/components/about/AboutHeroSection";
-// // export const metadata = {
-// //   title: "About Us | Crown Ink Tattoo Studio, Greater Noida",
-// //   description:
-// //     "Learn about Crown Ink Tattoo Studio in Greater Noida – our expert tattoo artists, custom designs, and commitment to quality, hygiene, and creativity. Discover why we are a leading tattoo studio in the region.",
+// export const metadata = {
+//   title: "About Us | Avyaya Developer, Greater Noida",
+//   description:
+//     "Learn about Crown Ink Tattoo Studio in Greater Noida – our expert tattoo artists, custom designs, and commitment to quality, hygiene, and creativity. Discover why we are a leading tattoo studio in the region.",
 
-// //   robots: {
-// //     index: true,
-// //     follow: true,
-// //   },
-// // };
+//   robots: {
+//     index: true,
+//     follow: true,
+//   },
+// };
+
+export const metadata = {
+  title: "About Us | Avyaya Developer, Greater Noida",
+  description:
+    "Learn about Avyaya Developer, a trusted real estate company in Greater Noida committed to delivering quality residential and commercial properties. Discover our vision, values, expertise, and dedication to customer satisfaction.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -31,7 +41,7 @@ export default function AboutPage() {
       <AboutWhyChoose />
       <AboutOurPurpose /> */}
       {/* <Footer /> */}
-      <AvyayaDevelopersAbout/>
+      <AvyayaDevelopersAbout />
     </>
   );
 }

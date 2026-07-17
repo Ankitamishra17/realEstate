@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import LeadFormModal from "@/components/LeadFormModal";
+
 
 const CATEGORIES = [
   "All",
@@ -603,6 +605,17 @@ export default function GalleryPage() {
   const [lightbox, setLightbox] = useState(null);
   const windowWidth = useWindowWidth();
 
+const [leadModalOpen, setLeadModalOpen] = useState(false);
+  const [leadDestination, setLeadDestination] = useState(null);
+
+  const openLeadForm = (destinationUrl) => {
+    setLeadDestination(destinationUrl);
+    setLeadModalOpen(true);
+  };
+
+
+
+
   const isMobile = windowWidth <= 600;
   const isTablet = windowWidth > 600 && windowWidth <= 1024;
   const isDesktop = windowWidth > 1024;
@@ -754,7 +767,6 @@ export default function GalleryPage() {
             background:
               "linear-gradient(90deg,transparent,#b8892e 35%,#d4a84b 65%,transparent)",
             zIndex: 2,
-            
           }}
         />
 
@@ -770,7 +782,6 @@ export default function GalleryPage() {
                 ? "6rem 2rem 3.5rem"
                 : "7rem 2.5rem 4rem",
             width: "100%",
-            
           }}
         >
           <Fade>
@@ -780,7 +791,7 @@ export default function GalleryPage() {
                 alignItems: "center",
                 gap: 10,
                 marginBottom: 14,
-                marginTop:36
+                marginTop: 36,
               }}
             >
               <div style={{ width: 22, height: 2, background: "#b8892e" }} />
@@ -791,7 +802,6 @@ export default function GalleryPage() {
                   letterSpacing: "0.28em",
                   fontWeight: 700,
                   textTransform: "uppercase",
-                  
                 }}
               >
                 Our Portfolio
@@ -1185,7 +1195,7 @@ export default function GalleryPage() {
                   />
                 </svg>
               </a>
-              <a
+              {/* <a
                 href="/properties"
                 style={{
                   display: "inline-flex",
@@ -1203,10 +1213,36 @@ export default function GalleryPage() {
                 }}
               >
                 View All Projects
-              </a>
+              </a> */}
+
+              <button
+                onClick={() => openLeadForm("/properties")}
+               
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  color: "rgba(255,255,255,0.75)",
+                  fontWeight: 600,
+                  padding: "0.9rem 2rem",
+                  borderRadius: 2,
+                  textDecoration: "none",
+                  fontSize: 14,
+                  width: isMobile ? "100%" : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                View All Projects
+              </button>
             </div>
           </Fade>
         </div>
+        <LeadFormModal
+          isOpen={leadModalOpen}
+          destination={leadDestination}
+          onClose={() => setLeadModalOpen(false)}
+        />
       </section>
 
       {/* ── LIGHTBOX ── */}

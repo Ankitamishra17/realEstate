@@ -2,19 +2,20 @@
 
 import Buy from "@/components/Buy";
 
-// import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
-// import BuyHeroSection from "@/components/buy/BuyHeroSection";
+export const metadata = {
+  title: "Buy Property | Avyaya Developer",
+  description:
+    "Find your ideal property with Avyaya Developer. Explore ready-to-move homes, luxury apartments, plots, commercial spaces, and investment-friendly projects in Greater Noida.",
 
-// import BuyCardSection from "@/components/buy/BuyCardSection";
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function BuyPage() {
   return (
     <>
-      {/* <Navbar />
-      <BuyHeroSection />
-      <BuyCardSection />
-      <Footer /> */}
       <Buy />
     </>
   );
