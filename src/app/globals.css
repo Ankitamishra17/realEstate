@@ -10,11 +10,11 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
-/* 
+
 html,body{
     overflow-x: hidden;
 
-} */
+}
 
 .no-scrollbar {
   -ms-overflow-style: none;
